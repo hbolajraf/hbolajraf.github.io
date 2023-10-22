@@ -1,0 +1,235 @@
+
+
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>http://localhost:4000/</id>
+  <title></title>
+  <subtitle></subtitle>
+  <updated>2023-10-22T22:04:23+02:00</updated>
+  <author>
+    <name>Hassan BOLAJRAF</name>
+    <uri>http://localhost:4000/</uri>
+  </author>
+  <link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml"/>
+  <link rel="alternate" type="text/html" hreflang="en"
+    href="http://localhost:4000/"/>
+  <generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator>
+  <rights> © 2023 Hassan BOLAJRAF </rights>
+  <icon>/assets/img/favicons/favicon.ico</icon>
+  <logo>/assets/img/favicons/favicon-96x96.png</logo>
+
+
+  
+  <entry>
+    <title>Git - Tips and Tricks</title>
+    <link href="http://localhost:4000/posts/Git-Tips-and-Tricks/" rel="alternate" type="text/html" title="Git - Tips and Tricks" />
+    <published>2023-10-01T00:00:00+02:00</published>
+  
+    <updated>2023-10-22T14:28:59+02:00</updated>
+  
+    <id>http://localhost:4000/posts/Git-Tips-and-Tricks/</id>
+    <content src="http://localhost:4000/posts/Git-Tips-and-Tricks/" />
+    <author>
+      <name>Hassan BOLAJRAF</name>
+    </author>
+
+  
+    
+    <category term="GitHub" />
+    
+    <category term="Git" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      GitHub is a internet hosting provider for software development and version control using git. It provides distributed version control, source code management, issue tracking and many more. This is now the number one version control provider. Here, I will discuss on tips and tricks of git
+
+Discard unstaged changes in Git
+
+  For all unstaged files in current working directory use
+
+
+git checkout -...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>Configure QoS within API Gateway using ocelot and Polly</title>
+    <link href="http://localhost:4000/posts/Configure-QoS-within-API-Gateway-using-ocelot-and-Polly/" rel="alternate" type="text/html" title="Configure QoS within API Gateway using ocelot and Polly" />
+    <published>2023-09-27T00:00:00+02:00</published>
+  
+    <updated>2023-10-22T14:28:59+02:00</updated>
+  
+    <id>http://localhost:4000/posts/Configure-QoS-within-API-Gateway-using-ocelot-and-Polly/</id>
+    <content src="http://localhost:4000/posts/Configure-QoS-within-API-Gateway-using-ocelot-and-Polly/" />
+    <author>
+      <name>Hassan BOLAJRAF</name>
+    </author>
+
+  
+    
+    <category term="Microservices" />
+    
+    <category term="Ocelot" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Introduction
+API Gateway is an entry point for backend application. It maintains routing, authentication, logging, service discovery etc. Ocelot is used to design and develop API gateway for .net based application. QoS is generally configured in API gateway which provides different priorities for different applications, users or traffic. In this article, we will configure and discuss Quality of...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>Search AD entry by ObjectSid using Novell Directory Ldap Nuget package</title>
+    <link href="http://localhost:4000/posts/Search-AD-entry-by-ObjectSid-using-Novell-Directory-Ldap-Nuget-package/" rel="alternate" type="text/html" title="Search AD entry by ObjectSid using Novell Directory Ldap Nuget package" />
+    <published>2023-09-25T00:00:00+02:00</published>
+  
+    <updated>2023-10-22T14:28:59+02:00</updated>
+  
+    <id>http://localhost:4000/posts/Search-AD-entry-by-ObjectSid-using-Novell-Directory-Ldap-Nuget-package/</id>
+    <content src="http://localhost:4000/posts/Search-AD-entry-by-ObjectSid-using-Novell-Directory-Ldap-Nuget-package/" />
+    <author>
+      <name>Hassan BOLAJRAF</name>
+    </author>
+
+  
+    
+    <category term="ActiveDirectory" />
+    
+    <category term="Ldap" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      SID stands for security identifier, a unique string that Windows Server automatically assigns to each computer, user and group in order to mark and clearly distinguish them.
+
+Windows SID Format :
+SIDs always follow the same structure, with values separated by dashes:
+
+
+
+Novell Directory Ldap
+
+Novell Directory Ldap nuget package allows you to connect to the active directory in order to perform C...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>AZ-400 Certification Path</title>
+    <link href="http://localhost:4000/posts/AZ-400-Certification-Path/" rel="alternate" type="text/html" title="AZ-400 Certification Path" />
+    <published>2023-09-25T00:00:00+02:00</published>
+  
+    <updated>2023-10-22T14:28:59+02:00</updated>
+  
+    <id>http://localhost:4000/posts/AZ-400-Certification-Path/</id>
+    <content src="http://localhost:4000/posts/AZ-400-Certification-Path/" />
+    <author>
+      <name>Hassan BOLAJRAF</name>
+    </author>
+
+  
+    
+    <category term="Microsoft" />
+    
+    <category term="Certification" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      
+
+Microsoft certification paths changes
+
+Both the MCSD and MCT certifications were discontinued by Microsoft in 2017. They were replaced by newer certification programs that reflect the changing demands of the tech industry and the evolving needs of professionals.
+
+The MCSD certification was replaced by the Azure Developer Associate certification, which is a newer certification program that is ...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>Implementing API gateway using ocelot in asp.net core application</title>
+    <link href="http://localhost:4000/posts/Implementing-Ocelot-Gateway/" rel="alternate" type="text/html" title="Implementing API gateway using ocelot in asp.net core application" />
+    <published>2023-09-24T00:00:00+02:00</published>
+  
+    <updated>2023-10-22T14:28:59+02:00</updated>
+  
+    <id>http://localhost:4000/posts/Implementing-Ocelot-Gateway/</id>
+    <content src="http://localhost:4000/posts/Implementing-Ocelot-Gateway/" />
+    <author>
+      <name>Hassan BOLAJRAF</name>
+    </author>
+
+  
+    
+    <category term="Microservices" />
+    
+    <category term="Ocelot" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      API Gateway is an API management tools that sits between a client application and backend application. It agregates different services, maintain load balancing and work as reverse proxy. Ocelot is an api managment tool which is very powerful and best fit for .net application.
+
+Tools and technologies used
+
+
+  Visual Studio 2022
+  .NET 6.0
+  In Memory Database
+  Entity Framework
+  ASP.NET Core We...
+    </summary>
+  
+
+  </entry>
+
+</feed>
+
+
