@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title></title>
   <subtitle></subtitle>
-  <updated>2023-10-22T22:04:23+02:00</updated>
+  <updated>2023-10-27T22:17:28+02:00</updated>
   <author>
     <name>Hassan BOLAJRAF</name>
     <uri>http://localhost:4000/</uri>
@@ -20,8 +20,53 @@
 
   
   <entry>
-    <title>Git - Tips and Tricks</title>
-    <link href="http://localhost:4000/posts/Git-Tips-and-Tricks/" rel="alternate" type="text/html" title="Git - Tips and Tricks" />
+    <title>Docker Tips and Tricks</title>
+    <link href="http://localhost:4000/posts/Docker-Tips-and-Tricks/" rel="alternate" type="text/html" title="Docker Tips and Tricks" />
+    <published>2023-10-26T00:00:00+02:00</published>
+  
+    <updated>2023-10-26T00:00:00+02:00</updated>
+  
+    <id>http://localhost:4000/posts/Docker-Tips-and-Tricks/</id>
+    <content src="http://localhost:4000/posts/Docker-Tips-and-Tricks/" />
+    <author>
+      <name>Hassan BOLAJRAF</name>
+    </author>
+
+  
+    
+    <category term="Tips And Tricks" />
+    
+    <category term="Docker" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Docker is a powerful tool for containerization, allowing you to package and run applications with their dependencies in isolated containers. Here are some tips and tricks for using Docker effectively.
+
+Installation and Setup
+
+1. Install Docker
+
+  To get started, install Docker by following the official installation instructions for your operating system on the Docker website.
+
+
+2. Use Docker Co...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>Git | Tips and Tricks</title>
+    <link href="http://localhost:4000/posts/Git-Tips-and-Tricks/" rel="alternate" type="text/html" title="Git | Tips and Tricks" />
     <published>2023-10-01T00:00:00+02:00</published>
   
     <updated>2023-10-22T14:28:59+02:00</updated>
@@ -48,14 +93,15 @@
 
 
 
-      GitHub is a internet hosting provider for software development and version control using git. It provides distributed version control, source code management, issue tracking and many more. This is now the number one version control provider. Here, I will discuss on tips and tricks of git
+      Git Tips and Tricks
 
-Discard unstaged changes in Git
+Git is a powerful version control system that can make your development workflow more efficient. Here are some tips and tricks to help you get the most out of Git.
 
-  For all unstaged files in current working directory use
+Configure Git
+Before you start using Git, it’s a good idea to configure it with your name and email address. This information will be associated with your commits.
 
-
-git checkout -...
+git config --global user.name "hbolajraf"
+git ...
     </summary>
   
 
@@ -180,51 +226,6 @@ Microsoft certification paths changes
 Both the MCSD and MCT certifications were discontinued by Microsoft in 2017. They were replaced by newer certification programs that reflect the changing demands of the tech industry and the evolving needs of professionals.
 
 The MCSD certification was replaced by the Azure Developer Associate certification, which is a newer certification program that is ...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Implementing API gateway using ocelot in asp.net core application</title>
-    <link href="http://localhost:4000/posts/Implementing-Ocelot-Gateway/" rel="alternate" type="text/html" title="Implementing API gateway using ocelot in asp.net core application" />
-    <published>2023-09-24T00:00:00+02:00</published>
-  
-    <updated>2023-10-22T14:28:59+02:00</updated>
-  
-    <id>http://localhost:4000/posts/Implementing-Ocelot-Gateway/</id>
-    <content src="http://localhost:4000/posts/Implementing-Ocelot-Gateway/" />
-    <author>
-      <name>Hassan BOLAJRAF</name>
-    </author>
-
-  
-    
-    <category term="Microservices" />
-    
-    <category term="Ocelot" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      API Gateway is an API management tools that sits between a client application and backend application. It agregates different services, maintain load balancing and work as reverse proxy. Ocelot is an api managment tool which is very powerful and best fit for .net application.
-
-Tools and technologies used
-
-
-  Visual Studio 2022
-  .NET 6.0
-  In Memory Database
-  Entity Framework
-  ASP.NET Core We...
     </summary>
   
 
