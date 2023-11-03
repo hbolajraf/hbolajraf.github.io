@@ -18,6 +18,8 @@
 <!-- `site.alt_lang` can specify a language different from the UI -->
 <html lang="en" 
   
+    data-mode="dark"
+  
 >
   <!-- The Head -->
 
@@ -39,7 +41,7 @@
   
     <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.3.2" />
-<meta property="og:title" content="Configure QoS within API Gateway using ocelot and Polly" />
+<meta property="og:title" content="C# Configure QoS within API Gateway using ocelot and Polly" />
 <meta property="og:locale" content="en" />
 <meta name="description" content="Introduction API Gateway is an entry point for backend application. It maintains routing, authentication, logging, service discovery etc. Ocelot is used to design and develop API gateway for .net based application. QoS is generally configured in API gateway which provides different priorities for different applications, users or traffic. In this article, we will configure and discuss Quality of Services (QoS) using ocelot and Polly on ASP.NET Core web API project." />
 <meta property="og:description" content="Introduction API Gateway is an entry point for backend application. It maintains routing, authentication, logging, service discovery etc. Ocelot is used to design and develop API gateway for .net based application. QoS is generally configured in API gateway which provides different priorities for different applications, users or traffic. In this article, we will configure and discuss Quality of Services (QoS) using ocelot and Polly on ASP.NET Core web API project." />
@@ -48,15 +50,15 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2023-09-27T00:00:00+02:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Configure QoS within API Gateway using ocelot and Polly" />
+<meta property="twitter:title" content="C# Configure QoS within API Gateway using ocelot and Polly" />
 <meta name="twitter:site" content="@hbolajraf" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-10-22T14:28:59+02:00","datePublished":"2023-09-27T00:00:00+02:00","description":"Introduction API Gateway is an entry point for backend application. It maintains routing, authentication, logging, service discovery etc. Ocelot is used to design and develop API gateway for .net based application. QoS is generally configured in API gateway which provides different priorities for different applications, users or traffic. In this article, we will configure and discuss Quality of Services (QoS) using ocelot and Polly on ASP.NET Core web API project.","headline":"Configure QoS within API Gateway using ocelot and Polly","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/Configure-QoS-within-API-Gateway-using-ocelot-and-Polly/"},"url":"http://localhost:4000/posts/Configure-QoS-within-API-Gateway-using-ocelot-and-Polly/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-10-22T14:28:59+02:00","datePublished":"2023-09-27T00:00:00+02:00","description":"Introduction API Gateway is an entry point for backend application. It maintains routing, authentication, logging, service discovery etc. Ocelot is used to design and develop API gateway for .net based application. QoS is generally configured in API gateway which provides different priorities for different applications, users or traffic. In this article, we will configure and discuss Quality of Services (QoS) using ocelot and Polly on ASP.NET Core web API project.","headline":"C# Configure QoS within API Gateway using ocelot and Polly","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/Configure-QoS-within-API-Gateway-using-ocelot-and-Polly/"},"url":"http://localhost:4000/posts/Configure-QoS-within-API-Gateway-using-ocelot-and-Polly/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
 
-  <title>Configure QoS within API Gateway using ocelot and Polly | 
+  <title>C# | Configure QoS within API Gateway using ocelot and Polly | 
   </title>
 
   <!--
@@ -119,151 +121,6 @@
   <!-- JavaScript -->
 
   
-    <!-- Switch the mode between dark and light. -->
-
-<script type="text/javascript">
-  class ModeToggle {
-    static get MODE_KEY() {
-      return 'mode';
-    }
-    static get MODE_ATTR() {
-      return 'data-mode';
-    }
-    static get DARK_MODE() {
-      return 'dark';
-    }
-    static get LIGHT_MODE() {
-      return 'light';
-    }
-    static get ID() {
-      return 'mode-toggle';
-    }
-
-    constructor() {
-      if (this.hasMode) {
-        if (this.isDarkMode) {
-          if (!this.isSysDarkPrefer) {
-            this.setDark();
-          }
-        } else {
-          if (this.isSysDarkPrefer) {
-            this.setLight();
-          }
-        }
-      }
-
-      let self = this;
-
-      /* always follow the system prefers */
-      this.sysDarkPrefers.addEventListener('change', () => {
-        if (self.hasMode) {
-          if (self.isDarkMode) {
-            if (!self.isSysDarkPrefer) {
-              self.setDark();
-            }
-          } else {
-            if (self.isSysDarkPrefer) {
-              self.setLight();
-            }
-          }
-
-          self.clearMode();
-        }
-
-        self.notify();
-      });
-    } /* constructor() */
-
-    get sysDarkPrefers() {
-      return window.matchMedia('(prefers-color-scheme: dark)');
-    }
-
-    get isSysDarkPrefer() {
-      return this.sysDarkPrefers.matches;
-    }
-
-    get isDarkMode() {
-      return this.mode === ModeToggle.DARK_MODE;
-    }
-
-    get isLightMode() {
-      return this.mode === ModeToggle.LIGHT_MODE;
-    }
-
-    get hasMode() {
-      return this.mode != null;
-    }
-
-    get mode() {
-      return sessionStorage.getItem(ModeToggle.MODE_KEY);
-    }
-
-    /* get the current mode on screen */
-    get modeStatus() {
-      if (this.isDarkMode || (!this.hasMode && this.isSysDarkPrefer)) {
-        return ModeToggle.DARK_MODE;
-      } else {
-        return ModeToggle.LIGHT_MODE;
-      }
-    }
-
-    setDark() {
-      document.documentElement.setAttribute(ModeToggle.MODE_ATTR, ModeToggle.DARK_MODE);
-      sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.DARK_MODE);
-    }
-
-    setLight() {
-      document.documentElement.setAttribute(ModeToggle.MODE_ATTR, ModeToggle.LIGHT_MODE);
-      sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.LIGHT_MODE);
-    }
-
-    clearMode() {
-      document.documentElement.removeAttribute(ModeToggle.MODE_ATTR);
-      sessionStorage.removeItem(ModeToggle.MODE_KEY);
-    }
-
-    /* Notify another plugins that the theme mode has changed */
-    notify() {
-      window.postMessage(
-        {
-          direction: ModeToggle.ID,
-          message: this.modeStatus
-        },
-        '*'
-      );
-    }
-
-    flipMode() {
-      if (this.hasMode) {
-        if (this.isSysDarkPrefer) {
-          if (this.isLightMode) {
-            this.clearMode();
-          } else {
-            this.setLight();
-          }
-        } else {
-          if (this.isDarkMode) {
-            this.clearMode();
-          } else {
-            this.setDark();
-          }
-        }
-      } else {
-        if (this.isSysDarkPrefer) {
-          this.setLight();
-        } else {
-          this.setDark();
-        }
-      }
-
-      this.notify();
-    } /* flipMode() */
-  } /* ModeToggle */
-
-  const modeToggle = new ModeToggle();
-</script>
-
-  
 
   <!-- A placeholder to allow defining custom metadata -->
 
@@ -285,7 +142,7 @@
     <h1 class="site-title">
       <a href="/"></a>
     </h1>
-    <p class="site-subtitle fst-italic mb-0"><h4><b>Hassan BOLAJRAF</b></h4></p>
+    <p class="site-subtitle fst-italic mb-0"><h4><b>Hassan BOLAJRAF</b></h4>Fostering a culture of code quality and collaboration for .NET enthusiasts</p>
   </header>
   <!-- .profile-wrapper -->
 
@@ -344,14 +201,6 @@
   </nav>
 
   <div class="sidebar-bottom d-flex flex-wrap  align-items-center w-100">
-    
-      <button type="button" class="mode-toggle btn" aria-label="Switch Mode">
-        <i class="fas fa-adjust"></i>
-      </button>
-
-      
-        <span class="icon-border"></span>
-      
     
 
     
@@ -428,6 +277,29 @@
 
       
         <a
+          href=""
+          aria-label="Youtube"
+          
+
+          
+            target="_blank"
+            
+          
+
+          
+
+          
+            rel="noopener noreferrer"
+          
+        >
+          <i class="fab fa-youtube"></i>
+        </a>
+      
+    
+      
+
+      
+        <a
           href="javascript:location.href = 'mailto:' + ['hassan.bolajraf','gmail.com'].join('@')"
           aria-label="email"
           
@@ -475,7 +347,7 @@
         
           
             
-              <span>Configure QoS within API Gateway using ocelot and Polly</span>
+              <span>C# | Configure QoS within API Gateway using ocelot and Polly</span>
             
 
           
@@ -878,7 +750,7 @@
 
 
 <header>
-  <h1 data-toc-skip>Configure QoS within API Gateway using ocelot and Polly</h1>
+  <h1 data-toc-skip>C# | Configure QoS within API Gateway using ocelot and Polly</h1>
 
   <div class="post-meta text-muted">
     <!-- published date -->
@@ -1868,8 +1740,8 @@ Here, BFF.Web project will act as API Gateway.</li>
     <div class="post-meta mb-3">
       <i class="far fa-folder-open fa-fw me-1"></i>
       
-        <a href="/categories/microservices/">Microservices</a>,
-        <a href="/categories/ocelot/">Ocelot</a>
+        <a href="/categories/c/">C#</a>,
+        <a href="/categories/web-api/">Web API</a>
     </div>
   
 
@@ -1974,7 +1846,7 @@ Here, BFF.Web project will act as API Gateway.</li>
     
       
       <a
-        href="https://twitter.com/intent/tweet?text=Configure%20QoS%20within%20API%20Gateway%20using%20ocelot%20and%20Polly%20-%20&url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2FConfigure-QoS-within-API-Gateway-using-ocelot-and-Polly%2F"
+        href="https://twitter.com/intent/tweet?text=C#%20%7C%20Configure%20QoS%20within%20API%20Gateway%20using%20ocelot%20and%20Polly%20-%20&url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2FConfigure-QoS-within-API-Gateway-using-ocelot-and-Polly%2F"
         data-bs-toggle="tooltip"
         data-bs-placement="top"
         title="Twitter"
@@ -1987,7 +1859,7 @@ Here, BFF.Web project will act as API Gateway.</li>
     
       
       <a
-        href="https://www.facebook.com/sharer/sharer.php?title=Configure%20QoS%20within%20API%20Gateway%20using%20ocelot%20and%20Polly%20-%20&u=http%3A%2F%2Flocalhost%3A4000%2Fposts%2FConfigure-QoS-within-API-Gateway-using-ocelot-and-Polly%2F"
+        href="https://www.facebook.com/sharer/sharer.php?title=C#%20%7C%20Configure%20QoS%20within%20API%20Gateway%20using%20ocelot%20and%20Polly%20-%20&u=http%3A%2F%2Flocalhost%3A4000%2Fposts%2FConfigure-QoS-within-API-Gateway-using-ocelot-and-Polly%2F"
         data-bs-toggle="tooltip"
         data-bs-placement="top"
         title="Facebook"
@@ -2052,35 +1924,35 @@ Here, BFF.Web project will act as API Gateway.</li>
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/Create-.Net-custom-template-using-GitHub-Packages-Registry/">Create .Net custom template using GitHub Packages Registry</a>
+          <a href="/posts/Git-Tips-and-Tricks/">Git | Tips and Tricks</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/Configure-Swagger-For-Ocelot-Gateway/">Configure Swagger on api gateway using ocelot in asp.net core application</a>
+          <a href="/posts/Create-.Net-custom-template-using-GitHub-Packages-Registry/">C# | Create .Net custom template using GitHub Packages Registry</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/Implementing-Ocelot-Gateway/">Implementing API gateway using ocelot in asp.net core application</a>
+          <a href="/posts/Configure-Swagger-For-Ocelot-Gateway/">C# | Configure Swagger on api gateway using ocelot in asp.net core application</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/AZ-400-Certification-Path/">AZ-400 Certification Path</a>
+          <a href="/posts/Search-AD-entry-by-ObjectSid-using-Novell-Directory-Ldap-Nuget-package/">C# | Search AD entry by ObjectSid using Novell Directory Ldap Nuget package</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/Search-AD-entry-by-ObjectSid-using-Novell-Directory-Ldap-Nuget-package/">Search AD entry by ObjectSid using Novell Directory Ldap Nuget package</a>
+          <a href="/posts/Configure-QoS-within-API-Gateway-using-ocelot-and-Polly/">C# | Configure QoS within API Gateway using ocelot and Polly</a>
         </li>
       
     </ul>
@@ -2179,164 +2051,6 @@ Here, BFF.Web project will act as API Gateway.</li>
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2401,174 +2115,6 @@ Here, BFF.Web project will act as API Gateway.</li>
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2659,6 +2205,600 @@ Here, BFF.Web project will act as API Gateway.</li>
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
     
   
     
@@ -2724,34 +2864,6 @@ Here, BFF.Web project will act as API Gateway.</li>
     
     
     
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
   
     
     
@@ -2781,52 +2893,6 @@ Here, BFF.Web project will act as API Gateway.</li>
     
     
     
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -2863,6 +2929,15 @@ Here, BFF.Web project will act as API Gateway.</li>
         <a class="post-tag btn btn-outline-primary" href="/tags/csharp/">csharp</a>
       
         
+        <a class="post-tag btn btn-outline-primary" href="/tags/azure/">azure</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/azuredevops/">azuredevops</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/bestpractices/">bestpractices</a>
+      
+        
         <a class="post-tag btn btn-outline-primary" href="/tags/aspnetcore/">aspnetcore</a>
       
         
@@ -2872,16 +2947,7 @@ Here, BFF.Web project will act as API Gateway.</li>
         <a class="post-tag btn btn-outline-primary" href="/tags/webapi/">webapi</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/gateway/">gateway</a>
-      
-        
         <a class="post-tag btn btn-outline-primary" href="/tags/github/">github</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/microservices/">microservices</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/nugetpackage/">nugetpackage</a>
       
     </div>
   </section>
@@ -3125,6 +3191,222 @@ Here, BFF.Web project will act as API Gateway.</li>
 
   
 
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
 
 
 
@@ -3138,6 +3420,44 @@ Here, BFF.Web project will act as API Gateway.</li>
   <aside id="related-posts" aria-labelledby="related-label">
     <h3 class="mb-4" id="related-label">Further Reading</h3>
     <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
+      
+        <article class="col">
+          <a href="/posts/Implementing-Ocelot-Gateway/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+    class="small"
+  
+  data-ts="1694556000"
+  data-df="ll"
+  
+>
+  Sep 13, 2023
+</time>
+
+              <h4 class="pt-0 my-2">C# | Implementing API gateway using ocelot in asp.net core application</h4>
+              <div class="text-muted small">
+                <p>
+                  
+
+
+
+
+
+                  API Gateway is an API management tools that sits between a client application and backend application. It agregates different services, maintain load balancing and work as reverse proxy. Ocelot is ...
+                </p>
+              </div>
+            </div>
+          </a>
+        </article>
       
         <article class="col">
           <a href="/posts/Configure-Swagger-For-Ocelot-Gateway/" class="post-preview card h-100">
@@ -3161,7 +3481,7 @@ Here, BFF.Web project will act as API Gateway.</li>
   Sep 24, 2023
 </time>
 
-              <h4 class="pt-0 my-2">Configure Swagger on api gateway using ocelot in asp.net core application</h4>
+              <h4 class="pt-0 my-2">C# | Configure Swagger on api gateway using ocelot in asp.net core application</h4>
               <div class="text-muted small">
                 <p>
                   
@@ -3180,7 +3500,7 @@ Swagger configuration on API gateway is not as simple as you are configure norma
         </article>
       
         <article class="col">
-          <a href="/posts/Implementing-Ocelot-Gateway/" class="post-preview card h-100">
+          <a href="/posts/ASP.NET-Web-APIs-with-Zipkin-and-C/" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -3194,14 +3514,14 @@ Swagger configuration on API gateway is not as simple as you are configure norma
   
     class="small"
   
-  data-ts="1695506400"
+  data-ts="1691532000"
   data-df="ll"
   
 >
-  Sep 24, 2023
+  Aug  9, 2023
 </time>
 
-              <h4 class="pt-0 my-2">Implementing API gateway using ocelot in asp.net core application</h4>
+              <h4 class="pt-0 my-2">C# | ASP.NET Web APIs with Zipkin</h4>
               <div class="text-muted small">
                 <p>
                   
@@ -3210,47 +3530,9 @@ Swagger configuration on API gateway is not as simple as you are configure norma
 
 
 
-                  API Gateway is an API management tools that sits between a client application and backend application. It agregates different services, maintain load balancing and work as reverse proxy. Ocelot is ...
-                </p>
-              </div>
-            </div>
-          </a>
-        </article>
-      
-        <article class="col">
-          <a href="/posts/Deploy-.net-core-NuGet-Packages-in-GitHub-Packages-Registry/" class="post-preview card h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
+                  ASP.NET Web APIs with Zipkin and C#
 
-
-
-
-<time
-  
-    class="small"
-  
-  data-ts="1692396000"
-  data-df="ll"
-  
->
-  Aug 19, 2023
-</time>
-
-              <h4 class="pt-0 my-2">Deploy .net core NuGet Packages in GitHub Packages Registry</h4>
-              <div class="text-muted small">
-                <p>
-                  
-
-
-
-
-
-                  Introduction
-
-GitHub packages registries is most popular now a days. It offers different packages registries for most used package managers, such as NuGet, npm, Docker etc. In this article, I will ...
+Zipkin is a distributed tracing system that helps you monitor and troubleshoot microservices-based applications. This guide will walk you through the steps to i...
                 </p>
               </div>
             </div>
@@ -3276,7 +3558,7 @@ GitHub packages registries is most popular now a days. It offers different packa
       class="btn btn-outline-primary"
       aria-label="Older"
     >
-      <p>Search AD entry by ObjectSid using Novell Directory Ldap Nuget package</p>
+      <p>C# | Search AD entry by ObjectSid using Novell Directory Ldap Nuget package</p>
     </a>
   
 
@@ -3424,164 +3706,6 @@ GitHub packages registries is most popular now a days. It offers different packa
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -3646,174 +3770,6 @@ GitHub packages registries is most popular now a days. It offers different packa
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -3904,6 +3860,600 @@ GitHub packages registries is most popular now a days. It offers different packa
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
     
   
     
@@ -3969,34 +4519,6 @@ GitHub packages registries is most popular now a days. It offers different packa
     
     
     
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
   
     
     
@@ -4026,52 +4548,6 @@ GitHub packages registries is most popular now a days. It offers different packa
     
     
     
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -4108,6 +4584,15 @@ GitHub packages registries is most popular now a days. It offers different packa
         <a class="post-tag btn btn-outline-primary" href="/tags/csharp/">csharp</a>
       
         
+        <a class="post-tag btn btn-outline-primary" href="/tags/azure/">azure</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/azuredevops/">azuredevops</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/bestpractices/">bestpractices</a>
+      
+        
         <a class="post-tag btn btn-outline-primary" href="/tags/aspnetcore/">aspnetcore</a>
       
         
@@ -4117,16 +4602,7 @@ GitHub packages registries is most popular now a days. It offers different packa
         <a class="post-tag btn btn-outline-primary" href="/tags/webapi/">webapi</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/gateway/">gateway</a>
-      
-        
         <a class="post-tag btn btn-outline-primary" href="/tags/github/">github</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/microservices/">microservices</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/nugetpackage/">nugetpackage</a>
       
     </div>
   </section>

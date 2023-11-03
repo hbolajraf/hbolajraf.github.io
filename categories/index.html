@@ -18,6 +18,8 @@
 <!-- `site.alt_lang` can specify a language different from the UI -->
 <html lang="en" 
   
+    data-mode="dark"
+  
 >
   <!-- The Head -->
 
@@ -44,12 +46,12 @@
 <link rel="canonical" href="http://localhost:4000/categories/" />
 <meta property="og:url" content="http://localhost:4000/categories/" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2023-10-27T22:17:28+02:00" />
+<meta property="article:published_time" content="2023-11-03T22:12:16+01:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Categories" />
 <meta name="twitter:site" content="@hbolajraf" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-10-27T22:17:28+02:00","datePublished":"2023-10-27T22:17:28+02:00","headline":"Categories","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/categories/"},"url":"http://localhost:4000/categories/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-11-03T22:12:16+01:00","datePublished":"2023-11-03T22:12:16+01:00","headline":"Categories","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/categories/"},"url":"http://localhost:4000/categories/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -112,151 +114,6 @@
   <!-- JavaScript -->
 
   
-    <!-- Switch the mode between dark and light. -->
-
-<script type="text/javascript">
-  class ModeToggle {
-    static get MODE_KEY() {
-      return 'mode';
-    }
-    static get MODE_ATTR() {
-      return 'data-mode';
-    }
-    static get DARK_MODE() {
-      return 'dark';
-    }
-    static get LIGHT_MODE() {
-      return 'light';
-    }
-    static get ID() {
-      return 'mode-toggle';
-    }
-
-    constructor() {
-      if (this.hasMode) {
-        if (this.isDarkMode) {
-          if (!this.isSysDarkPrefer) {
-            this.setDark();
-          }
-        } else {
-          if (this.isSysDarkPrefer) {
-            this.setLight();
-          }
-        }
-      }
-
-      let self = this;
-
-      /* always follow the system prefers */
-      this.sysDarkPrefers.addEventListener('change', () => {
-        if (self.hasMode) {
-          if (self.isDarkMode) {
-            if (!self.isSysDarkPrefer) {
-              self.setDark();
-            }
-          } else {
-            if (self.isSysDarkPrefer) {
-              self.setLight();
-            }
-          }
-
-          self.clearMode();
-        }
-
-        self.notify();
-      });
-    } /* constructor() */
-
-    get sysDarkPrefers() {
-      return window.matchMedia('(prefers-color-scheme: dark)');
-    }
-
-    get isSysDarkPrefer() {
-      return this.sysDarkPrefers.matches;
-    }
-
-    get isDarkMode() {
-      return this.mode === ModeToggle.DARK_MODE;
-    }
-
-    get isLightMode() {
-      return this.mode === ModeToggle.LIGHT_MODE;
-    }
-
-    get hasMode() {
-      return this.mode != null;
-    }
-
-    get mode() {
-      return sessionStorage.getItem(ModeToggle.MODE_KEY);
-    }
-
-    /* get the current mode on screen */
-    get modeStatus() {
-      if (this.isDarkMode || (!this.hasMode && this.isSysDarkPrefer)) {
-        return ModeToggle.DARK_MODE;
-      } else {
-        return ModeToggle.LIGHT_MODE;
-      }
-    }
-
-    setDark() {
-      document.documentElement.setAttribute(ModeToggle.MODE_ATTR, ModeToggle.DARK_MODE);
-      sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.DARK_MODE);
-    }
-
-    setLight() {
-      document.documentElement.setAttribute(ModeToggle.MODE_ATTR, ModeToggle.LIGHT_MODE);
-      sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.LIGHT_MODE);
-    }
-
-    clearMode() {
-      document.documentElement.removeAttribute(ModeToggle.MODE_ATTR);
-      sessionStorage.removeItem(ModeToggle.MODE_KEY);
-    }
-
-    /* Notify another plugins that the theme mode has changed */
-    notify() {
-      window.postMessage(
-        {
-          direction: ModeToggle.ID,
-          message: this.modeStatus
-        },
-        '*'
-      );
-    }
-
-    flipMode() {
-      if (this.hasMode) {
-        if (this.isSysDarkPrefer) {
-          if (this.isLightMode) {
-            this.clearMode();
-          } else {
-            this.setLight();
-          }
-        } else {
-          if (this.isDarkMode) {
-            this.clearMode();
-          } else {
-            this.setDark();
-          }
-        }
-      } else {
-        if (this.isSysDarkPrefer) {
-          this.setLight();
-        } else {
-          this.setDark();
-        }
-      }
-
-      this.notify();
-    } /* flipMode() */
-  } /* ModeToggle */
-
-  const modeToggle = new ModeToggle();
-</script>
-
-  
 
   <!-- A placeholder to allow defining custom metadata -->
 
@@ -278,7 +135,7 @@
     <h1 class="site-title">
       <a href="/"></a>
     </h1>
-    <p class="site-subtitle fst-italic mb-0"><h4><b>Hassan BOLAJRAF</b></h4></p>
+    <p class="site-subtitle fst-italic mb-0"><h4><b>Hassan BOLAJRAF</b></h4>Fostering a culture of code quality and collaboration for .NET enthusiasts</p>
   </header>
   <!-- .profile-wrapper -->
 
@@ -337,14 +194,6 @@
   </nav>
 
   <div class="sidebar-bottom d-flex flex-wrap  align-items-center w-100">
-    
-      <button type="button" class="mode-toggle btn" aria-label="Switch Mode">
-        <i class="fas fa-adjust"></i>
-      </button>
-
-      
-        <span class="icon-border"></span>
-      
     
 
     
@@ -414,6 +263,29 @@
           
         >
           <i class="fab fa-facebook"></i>
+        </a>
+      
+    
+      
+
+      
+        <a
+          href=""
+          aria-label="Youtube"
+          
+
+          
+            target="_blank"
+            
+          
+
+          
+
+          
+            rel="noopener noreferrer"
+          
+        >
+          <i class="fab fa-youtube"></i>
         </a>
       
     
@@ -537,6 +409,12 @@
   
 
   
+
+  
+  
+  
+
+  
     
 
     
@@ -554,22 +432,22 @@
           <i class="far fa-folder-open fa-fw"></i>
 
           
-          <a href="/categories/activedirectory/" class="mx-2">ActiveDirectory</a>
+          <a href="/categories/azure/" class="mx-2">Azure</a>
 
           <!-- content count -->
           
           <span class="text-muted small font-weight-light">
             
-              1
+              3
               
-                category
+                categories
               ,
             
 
-            1
+            3
 
             
-              post
+              posts
             
           </span>
         </span>
@@ -598,7 +476,39 @@
                 <i class="far fa-folder fa-fw"></i>
 
                 
-                <a href="/categories/ldap/" class="mx-2">Ldap</a>
+                <a href="/categories/azure-functions/" class="mx-2">Azure Functions</a>
+
+                
+                <span class="text-muted small font-weight-light">
+                  1
+
+                  
+                    post
+                  
+                </span>
+              </li>
+            
+              <li class="list-group-item">
+                <i class="far fa-folder fa-fw"></i>
+
+                
+                <a href="/categories/azure-devops/" class="mx-2">Azure devops</a>
+
+                
+                <span class="text-muted small font-weight-light">
+                  1
+
+                  
+                    post
+                  
+                </span>
+              </li>
+            
+              <li class="list-group-item">
+                <i class="far fa-folder fa-fw"></i>
+
+                
+                <a href="/categories/iot/" class="mx-2">IoT</a>
 
                 
                 <span class="text-muted small font-weight-light">
@@ -638,51 +548,104 @@
         class="card-header d-flex justify-content-between hide-border-bottom"
       >
         <span class="ms-2">
-          <i class="far fa-folder fa-fw"></i>
+          <i class="far fa-folder-open fa-fw"></i>
 
           
-          <a href="/categories/azure-devops/" class="mx-2">Azure devops</a>
+          <a href="/categories/azure-devops/" class="mx-2">Azure DevOps</a>
 
           <!-- content count -->
           
           <span class="text-muted small font-weight-light">
             
+              3
+              
+                categories
+              ,
+            
 
-            1
+            5
 
             
-              post
+              posts
             
           </span>
         </span>
 
         <!-- arrow -->
         
-          <span data-bs-toggle="collapse" class="category-trigger hide-border-bottom disabled">
-            <i class="fas fa-fw fa-angle-right"></i>
-          </span>
+          <a
+            href="#l_1"
+            data-bs-toggle="collapse"
+            aria-expanded="true"
+            aria-label="h_1-trigger"
+            class="category-trigger hide-border-bottom"
+          >
+            <i class="fas fa-fw fa-angle-down"></i>
+          </a>
         
       </div>
       <!-- .card-header -->
 
       <!-- Sub-categories -->
       
+        <div id="l_1" class="collapse show" aria-expanded="true">
+          <ul class="list-group">
+            
+              <li class="list-group-item">
+                <i class="far fa-folder fa-fw"></i>
+
+                
+                <a href="/categories/jmeter/" class="mx-2">JMeter</a>
+
+                
+                <span class="text-muted small font-weight-light">
+                  1
+
+                  
+                    post
+                  
+                </span>
+              </li>
+            
+              <li class="list-group-item">
+                <i class="far fa-folder fa-fw"></i>
+
+                
+                <a href="/categories/postman/" class="mx-2">Postman</a>
+
+                
+                <span class="text-muted small font-weight-light">
+                  3
+
+                  
+                    posts
+                  
+                </span>
+              </li>
+            
+              <li class="list-group-item">
+                <i class="far fa-folder fa-fw"></i>
+
+                
+                <a href="/categories/terraform/" class="mx-2">Terraform</a>
+
+                
+                <span class="text-muted small font-weight-light">
+                  1
+
+                  
+                    post
+                  
+                </span>
+              </li>
+            
+          </ul>
+        </div>
+      
     </div>
     <!-- .card -->
 
     
-  
-
-  
-  
-  
-
-  
-
-  
-  
-  
-
   
 
   
@@ -719,7 +682,7 @@
           <i class="far fa-folder-open fa-fw"></i>
 
           
-          <a href="/categories/github/" class="mx-2">GitHub</a>
+          <a href="/categories/best-practices/" class="mx-2">Best Practices</a>
 
           <!-- content count -->
           
@@ -731,7 +694,7 @@
               ,
             
 
-            3
+            6
 
             
               posts
@@ -763,7 +726,23 @@
                 <i class="far fa-folder fa-fw"></i>
 
                 
-                <a href="/categories/git/" class="mx-2">Git</a>
+                <a href="/categories/best-practices/" class="mx-2">Best Practices</a>
+
+                
+                <span class="text-muted small font-weight-light">
+                  6
+
+                  
+                    posts
+                  
+                </span>
+              </li>
+            
+              <li class="list-group-item">
+                <i class="far fa-folder fa-fw"></i>
+
+                
+                <a href="/categories/sonarqube/" class="mx-2">SonarQube</a>
 
                 
                 <span class="text-muted small font-weight-light">
@@ -775,22 +754,6 @@
                 </span>
               </li>
             
-              <li class="list-group-item">
-                <i class="far fa-folder fa-fw"></i>
-
-                
-                <a href="/categories/github/" class="mx-2">GitHub</a>
-
-                
-                <span class="text-muted small font-weight-light">
-                  3
-
-                  
-                    posts
-                  
-                </span>
-              </li>
-            
           </ul>
         </div>
       
@@ -798,12 +761,6 @@
     <!-- .card -->
 
     
-  
-
-  
-  
-  
-
   
 
   
@@ -828,19 +785,19 @@
           <i class="far fa-folder-open fa-fw"></i>
 
           
-          <a href="/categories/microservices/" class="mx-2">Microservices</a>
+          <a href="/categories/c/" class="mx-2">C#</a>
 
           <!-- content count -->
           
           <span class="text-muted small font-weight-light">
             
-              1
+              7
               
-                category
+                categories
               ,
             
 
-            3
+            18
 
             
               posts
@@ -872,11 +829,107 @@
                 <i class="far fa-folder fa-fw"></i>
 
                 
-                <a href="/categories/ocelot/" class="mx-2">Ocelot</a>
+                <a href="/categories/active-directory/" class="mx-2">Active Directory</a>
+
+                
+                <span class="text-muted small font-weight-light">
+                  1
+
+                  
+                    post
+                  
+                </span>
+              </li>
+            
+              <li class="list-group-item">
+                <i class="far fa-folder fa-fw"></i>
+
+                
+                <a href="/categories/best-practices/" class="mx-2">Best Practices</a>
+
+                
+                <span class="text-muted small font-weight-light">
+                  6
+
+                  
+                    posts
+                  
+                </span>
+              </li>
+            
+              <li class="list-group-item">
+                <i class="far fa-folder fa-fw"></i>
+
+                
+                <a href="/categories/entity-framework/" class="mx-2">Entity Framework</a>
 
                 
                 <span class="text-muted small font-weight-light">
                   3
+
+                  
+                    posts
+                  
+                </span>
+              </li>
+            
+              <li class="list-group-item">
+                <i class="far fa-folder fa-fw"></i>
+
+                
+                <a href="/categories/nuget-package/" class="mx-2">Nuget Package</a>
+
+                
+                <span class="text-muted small font-weight-light">
+                  3
+
+                  
+                    posts
+                  
+                </span>
+              </li>
+            
+              <li class="list-group-item">
+                <i class="far fa-folder fa-fw"></i>
+
+                
+                <a href="/categories/tdd/" class="mx-2">TDD</a>
+
+                
+                <span class="text-muted small font-weight-light">
+                  1
+
+                  
+                    post
+                  
+                </span>
+              </li>
+            
+              <li class="list-group-item">
+                <i class="far fa-folder fa-fw"></i>
+
+                
+                <a href="/categories/tips-and-tricks/" class="mx-2">Tips And Tricks</a>
+
+                
+                <span class="text-muted small font-weight-light">
+                  4
+
+                  
+                    posts
+                  
+                </span>
+              </li>
+            
+              <li class="list-group-item">
+                <i class="far fa-folder fa-fw"></i>
+
+                
+                <a href="/categories/web-api/" class="mx-2">Web API</a>
+
+                
+                <span class="text-muted small font-weight-light">
+                  4
 
                   
                     posts
@@ -891,6 +944,18 @@
     <!-- .card -->
 
     
+  
+
+  
+  
+  
+
+  
+
+  
+  
+  
+
   
 
   
@@ -915,7 +980,7 @@
           <i class="far fa-folder-open fa-fw"></i>
 
           
-          <a href="/categories/microsoft/" class="mx-2">Microsoft</a>
+          <a href="/categories/docker/" class="mx-2">Docker</a>
 
           <!-- content count -->
           
@@ -959,14 +1024,14 @@
                 <i class="far fa-folder fa-fw"></i>
 
                 
-                <a href="/categories/certification/" class="mx-2">Certification</a>
+                <a href="/categories/tips-and-tricks/" class="mx-2">Tips And Tricks</a>
 
                 
                 <span class="text-muted small font-weight-light">
-                  1
+                  4
 
                   
-                    post
+                    posts
                   
                 </span>
               </li>
@@ -978,6 +1043,18 @@
     <!-- .card -->
 
     
+  
+
+  
+  
+  
+
+  
+
+  
+  
+  
+
   
 
   
@@ -1002,13 +1079,13 @@
           <i class="far fa-folder-open fa-fw"></i>
 
           
-          <a href="/categories/nugetpackage/" class="mx-2">NugetPackage</a>
+          <a href="/categories/github/" class="mx-2">GitHub</a>
 
           <!-- content count -->
           
           <span class="text-muted small font-weight-light">
             
-              2
+              3
               
                 categories
               ,
@@ -1046,14 +1123,14 @@
                 <i class="far fa-folder fa-fw"></i>
 
                 
-                <a href="/categories/c/" class="mx-2">C#</a>
+                <a href="/categories/copilot/" class="mx-2">Copilot</a>
 
                 
                 <span class="text-muted small font-weight-light">
-                  6
+                  1
 
                   
-                    posts
+                    post
                   
                 </span>
               </li>
@@ -1062,7 +1139,23 @@
                 <i class="far fa-folder fa-fw"></i>
 
                 
-                <a href="/categories/github/" class="mx-2">GitHub</a>
+                <a href="/categories/git/" class="mx-2">Git</a>
+
+                
+                <span class="text-muted small font-weight-light">
+                  1
+
+                  
+                    post
+                  
+                </span>
+              </li>
+            
+              <li class="list-group-item">
+                <i class="far fa-folder fa-fw"></i>
+
+                
+                <a href="/categories/nuget-package/" class="mx-2">Nuget Package</a>
 
                 
                 <span class="text-muted small font-weight-light">
@@ -1094,6 +1187,18 @@
   
 
   
+
+  
+  
+  
+
+  
+
+  
+  
+  
+
+  
     
 
     
@@ -1111,7 +1216,7 @@
           <i class="far fa-folder-open fa-fw"></i>
 
           
-          <a href="/categories/tdd/" class="mx-2">TDD</a>
+          <a href="/categories/kubernetes/" class="mx-2">Kubernetes</a>
 
           <!-- content count -->
           
@@ -1155,14 +1260,14 @@
                 <i class="far fa-folder fa-fw"></i>
 
                 
-                <a href="/categories/c/" class="mx-2">C#</a>
+                <a href="/categories/helm/" class="mx-2">Helm</a>
 
                 
                 <span class="text-muted small font-weight-light">
-                  6
+                  1
 
                   
-                    posts
+                    post
                   
                 </span>
               </li>
@@ -1198,22 +1303,22 @@
           <i class="far fa-folder-open fa-fw"></i>
 
           
-          <a href="/categories/tips-and-tricks/" class="mx-2">Tips And Tricks</a>
+          <a href="/categories/microsoft/" class="mx-2">Microsoft</a>
 
           <!-- content count -->
           
           <span class="text-muted small font-weight-light">
             
-              3
+              1
               
-                categories
+                category
               ,
             
 
-            6
+            1
 
             
-              posts
+              post
             
           </span>
         </span>
@@ -1242,23 +1347,7 @@
                 <i class="far fa-folder fa-fw"></i>
 
                 
-                <a href="/categories/c/" class="mx-2">C#</a>
-
-                
-                <span class="text-muted small font-weight-light">
-                  6
-
-                  
-                    posts
-                  
-                </span>
-              </li>
-            
-              <li class="list-group-item">
-                <i class="far fa-folder fa-fw"></i>
-
-                
-                <a href="/categories/docker/" class="mx-2">Docker</a>
+                <a href="/categories/certification/" class="mx-2">Certification</a>
 
                 
                 <span class="text-muted small font-weight-light">
@@ -1270,11 +1359,100 @@
                 </span>
               </li>
             
+          </ul>
+        </div>
+      
+    </div>
+    <!-- .card -->
+
+    
+  
+
+  
+  
+  
+
+  
+
+  
+  
+  
+
+  
+
+  
+  
+  
+
+  
+
+  
+  
+  
+
+  
+    
+
+    
+
+    
+    
+
+    <div class="card categories">
+      <!-- top-category -->
+      <div
+        id="h_8"
+        class="card-header d-flex justify-content-between hide-border-bottom"
+      >
+        <span class="ms-2">
+          <i class="far fa-folder-open fa-fw"></i>
+
+          
+          <a href="/categories/sql/" class="mx-2">SQL</a>
+
+          <!-- content count -->
+          
+          <span class="text-muted small font-weight-light">
+            
+              1
+              
+                category
+              ,
+            
+
+            2
+
+            
+              posts
+            
+          </span>
+        </span>
+
+        <!-- arrow -->
+        
+          <a
+            href="#l_8"
+            data-bs-toggle="collapse"
+            aria-expanded="true"
+            aria-label="h_8-trigger"
+            class="category-trigger hide-border-bottom"
+          >
+            <i class="fas fa-fw fa-angle-down"></i>
+          </a>
+        
+      </div>
+      <!-- .card-header -->
+
+      <!-- Sub-categories -->
+      
+        <div id="l_8" class="collapse show" aria-expanded="true">
+          <ul class="list-group">
+            
               <li class="list-group-item">
                 <i class="far fa-folder fa-fw"></i>
 
                 
-                <a href="/categories/visual-studio/" class="mx-2">Visual Studio</a>
+                <a href="/categories/optimization/" class="mx-2">Optimization</a>
 
                 
                 <span class="text-muted small font-weight-light">
@@ -1306,6 +1484,24 @@
   
 
   
+
+  
+  
+  
+
+  
+
+  
+  
+  
+
+  
+
+  
+  
+  
+
+  
     
 
     
@@ -1316,14 +1512,14 @@
     <div class="card categories">
       <!-- top-category -->
       <div
-        id="h_8"
+        id="h_9"
         class="card-header d-flex justify-content-between hide-border-bottom"
       >
         <span class="ms-2">
           <i class="far fa-folder-open fa-fw"></i>
 
           
-          <a href="/categories/web-api/" class="mx-2">Web API</a>
+          <a href="/categories/visual-studio/" class="mx-2">Visual Studio</a>
 
           <!-- content count -->
           
@@ -1346,10 +1542,10 @@
         <!-- arrow -->
         
           <a
-            href="#l_8"
+            href="#l_9"
             data-bs-toggle="collapse"
             aria-expanded="true"
-            aria-label="h_8-trigger"
+            aria-label="h_9-trigger"
             class="category-trigger hide-border-bottom"
           >
             <i class="fas fa-fw fa-angle-down"></i>
@@ -1360,18 +1556,18 @@
 
       <!-- Sub-categories -->
       
-        <div id="l_8" class="collapse show" aria-expanded="true">
+        <div id="l_9" class="collapse show" aria-expanded="true">
           <ul class="list-group">
             
               <li class="list-group-item">
                 <i class="far fa-folder fa-fw"></i>
 
                 
-                <a href="/categories/c/" class="mx-2">C#</a>
+                <a href="/categories/tips-and-tricks/" class="mx-2">Tips And Tricks</a>
 
                 
                 <span class="text-muted small font-weight-light">
-                  6
+                  4
 
                   
                     posts
@@ -1386,6 +1582,12 @@
     <!-- .card -->
 
     
+  
+
+  
+  
+  
+
   
 
 
@@ -1423,35 +1625,35 @@
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/Create-.Net-custom-template-using-GitHub-Packages-Registry/">Create .Net custom template using GitHub Packages Registry</a>
+          <a href="/posts/Git-Tips-and-Tricks/">Git | Tips and Tricks</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/Configure-Swagger-For-Ocelot-Gateway/">Configure Swagger on api gateway using ocelot in asp.net core application</a>
+          <a href="/posts/Create-.Net-custom-template-using-GitHub-Packages-Registry/">C# | Create .Net custom template using GitHub Packages Registry</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/Implementing-Ocelot-Gateway/">Implementing API gateway using ocelot in asp.net core application</a>
+          <a href="/posts/Configure-Swagger-For-Ocelot-Gateway/">C# | Configure Swagger on api gateway using ocelot in asp.net core application</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/AZ-400-Certification-Path/">AZ-400 Certification Path</a>
+          <a href="/posts/Search-AD-entry-by-ObjectSid-using-Novell-Directory-Ldap-Nuget-package/">C# | Search AD entry by ObjectSid using Novell Directory Ldap Nuget package</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/Search-AD-entry-by-ObjectSid-using-Novell-Directory-Ldap-Nuget-package/">Search AD entry by ObjectSid using Novell Directory Ldap Nuget package</a>
+          <a href="/posts/Configure-QoS-within-API-Gateway-using-ocelot-and-Polly/">C# | Configure QoS within API Gateway using ocelot and Polly</a>
         </li>
       
     </ul>
@@ -1550,164 +1752,6 @@
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1772,174 +1816,6 @@
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2030,6 +1906,600 @@
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
     
   
     
@@ -2095,34 +2565,6 @@
     
     
     
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
   
     
     
@@ -2152,52 +2594,6 @@
     
     
     
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -2234,6 +2630,15 @@
         <a class="post-tag btn btn-outline-primary" href="/tags/csharp/">csharp</a>
       
         
+        <a class="post-tag btn btn-outline-primary" href="/tags/azure/">azure</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/azuredevops/">azuredevops</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/bestpractices/">bestpractices</a>
+      
+        
         <a class="post-tag btn btn-outline-primary" href="/tags/aspnetcore/">aspnetcore</a>
       
         
@@ -2243,16 +2648,7 @@
         <a class="post-tag btn btn-outline-primary" href="/tags/webapi/">webapi</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/gateway/">gateway</a>
-      
-        
         <a class="post-tag btn btn-outline-primary" href="/tags/github/">github</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/microservices/">microservices</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/nugetpackage/">nugetpackage</a>
       
     </div>
   </section>
@@ -2394,164 +2790,6 @@
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2616,174 +2854,6 @@
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2874,6 +2944,600 @@
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
     
   
     
@@ -2939,34 +3603,6 @@
     
     
     
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
   
     
     
@@ -2996,52 +3632,6 @@
     
     
     
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -3078,6 +3668,15 @@
         <a class="post-tag btn btn-outline-primary" href="/tags/csharp/">csharp</a>
       
         
+        <a class="post-tag btn btn-outline-primary" href="/tags/azure/">azure</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/azuredevops/">azuredevops</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/bestpractices/">bestpractices</a>
+      
+        
         <a class="post-tag btn btn-outline-primary" href="/tags/aspnetcore/">aspnetcore</a>
       
         
@@ -3087,16 +3686,7 @@
         <a class="post-tag btn btn-outline-primary" href="/tags/webapi/">webapi</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/gateway/">gateway</a>
-      
-        
         <a class="post-tag btn btn-outline-primary" href="/tags/github/">github</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/microservices/">microservices</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/nugetpackage/">nugetpackage</a>
       
     </div>
   </section>

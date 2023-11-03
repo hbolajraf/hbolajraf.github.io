@@ -18,6 +18,8 @@
 <!-- `site.alt_lang` can specify a language different from the UI -->
 <html lang="en" 
   
+    data-mode="dark"
+  
 >
   <!-- The Head -->
 
@@ -119,151 +121,6 @@
   <!-- JavaScript -->
 
   
-    <!-- Switch the mode between dark and light. -->
-
-<script type="text/javascript">
-  class ModeToggle {
-    static get MODE_KEY() {
-      return 'mode';
-    }
-    static get MODE_ATTR() {
-      return 'data-mode';
-    }
-    static get DARK_MODE() {
-      return 'dark';
-    }
-    static get LIGHT_MODE() {
-      return 'light';
-    }
-    static get ID() {
-      return 'mode-toggle';
-    }
-
-    constructor() {
-      if (this.hasMode) {
-        if (this.isDarkMode) {
-          if (!this.isSysDarkPrefer) {
-            this.setDark();
-          }
-        } else {
-          if (this.isSysDarkPrefer) {
-            this.setLight();
-          }
-        }
-      }
-
-      let self = this;
-
-      /* always follow the system prefers */
-      this.sysDarkPrefers.addEventListener('change', () => {
-        if (self.hasMode) {
-          if (self.isDarkMode) {
-            if (!self.isSysDarkPrefer) {
-              self.setDark();
-            }
-          } else {
-            if (self.isSysDarkPrefer) {
-              self.setLight();
-            }
-          }
-
-          self.clearMode();
-        }
-
-        self.notify();
-      });
-    } /* constructor() */
-
-    get sysDarkPrefers() {
-      return window.matchMedia('(prefers-color-scheme: dark)');
-    }
-
-    get isSysDarkPrefer() {
-      return this.sysDarkPrefers.matches;
-    }
-
-    get isDarkMode() {
-      return this.mode === ModeToggle.DARK_MODE;
-    }
-
-    get isLightMode() {
-      return this.mode === ModeToggle.LIGHT_MODE;
-    }
-
-    get hasMode() {
-      return this.mode != null;
-    }
-
-    get mode() {
-      return sessionStorage.getItem(ModeToggle.MODE_KEY);
-    }
-
-    /* get the current mode on screen */
-    get modeStatus() {
-      if (this.isDarkMode || (!this.hasMode && this.isSysDarkPrefer)) {
-        return ModeToggle.DARK_MODE;
-      } else {
-        return ModeToggle.LIGHT_MODE;
-      }
-    }
-
-    setDark() {
-      document.documentElement.setAttribute(ModeToggle.MODE_ATTR, ModeToggle.DARK_MODE);
-      sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.DARK_MODE);
-    }
-
-    setLight() {
-      document.documentElement.setAttribute(ModeToggle.MODE_ATTR, ModeToggle.LIGHT_MODE);
-      sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.LIGHT_MODE);
-    }
-
-    clearMode() {
-      document.documentElement.removeAttribute(ModeToggle.MODE_ATTR);
-      sessionStorage.removeItem(ModeToggle.MODE_KEY);
-    }
-
-    /* Notify another plugins that the theme mode has changed */
-    notify() {
-      window.postMessage(
-        {
-          direction: ModeToggle.ID,
-          message: this.modeStatus
-        },
-        '*'
-      );
-    }
-
-    flipMode() {
-      if (this.hasMode) {
-        if (this.isSysDarkPrefer) {
-          if (this.isLightMode) {
-            this.clearMode();
-          } else {
-            this.setLight();
-          }
-        } else {
-          if (this.isDarkMode) {
-            this.clearMode();
-          } else {
-            this.setDark();
-          }
-        }
-      } else {
-        if (this.isSysDarkPrefer) {
-          this.setLight();
-        } else {
-          this.setDark();
-        }
-      }
-
-      this.notify();
-    } /* flipMode() */
-  } /* ModeToggle */
-
-  const modeToggle = new ModeToggle();
-</script>
-
-  
 
   <!-- A placeholder to allow defining custom metadata -->
 
@@ -285,7 +142,7 @@
     <h1 class="site-title">
       <a href="/"></a>
     </h1>
-    <p class="site-subtitle fst-italic mb-0"><h4><b>Hassan BOLAJRAF</b></h4></p>
+    <p class="site-subtitle fst-italic mb-0"><h4><b>Hassan BOLAJRAF</b></h4>Fostering a culture of code quality and collaboration for .NET enthusiasts</p>
   </header>
   <!-- .profile-wrapper -->
 
@@ -344,14 +201,6 @@
   </nav>
 
   <div class="sidebar-bottom d-flex flex-wrap  align-items-center w-100">
-    
-      <button type="button" class="mode-toggle btn" aria-label="Switch Mode">
-        <i class="fas fa-adjust"></i>
-      </button>
-
-      
-        <span class="icon-border"></span>
-      
     
 
     
@@ -421,6 +270,29 @@
           
         >
           <i class="fab fa-facebook"></i>
+        </a>
+      
+    
+      
+
+      
+        <a
+          href=""
+          aria-label="Youtube"
+          
+
+          
+            target="_blank"
+            
+          
+
+          
+
+          
+            rel="noopener noreferrer"
+          
+        >
+          <i class="fab fa-youtube"></i>
         </a>
       
     
@@ -846,8 +718,8 @@
       <button aria-label="copy" data-title-succeed=""><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-</pre></td><td class="rouge-code"><pre><span class="kt">string</span> <span class="n">name</span> <span class="p">=</span> <span class="s">"Alice"</span><span class="p">;</span>
-<span class="kt">int</span> <span class="n">age</span> <span class="p">=</span> <span class="m">30</span><span class="p">;</span>
+</pre></td><td class="rouge-code"><pre><span class="kt">string</span> <span class="n">name</span> <span class="p">=</span> <span class="s">"Hassan"</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">age</span> <span class="p">=</span> <span class="m">35</span><span class="p">;</span>
 <span class="kt">string</span> <span class="n">message</span> <span class="p">=</span> <span class="s">$"Hello, </span><span class="p">{</span><span class="n">name</span><span class="p">}</span><span class="s">! You are </span><span class="p">{</span><span class="n">age</span><span class="p">}</span><span class="s"> years old."</span><span class="p">;</span>
 </pre></td></tr></tbody></table></code></div></div>
 
@@ -915,7 +787,7 @@
 2
 3
 </pre></td><td class="rouge-code"><pre><span class="kt">var</span> <span class="n">result</span> <span class="p">=</span> <span class="k">from</span> <span class="n">person</span> <span class="k">in</span> <span class="n">people</span>
-             <span class="k">where</span> <span class="n">person</span><span class="p">.</span><span class="n">Age</span> <span class="p">&gt;</span> <span class="m">30</span>
+             <span class="k">where</span> <span class="n">person</span><span class="p">.</span><span class="n">Age</span> <span class="p">&gt;</span> <span class="m">35</span>
              <span class="k">select</span> <span class="n">person</span><span class="p">.</span><span class="n">Name</span><span class="p">;</span>
 </pre></td></tr></tbody></table></code></div></div>
 
@@ -999,8 +871,8 @@ As you continue to work with C#, explore its vast ecosystem to improve your skil
     <div class="post-meta mb-3">
       <i class="far fa-folder-open fa-fw me-1"></i>
       
-        <a href="/categories/tips-and-tricks/">Tips And Tricks</a>,
-        <a href="/categories/c/">C#</a>
+        <a href="/categories/c/">C#</a>,
+        <a href="/categories/tips-and-tricks/">Tips And Tricks</a>
     </div>
   
 
@@ -1158,35 +1030,35 @@ As you continue to work with C#, explore its vast ecosystem to improve your skil
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/Create-.Net-custom-template-using-GitHub-Packages-Registry/">Create .Net custom template using GitHub Packages Registry</a>
+          <a href="/posts/Git-Tips-and-Tricks/">Git | Tips and Tricks</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/Configure-Swagger-For-Ocelot-Gateway/">Configure Swagger on api gateway using ocelot in asp.net core application</a>
+          <a href="/posts/Create-.Net-custom-template-using-GitHub-Packages-Registry/">C# | Create .Net custom template using GitHub Packages Registry</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/Implementing-Ocelot-Gateway/">Implementing API gateway using ocelot in asp.net core application</a>
+          <a href="/posts/Configure-Swagger-For-Ocelot-Gateway/">C# | Configure Swagger on api gateway using ocelot in asp.net core application</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/AZ-400-Certification-Path/">AZ-400 Certification Path</a>
+          <a href="/posts/Search-AD-entry-by-ObjectSid-using-Novell-Directory-Ldap-Nuget-package/">C# | Search AD entry by ObjectSid using Novell Directory Ldap Nuget package</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/Search-AD-entry-by-ObjectSid-using-Novell-Directory-Ldap-Nuget-package/">Search AD entry by ObjectSid using Novell Directory Ldap Nuget package</a>
+          <a href="/posts/Configure-QoS-within-API-Gateway-using-ocelot-and-Polly/">C# | Configure QoS within API Gateway using ocelot and Polly</a>
         </li>
       
     </ul>
@@ -1285,164 +1157,6 @@ As you continue to work with C#, explore its vast ecosystem to improve your skil
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1507,174 +1221,6 @@ As you continue to work with C#, explore its vast ecosystem to improve your skil
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1765,6 +1311,600 @@ As you continue to work with C#, explore its vast ecosystem to improve your skil
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
     
   
     
@@ -1830,34 +1970,6 @@ As you continue to work with C#, explore its vast ecosystem to improve your skil
     
     
     
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
   
     
     
@@ -1887,52 +1999,6 @@ As you continue to work with C#, explore its vast ecosystem to improve your skil
     
     
     
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -1969,6 +2035,15 @@ As you continue to work with C#, explore its vast ecosystem to improve your skil
         <a class="post-tag btn btn-outline-primary" href="/tags/csharp/">csharp</a>
       
         
+        <a class="post-tag btn btn-outline-primary" href="/tags/azure/">azure</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/azuredevops/">azuredevops</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/bestpractices/">bestpractices</a>
+      
+        
         <a class="post-tag btn btn-outline-primary" href="/tags/aspnetcore/">aspnetcore</a>
       
         
@@ -1978,16 +2053,7 @@ As you continue to work with C#, explore its vast ecosystem to improve your skil
         <a class="post-tag btn btn-outline-primary" href="/tags/webapi/">webapi</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/gateway/">gateway</a>
-      
-        
         <a class="post-tag btn btn-outline-primary" href="/tags/github/">github</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/microservices/">microservices</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/nugetpackage/">nugetpackage</a>
       
     </div>
   </section>
@@ -2103,7 +2169,223 @@ As you continue to work with C#, explore its vast ecosystem to improve your skil
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
   
 
   
@@ -2282,13 +2564,12 @@ As you continue to work with C#, explore its vast ecosystem to improve your skil
 
 
                   C# Best Practices
-
 These best practices are designed to help you write clean, efficient, and maintainable C# code.
 
 1. Follow Naming Conventions
 
 
-  Use PascalCase for class names, method names, an...
+  Use PascalCase for class names, method names, and...
                 </p>
               </div>
             </div>
@@ -2336,7 +2617,7 @@ Building Web APIs in C# is a powerful way to create scalable and efficient backe
         </article>
       
         <article class="col">
-          <a href="/posts/Configure-QoS-within-API-Gateway-using-ocelot-and-Polly/" class="post-preview card h-100">
+          <a href="/posts/C-Entity-Framework-Issues-and-Troubleshooting/" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -2350,14 +2631,14 @@ Building Web APIs in C# is a powerful way to create scalable and efficient backe
   
     class="small"
   
-  data-ts="1695765600"
+  data-ts="1686434400"
   data-df="ll"
   
 >
-  Sep 27, 2023
+  Jun 11, 2023
 </time>
 
-              <h4 class="pt-0 my-2">Configure QoS within API Gateway using ocelot and Polly</h4>
+              <h4 class="pt-0 my-2">C# | Entity Framework Issues and Troubleshooting</h4>
               <div class="text-muted small">
                 <p>
                   
@@ -2366,8 +2647,8 @@ Building Web APIs in C# is a powerful way to create scalable and efficient backe
 
 
 
-                  Introduction
-API Gateway is an entry point for backend application. It maintains routing, authentication, logging, service discovery etc. Ocelot is used to design and develop API gateway for .net b...
+                  Entity Framework Issues and Troubleshooting
+Entity Framework is a powerful ORM (Object-Relational Mapping) framework for C# applications, but it can sometimes lead to issues that developers need to...
                 </p>
               </div>
             </div>
@@ -2388,18 +2669,22 @@ API Gateway is an entry point for backend application. It maintains routing, aut
   
 
   
-    <div class="btn btn-outline-primary disabled" aria-label="Older">
-      <p>-</p>
-    </div>
+    <a
+      href="/posts/C-Entity-Framework-Issues-and-Troubleshooting/"
+      class="btn btn-outline-primary"
+      aria-label="Older"
+    >
+      <p>C# | Entity Framework Issues and Troubleshooting</p>
+    </a>
   
 
   
     <a
-      href="/posts/C-Web-Api's-Tips-and-Tricks/"
+      href="/posts/C-Common-Errors/"
       class="btn btn-outline-primary"
       aria-label="Newer"
     >
-      <p>C# | Web Api's Tips and Tricks</p>
+      <p>C# | Common Errors</p>
     </a>
   
 </nav>
@@ -2537,164 +2822,6 @@ API Gateway is an entry point for backend application. It maintains routing, aut
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2759,174 +2886,6 @@ API Gateway is an entry point for backend application. It maintains routing, aut
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -3017,6 +2976,600 @@ API Gateway is an entry point for backend application. It maintains routing, aut
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
     
   
     
@@ -3082,34 +3635,6 @@ API Gateway is an entry point for backend application. It maintains routing, aut
     
     
     
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
   
     
     
@@ -3139,52 +3664,6 @@ API Gateway is an entry point for backend application. It maintains routing, aut
     
     
     
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -3221,6 +3700,15 @@ API Gateway is an entry point for backend application. It maintains routing, aut
         <a class="post-tag btn btn-outline-primary" href="/tags/csharp/">csharp</a>
       
         
+        <a class="post-tag btn btn-outline-primary" href="/tags/azure/">azure</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/azuredevops/">azuredevops</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/bestpractices/">bestpractices</a>
+      
+        
         <a class="post-tag btn btn-outline-primary" href="/tags/aspnetcore/">aspnetcore</a>
       
         
@@ -3230,16 +3718,7 @@ API Gateway is an entry point for backend application. It maintains routing, aut
         <a class="post-tag btn btn-outline-primary" href="/tags/webapi/">webapi</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/gateway/">gateway</a>
-      
-        
         <a class="post-tag btn btn-outline-primary" href="/tags/github/">github</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/microservices/">microservices</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/nugetpackage/">nugetpackage</a>
       
     </div>
   </section>
