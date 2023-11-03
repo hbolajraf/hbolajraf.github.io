@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title></title>
   <subtitle></subtitle>
-  <updated>2023-10-27T22:17:28+02:00</updated>
+  <updated>2023-11-03T22:12:16+01:00</updated>
   <author>
     <name>Hassan BOLAJRAF</name>
     <uri>http://localhost:4000/</uri>
@@ -20,8 +20,8 @@
 
   
   <entry>
-    <title>Docker Tips and Tricks</title>
-    <link href="http://localhost:4000/posts/Docker-Tips-and-Tricks/" rel="alternate" type="text/html" title="Docker Tips and Tricks" />
+    <title>Docker | Tips and Tricks</title>
+    <link href="http://localhost:4000/posts/Docker-Tips-and-Tricks/" rel="alternate" type="text/html" title="Docker | Tips and Tricks" />
     <published>2023-10-26T00:00:00+02:00</published>
   
     <updated>2023-10-26T00:00:00+02:00</updated>
@@ -34,9 +34,9 @@
 
   
     
-    <category term="Tips And Tricks" />
-    
     <category term="Docker" />
+    
+    <category term="Tips And Tricks" />
     
   
 
@@ -65,11 +65,95 @@ Installation and Setup
 
   
   <entry>
+    <title>GitHub | Using Copilot with Visual Studio Code</title>
+    <link href="http://localhost:4000/posts/GitHub-Using-Copilot-with-Visual-Studio-Code/" rel="alternate" type="text/html" title="GitHub | Using Copilot with Visual Studio Code" />
+    <published>2023-10-15T00:00:00+02:00</published>
+  
+    <updated>2023-10-15T00:00:00+02:00</updated>
+  
+    <id>http://localhost:4000/posts/GitHub-Using-Copilot-with-Visual-Studio-Code/</id>
+    <content src="http://localhost:4000/posts/GitHub-Using-Copilot-with-Visual-Studio-Code/" />
+    <author>
+      <name>Hassan BOLAJRAF</name>
+    </author>
+
+  
+    
+    <category term="GitHub" />
+    
+    <category term="Copilot" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Using GitHub Copilot with Visual Studio Code
+GitHub Copilot is an AI-powered pair programmer developed by GitHub and OpenAI. It helps developers write code faster by providing suggestions and auto-completions. In this guide, we’ll explore how to set up GitHub Copilot with Visual Studio Code and provide some examples of how to use it effectively.
+
+Prerequisites
+Before you start, ensure you have ...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>Azure | Build .Net IoT App using C#</title>
+    <link href="http://localhost:4000/posts/Azure-Build-.Net-IoT-App-using-C/" rel="alternate" type="text/html" title="Azure | Build .Net IoT App using C#" />
+    <published>2023-10-04T00:00:00+02:00</published>
+  
+    <updated>2023-10-04T00:00:00+02:00</updated>
+  
+    <id>http://localhost:4000/posts/Azure-Build-.Net-IoT-App-using-C/</id>
+    <content src="http://localhost:4000/posts/Azure-Build-.Net-IoT-App-using-C/" />
+    <author>
+      <name>Hassan BOLAJRAF</name>
+    </author>
+
+  
+    
+    <category term="Azure" />
+    
+    <category term="IoT" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Build .Net IoT App using C#
+Azure IoT provides a robust platform for building Internet of Things (IoT) solutions. Here are some C# examples to help you get started with Azure IoT services.
+
+Azure IoT Hub
+Azure IoT Hub is a fully managed service that enables reliable and secure communication between IoT devices and the cloud. Here’s how to interact with it using C#:
+
+Send Telemetry Data
+
+using M...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
     <title>Git | Tips and Tricks</title>
     <link href="http://localhost:4000/posts/Git-Tips-and-Tricks/" rel="alternate" type="text/html" title="Git | Tips and Tricks" />
     <published>2023-10-01T00:00:00+02:00</published>
   
-    <updated>2023-10-22T14:28:59+02:00</updated>
+    <updated>2023-10-28T22:06:54+02:00</updated>
   
     <id>http://localhost:4000/posts/Git-Tips-and-Tricks/</id>
     <content src="http://localhost:4000/posts/Git-Tips-and-Tricks/" />
@@ -109,8 +193,8 @@ git ...
 
   
   <entry>
-    <title>Configure QoS within API Gateway using ocelot and Polly</title>
-    <link href="http://localhost:4000/posts/Configure-QoS-within-API-Gateway-using-ocelot-and-Polly/" rel="alternate" type="text/html" title="Configure QoS within API Gateway using ocelot and Polly" />
+    <title>C# | Configure QoS within API Gateway using ocelot and Polly</title>
+    <link href="http://localhost:4000/posts/Configure-QoS-within-API-Gateway-using-ocelot-and-Polly/" rel="alternate" type="text/html" title="C# | Configure QoS within API Gateway using ocelot and Polly" />
     <published>2023-09-27T00:00:00+02:00</published>
   
     <updated>2023-10-22T14:28:59+02:00</updated>
@@ -123,9 +207,9 @@ git ...
 
   
     
-    <category term="Microservices" />
+    <category term="C#" />
     
-    <category term="Ocelot" />
+    <category term="Web API" />
     
   
 
@@ -139,93 +223,6 @@ git ...
 
       Introduction
 API Gateway is an entry point for backend application. It maintains routing, authentication, logging, service discovery etc. Ocelot is used to design and develop API gateway for .net based application. QoS is generally configured in API gateway which provides different priorities for different applications, users or traffic. In this article, we will configure and discuss Quality of...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Search AD entry by ObjectSid using Novell Directory Ldap Nuget package</title>
-    <link href="http://localhost:4000/posts/Search-AD-entry-by-ObjectSid-using-Novell-Directory-Ldap-Nuget-package/" rel="alternate" type="text/html" title="Search AD entry by ObjectSid using Novell Directory Ldap Nuget package" />
-    <published>2023-09-25T00:00:00+02:00</published>
-  
-    <updated>2023-10-22T14:28:59+02:00</updated>
-  
-    <id>http://localhost:4000/posts/Search-AD-entry-by-ObjectSid-using-Novell-Directory-Ldap-Nuget-package/</id>
-    <content src="http://localhost:4000/posts/Search-AD-entry-by-ObjectSid-using-Novell-Directory-Ldap-Nuget-package/" />
-    <author>
-      <name>Hassan BOLAJRAF</name>
-    </author>
-
-  
-    
-    <category term="ActiveDirectory" />
-    
-    <category term="Ldap" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      SID stands for security identifier, a unique string that Windows Server automatically assigns to each computer, user and group in order to mark and clearly distinguish them.
-
-Windows SID Format :
-SIDs always follow the same structure, with values separated by dashes:
-
-
-
-Novell Directory Ldap
-
-Novell Directory Ldap nuget package allows you to connect to the active directory in order to perform C...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>AZ-400 Certification Path</title>
-    <link href="http://localhost:4000/posts/AZ-400-Certification-Path/" rel="alternate" type="text/html" title="AZ-400 Certification Path" />
-    <published>2023-09-25T00:00:00+02:00</published>
-  
-    <updated>2023-10-22T14:28:59+02:00</updated>
-  
-    <id>http://localhost:4000/posts/AZ-400-Certification-Path/</id>
-    <content src="http://localhost:4000/posts/AZ-400-Certification-Path/" />
-    <author>
-      <name>Hassan BOLAJRAF</name>
-    </author>
-
-  
-    
-    <category term="Microsoft" />
-    
-    <category term="Certification" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      
-
-Microsoft certification paths changes
-
-Both the MCSD and MCT certifications were discontinued by Microsoft in 2017. They were replaced by newer certification programs that reflect the changing demands of the tech industry and the evolving needs of professionals.
-
-The MCSD certification was replaced by the Azure Developer Associate certification, which is a newer certification program that is ...
     </summary>
   
 
