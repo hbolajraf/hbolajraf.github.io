@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title></title>
   <subtitle></subtitle>
-  <updated>2023-12-29T22:01:06+01:00</updated>
+  <updated>2024-02-04T14:39:07+01:00</updated>
   <author>
     <name>Hassan BOLAJRAF</name>
     <uri>http://localhost:4000/</uri>
@@ -13,21 +13,21 @@
   <link rel="alternate" type="text/html" hreflang="en"
     href="http://localhost:4000/"/>
   <generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator>
-  <rights> © 2023 Hassan BOLAJRAF </rights>
+  <rights> © 2024 Hassan BOLAJRAF </rights>
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
 
   
   <entry>
-    <title>Azure | Azure API Management</title>
-    <link href="http://localhost:4000/posts/Azure-API-Management/" rel="alternate" type="text/html" title="Azure | Azure API Management" />
-    <published>2023-11-04T00:00:00+01:00</published>
+    <title>Azure | Interview Questions and Answers</title>
+    <link href="http://localhost:4000/posts/Azure-Interview-Questions-and-Answers/" rel="alternate" type="text/html" title="Azure | Interview Questions and Answers" />
+    <published>2024-01-29T00:00:00+01:00</published>
   
-    <updated>2023-11-04T00:00:00+01:00</updated>
+    <updated>2024-01-29T00:00:00+01:00</updated>
   
-    <id>http://localhost:4000/posts/Azure-API-Management/</id>
-    <content src="http://localhost:4000/posts/Azure-API-Management/" />
+    <id>http://localhost:4000/posts/Azure-Interview-Questions-and-Answers/</id>
+    <content src="http://localhost:4000/posts/Azure-Interview-Questions-and-Answers/" />
     <author>
       <name>Hassan BOLAJRAF</name>
     </author>
@@ -36,7 +36,7 @@
     
     <category term="Azure" />
     
-    <category term="API Management" />
+    <category term="Interview" />
     
   
 
@@ -50,13 +50,13 @@
 
       
 
-Azure API Management
+1. What is Microsoft Azure?
 
-Azure API Management is a comprehensive solution for publishing, managing, securing, and analyzing APIs. It allows organizations to expose their services as APIs to internal and external developers, making it easier to consume and manage APIs efficiently. In this guide, we will explore the key concepts of Azure API Management along with examples.
+Microsoft Azure is a cloud computing platform provided by Microsoft that offers a wide range of services, including computing power, storage, networking, databases, analytics, and more, enabling organizations to build, deploy, and manage applications and services in the cloud.
 
-Key Concepts
+2. What is the Azure Resource Manager (ARM)?
 
-1. APIs :...
+Azure Resource Manager is the deployment ...
     </summary>
   
 
@@ -64,23 +64,23 @@ Key Concepts
 
   
   <entry>
-    <title>Docker | Tips and Tricks</title>
-    <link href="http://localhost:4000/posts/Docker-Tips-and-Tricks/" rel="alternate" type="text/html" title="Docker | Tips and Tricks" />
-    <published>2023-10-26T00:00:00+02:00</published>
+    <title>Azure DevOps | Interview Questions and Answers</title>
+    <link href="http://localhost:4000/posts/Azure-DevOps-Interview-Questions-and-Answers/" rel="alternate" type="text/html" title="Azure DevOps | Interview Questions and Answers" />
+    <published>2024-01-23T00:00:00+01:00</published>
   
-    <updated>2023-11-03T22:24:18+01:00</updated>
+    <updated>2024-01-23T00:00:00+01:00</updated>
   
-    <id>http://localhost:4000/posts/Docker-Tips-and-Tricks/</id>
-    <content src="http://localhost:4000/posts/Docker-Tips-and-Tricks/" />
+    <id>http://localhost:4000/posts/Azure-DevOps-Interview-Questions-and-Answers/</id>
+    <content src="http://localhost:4000/posts/Azure-DevOps-Interview-Questions-and-Answers/" />
     <author>
       <name>Hassan BOLAJRAF</name>
     </author>
 
   
     
-    <category term="Docker" />
+    <category term="Azure DevOps" />
     
-    <category term="Tips And Tricks" />
+    <category term="Interview" />
     
   
 
@@ -92,16 +92,14 @@ Key Concepts
 
 
 
-      Docker is a powerful tool for containerization, allowing you to package and run applications with their dependencies in isolated containers. Here are some tips and tricks for using Docker effectively.
+      
 
-Installation and Setup
+Introduction
+Azure DevOps is a comprehensive set of development tools and services provided by Microsoft. It covers a wide range of activities from source control to build and release automation. This document compiles common interview questions related to Azure DevOps along with their answers.
 
-1. Install Docker
-
-  To get started, install Docker by following the official installation instructions for your operating system on the Docker website.
-
-
-2. Use Docker Co...
+Basic Questions
+Q1: What is Azure DevOps?
+Azure DevOps is a set of development tools and services ...
     </summary>
   
 
@@ -109,23 +107,23 @@ Installation and Setup
 
   
   <entry>
-    <title>GitHub | Using Copilot with Visual Studio Code</title>
-    <link href="http://localhost:4000/posts/GitHub-Using-Copilot-with-Visual-Studio-Code/" rel="alternate" type="text/html" title="GitHub | Using Copilot with Visual Studio Code" />
-    <published>2023-10-15T00:00:00+02:00</published>
+    <title>C# | Interview Questions and Answers</title>
+    <link href="http://localhost:4000/posts/C-Interview-Questions-and-Answers/" rel="alternate" type="text/html" title="C# | Interview Questions and Answers" />
+    <published>2024-01-17T00:00:00+01:00</published>
   
-    <updated>2023-10-15T00:00:00+02:00</updated>
+    <updated>2024-01-17T00:00:00+01:00</updated>
   
-    <id>http://localhost:4000/posts/GitHub-Using-Copilot-with-Visual-Studio-Code/</id>
-    <content src="http://localhost:4000/posts/GitHub-Using-Copilot-with-Visual-Studio-Code/" />
+    <id>http://localhost:4000/posts/C-Interview-Questions-and-Answers/</id>
+    <content src="http://localhost:4000/posts/C-Interview-Questions-and-Answers/" />
     <author>
       <name>Hassan BOLAJRAF</name>
     </author>
 
   
     
-    <category term="GitHub" />
+    <category term="C#" />
     
-    <category term="Copilot" />
+    <category term="Interview" />
     
   
 
@@ -137,11 +135,61 @@ Installation and Setup
 
 
 
-      Using GitHub Copilot with Visual Studio Code
-GitHub Copilot is an AI-powered pair programmer developed by GitHub and OpenAI. It helps developers write code faster by providing suggestions and auto-completions. In this guide, we’ll explore how to set up GitHub Copilot with Visual Studio Code and provide some examples of how to use it effectively.
+      
+
+1. What is C#?
+
+C# (pronounced C-sharp) is a modern, object-oriented programming language developed by Microsoft as part of the .NET platform.
+
+2. Differentiate between String and StringBuilder in C#.
+
+
+  String is immutable, meaning its value cannot be changed after it’s created. StringBuilder is mutable and allows for efficient manipulation of strings.
+
+
+3. Explain the difference between co...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>C# | Dapper Using Stored Procedures</title>
+    <link href="http://localhost:4000/posts/Dapper-Using-Stored-Procedures/" rel="alternate" type="text/html" title="C# | Dapper Using Stored Procedures" />
+    <published>2024-01-08T00:00:00+01:00</published>
+  
+    <updated>2024-01-08T00:00:00+01:00</updated>
+  
+    <id>http://localhost:4000/posts/Dapper-Using-Stored-Procedures/</id>
+    <content src="http://localhost:4000/posts/Dapper-Using-Stored-Procedures/" />
+    <author>
+      <name>Hassan BOLAJRAF</name>
+    </author>
+
+  
+    
+    <category term="C#" />
+    
+    <category term="Development" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Introduction
+
+Dapper is a simple, lightweight Object-Relational Mapping (ORM) library for .NET. It is designed to provide high performance and reduce the overhead typically associated with traditional ORMs. One of the powerful features of Dapper is its support for executing stored procedures. In this guide, we will explore how to use stored procedures in C# with Dapper.
 
 Prerequisites
-Before you start, ensure you have ...
+
+Before g...
     </summary>
   
 
@@ -149,23 +197,23 @@ Before you start, ensure you have ...
 
   
   <entry>
-    <title>Azure | Build .Net IoT App using C#</title>
-    <link href="http://localhost:4000/posts/Azure-Build-.Net-IoT-App-using-C/" rel="alternate" type="text/html" title="Azure | Build .Net IoT App using C#" />
-    <published>2023-10-04T00:00:00+02:00</published>
+    <title>C# | Dapper using Generic Repository</title>
+    <link href="http://localhost:4000/posts/Dapper-using-Generic-Repository/" rel="alternate" type="text/html" title="C# | Dapper using Generic Repository" />
+    <published>2024-01-05T00:00:00+01:00</published>
   
-    <updated>2023-10-04T00:00:00+02:00</updated>
+    <updated>2024-01-05T00:00:00+01:00</updated>
   
-    <id>http://localhost:4000/posts/Azure-Build-.Net-IoT-App-using-C/</id>
-    <content src="http://localhost:4000/posts/Azure-Build-.Net-IoT-App-using-C/" />
+    <id>http://localhost:4000/posts/Dapper-using-Generic-Repository/</id>
+    <content src="http://localhost:4000/posts/Dapper-using-Generic-Repository/" />
     <author>
       <name>Hassan BOLAJRAF</name>
     </author>
 
   
     
-    <category term="Azure" />
+    <category term="C#" />
     
-    <category term="IoT" />
+    <category term="Development" />
     
   
 
@@ -177,59 +225,13 @@ Before you start, ensure you have ...
 
 
 
-      Build .Net IoT App using C#
-Azure IoT provides a robust platform for building Internet of Things (IoT) solutions. Here are some C# examples to help you get started with Azure IoT services.
+      Introduction
 
-Azure IoT Hub
-Azure IoT Hub is a fully managed service that enables reliable and secure communication between IoT devices and the cloud. Here’s how to interact with it using C#:
+Dapper is a simple, lightweight, and high-performance Object-Relational Mapping (ORM) library for .NET. It is widely used for database access in C# applications due to its speed and simplicity. In this guide, we will explore how to use Dapper in combination with a Generic Repository pattern to streamline database interactions.
 
-Send Telemetry Data
+Setting Up Dapper
 
-using M...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Git | Tips and Tricks</title>
-    <link href="http://localhost:4000/posts/Git-Tips-and-Tricks/" rel="alternate" type="text/html" title="Git | Tips and Tricks" />
-    <published>2023-10-01T00:00:00+02:00</published>
-  
-    <updated>2023-11-03T22:24:18+01:00</updated>
-  
-    <id>http://localhost:4000/posts/Git-Tips-and-Tricks/</id>
-    <content src="http://localhost:4000/posts/Git-Tips-and-Tricks/" />
-    <author>
-      <name>Hassan BOLAJRAF</name>
-    </author>
-
-  
-    
-    <category term="GitHub" />
-    
-    <category term="Git" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      Git Tips and Tricks
-
-Git is a powerful version control system that can make your development workflow more efficient. Here are some tips and tricks to help you get the most out of Git.
-
-Configure Git
-Before you start using Git, it’s a good idea to configure it with your name and email address. This information will be associated with your commits.
-
-git config --global user.name "hbolajraf"
-git ...
+Before using Dapper, make sure to ...
     </summary>
   
 
