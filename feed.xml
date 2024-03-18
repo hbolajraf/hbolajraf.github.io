@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title></title>
   <subtitle></subtitle>
-  <updated>2024-02-04T14:50:18+01:00</updated>
+  <updated>2024-03-18T23:18:42+01:00</updated>
   <author>
     <name>Hassan BOLAJRAF</name>
     <uri>http://localhost:4000/</uri>
@@ -20,14 +20,65 @@
 
   
   <entry>
-    <title>Azure | Interview Questions and Answers</title>
-    <link href="http://localhost:4000/posts/Azure-Interview-Questions-and-Answers/" rel="alternate" type="text/html" title="Azure | Interview Questions and Answers" />
-    <published>2024-01-29T00:00:00+01:00</published>
+    <title>HashiCorp | Vault Multiple Choice Training Exam</title>
+    <link href="http://localhost:4000/posts/Vault-Multiple-Choice-Training-Exam/" rel="alternate" type="text/html" title="HashiCorp | Vault Multiple Choice Training Exam" />
+    <published>2024-03-18T00:00:00+01:00</published>
   
-    <updated>2024-01-29T00:00:00+01:00</updated>
+    <updated>2024-03-18T00:00:00+01:00</updated>
   
-    <id>http://localhost:4000/posts/Azure-Interview-Questions-and-Answers/</id>
-    <content src="http://localhost:4000/posts/Azure-Interview-Questions-and-Answers/" />
+    <id>http://localhost:4000/posts/Vault-Multiple-Choice-Training-Exam/</id>
+    <content src="http://localhost:4000/posts/Vault-Multiple-Choice-Training-Exam/" />
+    <author>
+      <name>Hassan BOLAJRAF</name>
+    </author>
+
+  
+    
+    <category term="HashiCorp" />
+    
+    <category term="Vault" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      The Vault Associate 002 exam contains 10 sections. Below, you’ll find some recurring questions that can help you prepare for the exam.
+
+Multiple Choice Exam
+
+Module 1: Compare Authentication Methods
+
+
+  What is a primary purpose of authentication methods in Vault?
+    
+      To manage secrets
+      To revoke leases
+      To encrypt data
+      To verify and authorize users
+    
+  
+  Which authen...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>Azure | Azure CLI Introduction and Usage</title>
+    <link href="http://localhost:4000/posts/azure-cli/" rel="alternate" type="text/html" title="Azure | Azure CLI Introduction and Usage" />
+    <published>2024-03-09T00:00:00+01:00</published>
+  
+    <updated>2024-03-09T00:00:00+01:00</updated>
+  
+    <id>http://localhost:4000/posts/azure-cli/</id>
+    <content src="http://localhost:4000/posts/azure-cli/" />
     <author>
       <name>Hassan BOLAJRAF</name>
     </author>
@@ -36,7 +87,7 @@
     
     <category term="Azure" />
     
-    <category term="Interview" />
+    <category term="CLI" />
     
   
 
@@ -48,15 +99,11 @@
 
 
 
-      
+      Azure CLI (Command-Line Interface) is a powerful tool for managing Azure resources from the command line. It provides a set of commands for interacting with Azure services and resources, allowing users to automate tasks, deploy resources, and manage infrastructure efficiently. In this guide, we’ll explore the basics of Azure CLI and how to use it with detailed examples.
 
-1. What is Microsoft Azure?
+Installation
 
-Microsoft Azure is a cloud computing platform provided by Microsoft that offers a wide range of services, including computing power, storage, networking, databases, analytics, and more, enabling organizations to build, deploy, and manage applications and services in the cloud.
-
-2. What is the Azure Resource Manager (ARM)?
-
-Azure Resource Manager is the deployment ...
+Before us...
     </summary>
   
 
@@ -64,105 +111,14 @@ Azure Resource Manager is the deployment ...
 
   
   <entry>
-    <title>Azure DevOps | Interview Questions and Answers</title>
-    <link href="http://localhost:4000/posts/Azure-DevOps-Interview-Questions-and-Answers/" rel="alternate" type="text/html" title="Azure DevOps | Interview Questions and Answers" />
-    <published>2024-01-23T00:00:00+01:00</published>
+    <title>C# | Types of Classes</title>
+    <link href="http://localhost:4000/posts/Types-of-Classes-in-C/" rel="alternate" type="text/html" title="C# | Types of Classes" />
+    <published>2024-03-05T00:00:00+01:00</published>
   
-    <updated>2024-01-23T00:00:00+01:00</updated>
+    <updated>2024-03-05T00:00:00+01:00</updated>
   
-    <id>http://localhost:4000/posts/Azure-DevOps-Interview-Questions-and-Answers/</id>
-    <content src="http://localhost:4000/posts/Azure-DevOps-Interview-Questions-and-Answers/" />
-    <author>
-      <name>Hassan BOLAJRAF</name>
-    </author>
-
-  
-    
-    <category term="Azure DevOps" />
-    
-    <category term="Interview" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      
-
-Introduction
-Azure DevOps is a comprehensive set of development tools and services provided by Microsoft. It covers a wide range of activities from source control to build and release automation. This document compiles common interview questions related to Azure DevOps along with their answers.
-
-Basic Questions
-Q1: What is Azure DevOps?
-Azure DevOps is a set of development tools and services ...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>C# | Interview Questions and Answers</title>
-    <link href="http://localhost:4000/posts/C-Interview-Questions-and-Answers/" rel="alternate" type="text/html" title="C# | Interview Questions and Answers" />
-    <published>2024-01-17T00:00:00+01:00</published>
-  
-    <updated>2024-01-17T00:00:00+01:00</updated>
-  
-    <id>http://localhost:4000/posts/C-Interview-Questions-and-Answers/</id>
-    <content src="http://localhost:4000/posts/C-Interview-Questions-and-Answers/" />
-    <author>
-      <name>Hassan BOLAJRAF</name>
-    </author>
-
-  
-    
-    <category term="C#" />
-    
-    <category term="Interview" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      
-
-1. What is C#?
-
-C# (pronounced C-sharp) is a modern, object-oriented programming language developed by Microsoft as part of the .NET platform.
-
-2. Differentiate between String and StringBuilder in C#.
-
-
-  String is immutable, meaning its value cannot be changed after it’s created. StringBuilder is mutable and allows for efficient manipulation of strings.
-
-
-3. Explain the difference between co...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>C# | Dapper Using Stored Procedures</title>
-    <link href="http://localhost:4000/posts/Dapper-Using-Stored-Procedures/" rel="alternate" type="text/html" title="C# | Dapper Using Stored Procedures" />
-    <published>2024-01-08T00:00:00+01:00</published>
-  
-    <updated>2024-01-08T00:00:00+01:00</updated>
-  
-    <id>http://localhost:4000/posts/Dapper-Using-Stored-Procedures/</id>
-    <content src="http://localhost:4000/posts/Dapper-Using-Stored-Procedures/" />
+    <id>http://localhost:4000/posts/Types-of-Classes-in-C/</id>
+    <content src="http://localhost:4000/posts/Types-of-Classes-in-C/" />
     <author>
       <name>Hassan BOLAJRAF</name>
     </author>
@@ -183,13 +139,11 @@ C# (pronounced C-sharp) is a modern, object-oriented programming language develo
 
 
 
-      Introduction
+      In C#, classes are the building blocks of object-oriented programming. They encapsulate data for the object and define methods to manipulate that data. There are various types of classes in C#, each serving different purposes. Let’s explore them with detailed examples.
 
-Dapper is a simple, lightweight Object-Relational Mapping (ORM) library for .NET. It is designed to provide high performance and reduce the overhead typically associated with traditional ORMs. One of the powerful features of Dapper is its support for executing stored procedures. In this guide, we will explore how to use stored procedures in C# with Dapper.
+1. Regular Classes
 
-Prerequisites
-
-Before g...
+Regular classes are the most common type of classes in C#. They are used to define objects and their behav...
     </summary>
   
 
@@ -197,14 +151,14 @@ Before g...
 
   
   <entry>
-    <title>C# | Dapper using Generic Repository</title>
-    <link href="http://localhost:4000/posts/Dapper-using-Generic-Repository/" rel="alternate" type="text/html" title="C# | Dapper using Generic Repository" />
-    <published>2024-01-05T00:00:00+01:00</published>
+    <title>C# | Implementing Event Driven Microservices Architecture</title>
+    <link href="http://localhost:4000/posts/Implementing-Event-Driven-Microservices-Architecture-in-.NET/" rel="alternate" type="text/html" title="C# | Implementing Event Driven Microservices Architecture" />
+    <published>2024-03-02T00:00:00+01:00</published>
   
-    <updated>2024-01-05T00:00:00+01:00</updated>
+    <updated>2024-03-02T00:00:00+01:00</updated>
   
-    <id>http://localhost:4000/posts/Dapper-using-Generic-Repository/</id>
-    <content src="http://localhost:4000/posts/Dapper-using-Generic-Repository/" />
+    <id>http://localhost:4000/posts/Implementing-Event-Driven-Microservices-Architecture-in-.NET/</id>
+    <content src="http://localhost:4000/posts/Implementing-Event-Driven-Microservices-Architecture-in-.NET/" />
     <author>
       <name>Hassan BOLAJRAF</name>
     </author>
@@ -225,13 +179,47 @@ Before g...
 
 
 
-      Introduction
+      In this guide, we’ll explore how to implement an event-driven microservices architecture using .NET technologies, specifically focusing on C# examples. Event-driven architecture (EDA) offers numerous benefits such as scalability, loose coupling, and resilience, making it a popular choice for building modern distributed systems. We’ll cover the key concepts and demonstrate how to design and impl...
+    </summary>
+  
 
-Dapper is a simple, lightweight, and high-performance Object-Relational Mapping (ORM) library for .NET. It is widely used for database access in C# applications due to its speed and simplicity. In this guide, we will explore how to use Dapper in combination with a Generic Repository pattern to streamline database interactions.
+  </entry>
 
-Setting Up Dapper
+  
+  <entry>
+    <title>Azure | Infrastructure as Code with ARM Template and Terraform</title>
+    <link href="http://localhost:4000/posts/Iac/" rel="alternate" type="text/html" title="Azure | Infrastructure as Code with ARM Template and Terraform" />
+    <published>2024-02-29T00:00:00+01:00</published>
+  
+    <updated>2024-02-29T00:00:00+01:00</updated>
+  
+    <id>http://localhost:4000/posts/Iac/</id>
+    <content src="http://localhost:4000/posts/Iac/" />
+    <author>
+      <name>Hassan BOLAJRAF</name>
+    </author>
 
-Before using Dapper, make sure to ...
+  
+    
+    <category term="Azure" />
+    
+    <category term="Infrastructure as Code" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      In modern cloud computing environments, Infrastructure as Code (IaC) has become a cornerstone for managing and provisioning resources efficiently. Two popular tools for implementing IaC are Azure Resource Manager (ARM) Templates and Terraform. Below, we’ll explore both with detailed examples.
+
+Azure Resource Manager (ARM) Template
+
+ARM Templates are JSON files used to define the infrastructure ...
     </summary>
   
 
