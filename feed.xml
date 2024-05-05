@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title></title>
   <subtitle></subtitle>
-  <updated>2024-03-18T23:18:42+01:00</updated>
+  <updated>2024-05-05T23:28:33+02:00</updated>
   <author>
     <name>Hassan BOLAJRAF</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,111 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>Azure | Creating an Azure Storage Account and Uploading Files to a Container</title>
+    <link href="http://localhost:4000/posts/Creating-an-Azure-Storage-Account-and-Uploading-Files-to-a-Container/" rel="alternate" type="text/html" title="Azure | Creating an Azure Storage Account and Uploading Files to a Container" />
+    <published>2024-04-27T00:00:00+02:00</published>
+  
+    <updated>2024-04-27T00:00:00+02:00</updated>
+  
+    <id>http://localhost:4000/posts/Creating-an-Azure-Storage-Account-and-Uploading-Files-to-a-Container/</id>
+    <content src="http://localhost:4000/posts/Creating-an-Azure-Storage-Account-and-Uploading-Files-to-a-Container/" />
+    <author>
+      <name>Hassan BOLAJRAF</name>
+    </author>
+
+  
+    
+    <category term="Azure" />
+    
+    <category term="Azure Storage Account" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      
+
+In this tutorial, we’ll walk through creating an Azure Storage account, setting up a container, and uploading a file to it.
+Also it is a part of the following post.
+
+
+  
+    
+      
+          Note
+      
+    
+    
+      
+        I highlighted screenshots with a yellow color to focus on some important informations.
+      
+    
+  
+
+
+Step 1: Create an Azure Storage Account
+
+
+  Sign in to the Azu...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>Azure | Ways to Connect to Microsoft Azure</title>
+    <link href="http://localhost:4000/posts/Ways-to-Connect-to-Microsoft-Azure/" rel="alternate" type="text/html" title="Azure | Ways to Connect to Microsoft Azure" />
+    <published>2024-04-15T00:00:00+02:00</published>
+  
+    <updated>2024-04-15T00:00:00+02:00</updated>
+  
+    <id>http://localhost:4000/posts/Ways-to-Connect-to-Microsoft-Azure/</id>
+    <content src="http://localhost:4000/posts/Ways-to-Connect-to-Microsoft-Azure/" />
+    <author>
+      <name>Hassan BOLAJRAF</name>
+    </author>
+
+  
+    
+    <category term="Azure" />
+    
+    <category term="Tips And Tricks" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      
+
+Microsoft Azure provides several ways to interact with its services, including the command-line interface (CLI), PowerShell, and other tools. Let’s explore each of these options:
+
+1. Azure Portal
+
+Azure Portal is a web-based interface for managing Azure resources. It provides a graphical user interface (GUI) for performing various tasks.
+
+Connection
+
+  Open a web browser and navigate to the A...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -144,82 +249,6 @@ Before us...
 1. Regular Classes
 
 Regular classes are the most common type of classes in C#. They are used to define objects and their behav...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>C# | Implementing Event Driven Microservices Architecture</title>
-    <link href="http://localhost:4000/posts/Implementing-Event-Driven-Microservices-Architecture-in-.NET/" rel="alternate" type="text/html" title="C# | Implementing Event Driven Microservices Architecture" />
-    <published>2024-03-02T00:00:00+01:00</published>
-  
-    <updated>2024-03-02T00:00:00+01:00</updated>
-  
-    <id>http://localhost:4000/posts/Implementing-Event-Driven-Microservices-Architecture-in-.NET/</id>
-    <content src="http://localhost:4000/posts/Implementing-Event-Driven-Microservices-Architecture-in-.NET/" />
-    <author>
-      <name>Hassan BOLAJRAF</name>
-    </author>
-
-  
-    
-    <category term="C#" />
-    
-    <category term="Development" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      In this guide, we’ll explore how to implement an event-driven microservices architecture using .NET technologies, specifically focusing on C# examples. Event-driven architecture (EDA) offers numerous benefits such as scalability, loose coupling, and resilience, making it a popular choice for building modern distributed systems. We’ll cover the key concepts and demonstrate how to design and impl...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Azure | Infrastructure as Code with ARM Template and Terraform</title>
-    <link href="http://localhost:4000/posts/Iac/" rel="alternate" type="text/html" title="Azure | Infrastructure as Code with ARM Template and Terraform" />
-    <published>2024-02-29T00:00:00+01:00</published>
-  
-    <updated>2024-02-29T00:00:00+01:00</updated>
-  
-    <id>http://localhost:4000/posts/Iac/</id>
-    <content src="http://localhost:4000/posts/Iac/" />
-    <author>
-      <name>Hassan BOLAJRAF</name>
-    </author>
-
-  
-    
-    <category term="Azure" />
-    
-    <category term="Infrastructure as Code" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      In modern cloud computing environments, Infrastructure as Code (IaC) has become a cornerstone for managing and provisioning resources efficiently. Two popular tools for implementing IaC are Azure Resource Manager (ARM) Templates and Terraform. Below, we’ll explore both with detailed examples.
-
-Azure Resource Manager (ARM) Template
-
-ARM Templates are JSON files used to define the infrastructure ...
     </summary>
   
 
