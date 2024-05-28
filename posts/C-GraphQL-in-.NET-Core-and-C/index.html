@@ -13,17 +13,9 @@
 
 
 
-
-
 <!-- `site.alt_lang` can specify a language different from the UI -->
-<html lang="en" 
-  
-    data-mode="dark"
-  
->
-  <!-- The Head -->
-
-<head>
+<html lang="en" data-mode="dark">
+  <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7f7f7">
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1b1b1e">
@@ -32,15 +24,12 @@
   <meta
     name="viewport"
     content="width=device-width, user-scalable=no initial-scale=1, shrink-to-fit=no, viewport-fit=cover"
-  >
+  ><!-- Setup Open Graph image -->
 
   
 
-  
-
-  
-    <!-- Begin Jekyll SEO tag v2.8.0 -->
-<meta name="generator" content="Jekyll v4.3.2" />
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v4.3.3" />
 <meta property="og:title" content="C# Building GraphQL APIs in C#" />
 <meta property="og:locale" content="en" />
 <link rel="canonical" href="http://localhost:4000/posts/C-GraphQL-in-.NET-Core-and-C/" />
@@ -54,7 +43,6 @@
 {"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-12-16T21:55:06+01:00","datePublished":"2023-09-16T00:00:00+02:00","headline":"C# Building GraphQL APIs in C#","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/C-GraphQL-in-.NET-Core-and-C/"},"url":"http://localhost:4000/posts/C-GraphQL-in-.NET-Core-and-C/"}</script>
 <!-- End Jekyll SEO tag -->
 
-  
 
   <title>C# | Building GraphQL APIs in C# | 
   </title>
@@ -69,7 +57,9 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">
-<link rel="manifest" href="/assets/img/favicons/site.webmanifest">
+
+  <link rel="manifest" href="/assets/img/favicons/site.webmanifest">
+
 <link rel="shortcut icon" href="/assets/img/favicons/favicon.ico">
 <meta name="apple-mobile-web-app-title" content="">
 <meta name="application-name" content="">
@@ -92,6 +82,9 @@
       <link rel="preconnect" href="https://cdn.jsdelivr.net" >
       <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" >
     
+      <link rel="preconnect" href="https://cdnjs.cloudflare.com" >
+      <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" >
+    
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato&family=Source+Sans+Pro:wght@400;600;700;900&display=swap">
   
@@ -100,15 +93,19 @@
   
 
   <!-- Bootstrap -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
 
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css">
 
   <link rel="stylesheet" href="/assets/css/jekyll-theme-chirpy.css">
 
   
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4.21.1/dist/tocbot.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4.25.0/dist/tocbot.min.css">
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.min.css">
   
 
   
@@ -123,23 +120,16 @@
   <!-- A placeholder to allow defining custom metadata -->
 
   
-    
-<!-- Google Analtics - tag (gtag.js) -->
-<!-- Manually added --> 
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-KPL0Y67SYB"></script>
-<script>
+  <!-- Google Analytics -->
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-KPL0Y67SYB"></script>
+  <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
   gtag('config', 'G-KPL0Y67SYB');
 </script>
-
-<!-- Google Adscence -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6318861990638219"
-     crossorigin="anonymous">
-</script>
-
+  
 </head>
 
 
@@ -148,17 +138,12 @@
 
 <aside aria-label="Sidebar" id="sidebar" class="d-flex flex-column align-items-end">
   <header class="profile-wrapper">
-    <a href="/" id="avatar" class="rounded-circle">
-      
-        
-        <img src="/assets/img/favicons/Owner.png" width="112" height="112" alt="avatar" onerror="this.style.display='none'">
-      
-    </a>
+    <a href="/" id="avatar" class="rounded-circle"><img src="/assets/img/favicons/Owner.png" width="112" height="112" alt="avatar" onerror="this.style.display='none'"></a>
 
     <h1 class="site-title">
       <a href="/"></a>
     </h1>
-    <p class="site-subtitle fst-italic mb-0"><h4><b>Hassan BOLAJRAF</b></h4>Fostering a culture of code quality and collaboration for .NET enthusiasts</p>
+    <p class="site-subtitle fst-italic mb-0"><h4><b>Hassan BOLAJRAF</b></h4>Fostering a culture of code quality and collaboration for .NET, azure and devops enthusiasts</p>
   </header>
   <!-- .profile-wrapper -->
 
@@ -347,7 +332,7 @@
 
 
     <div id="main-wrapper" class="d-flex justify-content-center">
-      <div class="container px-xxl-5">
+      <div class="container d-flex flex-column px-xxl-5">
         <!-- The Top Bar -->
 
 <header id="topbar-wrapper" aria-label="Top Bar">
@@ -362,9 +347,7 @@
         
           
             <span>
-              <a href="/">
-                Home
-              </a>
+              <a href="/">Home</a>
             </span>
 
           
@@ -410,18 +393,10 @@
 </header>
 
 
-        <div class="row">
-          <main
-            aria-label="Main Content"
-            class="col-12 col-lg-11 col-xl-9 px-md-4"
-          >
+        <div class="row flex-grow-1">
+          <main aria-label="Main Content" class="col-12 col-lg-11 col-xl-9 px-md-4">
             
-
-<article class="px-1">
-  
-    
-  
-    <!-- Refactor the HTML structure -->
+              <!-- Refactor the HTML structure -->
 
 
 
@@ -443,17 +418,13 @@
 <!-- Change the icon of checkbox -->
 
 
-<!-- images -->
+
+<!-- Handle images -->
+
 
 
 
   
-  
-
-  <!-- CDN URL -->
-  
-
-  <!-- Add image path -->
   
 
   
@@ -470,7 +441,6 @@
     
     
 
-    
     
     
     
@@ -497,21 +467,15 @@
     
 
     
-
     
 
     
 
-    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
-    
-    
-
-    <!-- add image placeholder -->
     
       
     
 
-    <!-- Bypass the HTML-proofer test -->
+    <!-- lazy-load images -->
     
 
     
@@ -521,12 +485,14 @@
       
         <!-- create the image wrapper -->
         
+
+        
+        
       
     
 
     <!-- combine -->
     
-
   
     
 
@@ -538,7 +504,6 @@
     
     
 
-    
     
     
     
@@ -565,21 +530,15 @@
     
 
     
-
     
 
     
 
-    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
-    
-    
-
-    <!-- add image placeholder -->
     
       
     
 
-    <!-- Bypass the HTML-proofer test -->
+    <!-- lazy-load images -->
     
 
     
@@ -589,12 +548,14 @@
       
         <!-- create the image wrapper -->
         
+
+        
+        
       
     
 
     <!-- combine -->
     
-
   
     
 
@@ -606,7 +567,6 @@
     
     
 
-    
     
     
     
@@ -633,21 +593,15 @@
     
 
     
-
     
 
     
 
-    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
-    
-    
-
-    <!-- add image placeholder -->
     
       
     
 
-    <!-- Bypass the HTML-proofer test -->
+    <!-- lazy-load images -->
     
 
     
@@ -657,16 +611,17 @@
       
         <!-- create the image wrapper -->
         
+
+        
+        
       
     
 
     <!-- combine -->
     
-
   
 
   
-
 
 
 <!-- Add header for code snippets -->
@@ -700,7 +655,6 @@
       
 
       
-
     
       
 
@@ -712,7 +666,6 @@
       
 
       
-
     
       
 
@@ -724,7 +677,6 @@
       
 
       
-
     
       
 
@@ -736,7 +688,6 @@
       
 
       
-
     
       
 
@@ -748,11 +699,9 @@
       
 
       
-
     
 
     
-
   
 
   
@@ -776,7 +725,6 @@
       
 
       
-
     
       
 
@@ -788,7 +736,6 @@
       
 
       
-
     
       
 
@@ -800,7 +747,6 @@
       
 
       
-
     
       
 
@@ -812,7 +758,6 @@
       
 
       
-
     
       
 
@@ -824,7 +769,6 @@
       
 
       
-
     
       
 
@@ -836,11 +780,9 @@
       
 
       
-
     
 
     
-
   
 
   
@@ -861,14 +803,15 @@
 
 
 
-<header>
-  <h1 data-toc-skip>C# | Building GraphQL APIs in C#</h1>
+<article class="px-1">
+  <header>
+    <h1 data-toc-skip>C# | Building GraphQL APIs in C#</h1>
 
-  <div class="post-meta text-muted">
-    <!-- published date -->
-    <span>
-      Posted
-      <!--
+    <div class="post-meta text-muted">
+      <!-- published date -->
+      <span>
+        Posted
+        <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
 -->
@@ -887,13 +830,13 @@
   Sep 16, 2023
 </time>
 
-    </span>
+      </span>
 
-    <!-- lastmod date -->
-    
-      <span>
-        Updated
-        <!--
+      <!-- lastmod date -->
+      
+        <span>
+          Updated
+          <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
 -->
@@ -912,27 +855,27 @@
   Dec 16, 2023
 </time>
 
-      </span>
-    
+        </span>
+      
 
-    
+      
 
-    <div class="d-flex justify-content-between">
-      <!-- author(s) -->
-      <span>
-        
-
-        By
-
-        <em>
+      <div class="d-flex justify-content-between">
+        <!-- author(s) -->
+        <span>
           
-            <a href="https://twitter.com/hbolajraf">Hassan BOLAJRAF</a>
-          
-        </em>
-      </span>
 
-      <!-- read time -->
-      <!-- Calculate the post's reading time, and display the word count in tooltip -->
+          By
+
+          <em>
+            
+              <a href="https://twitter.com/hbolajraf">Hassan BOLAJRAF</a>
+            
+          </em>
+        </span>
+
+        <!-- read time -->
+        <!-- Calculate the post's reading time, and display the word count in tooltip -->
 
 
 
@@ -956,14 +899,14 @@
 >
   <em>2 min</em> read</span>
 
+      </div>
+      <!-- .d-flex -->
     </div>
-    <!-- .d-flex -->
-  </div>
-  <!-- .post-meta -->
-</header>
+    <!-- .post-meta -->
+  </header>
 
-<div class="content">
-  <p><a href="/assets/img/favicons/posts/GraphQL.PNG" class="popup img-link "><img data-src="/assets/img/favicons/posts/GraphQL.PNG" alt="ScreenShot1" class="lazyload" data-proofer-ignore></a></p>
+  <div class="content">
+    <p><a href="/assets/img/favicons/posts/GraphQL.PNG" class="popup img-link  shimmer"><img src="/assets/img/favicons/posts/GraphQL.PNG" alt="ScreenShot1" loading="lazy"></a></p>
 
 <h2 id="what-is-graphql"><span class="me-2">What is GraphQL?</span><a href="#what-is-graphql" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
@@ -1006,7 +949,7 @@
 
 <div class="language-bash highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed=""><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 </pre></td><td class="rouge-code"><pre>dotnet add package HotChocolate.AspNetCore
 dotnet add package HotChocolate.AspNetCore.Interceptors
@@ -1022,7 +965,7 @@ dotnet add package HotChocolate.AspNetCore.Interceptors
 
     <div class="language-bash highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed=""><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td><td class="rouge-code"><pre> dotnet new webapi <span class="nt">-n</span> GraphQLExample
 </pre></td></tr></tbody></table></code></div>    </div>
   </li>
@@ -1031,7 +974,7 @@ dotnet add package HotChocolate.AspNetCore.Interceptors
 
     <div class="language-csharp highlighter-rouge"><div class="code-header">
         <span data-label-text="C#"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed=""><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -1080,7 +1023,7 @@ dotnet add package HotChocolate.AspNetCore.Interceptors
 
     <div class="language-csharp highlighter-rouge"><div class="code-header">
         <span data-label-text="C#"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed=""><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -1106,7 +1049,7 @@ dotnet add package HotChocolate.AspNetCore.Interceptors
 
     <div class="language-bash highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed=""><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 </pre></td><td class="rouge-code"><pre> <span class="nb">cd </span>GraphQLExample
  dotnet run
@@ -1114,7 +1057,7 @@ dotnet add package HotChocolate.AspNetCore.Interceptors
   </li>
 </ol>
 
-<p><a href="/assets/img/favicons/posts/GraphQLRun.PNG" class="popup img-link "><img data-src="/assets/img/favicons/posts/GraphQLRun.PNG" alt="ScreenShot1" class="lazyload" data-proofer-ignore></a></p>
+<p><a href="/assets/img/favicons/posts/GraphQLRun.PNG" class="popup img-link  shimmer"><img src="/assets/img/favicons/posts/GraphQLRun.PNG" alt="ScreenShot1" loading="lazy"></a></p>
 
 <ol>
   <li>
@@ -1124,7 +1067,7 @@ dotnet add package HotChocolate.AspNetCore.Interceptors
   </li>
 </ol>
 
-<p><a href="/assets/img/favicons/posts/GraphQLExecution.PNG" class="popup img-link "><img data-src="/assets/img/favicons/posts/GraphQLExecution.PNG" alt="ScreenShot1" class="lazyload" data-proofer-ignore></a></p>
+<p><a href="/assets/img/favicons/posts/GraphQLExecution.PNG" class="popup img-link  shimmer"><img src="/assets/img/favicons/posts/GraphQLExecution.PNG" alt="ScreenShot1" loading="lazy"></a></p>
 
 <p>This simple setup defines a GraphQL server with a single query (<code class="language-plaintext highlighter-rouge">hello</code>) that returns a string.</p>
 
@@ -1136,136 +1079,98 @@ dotnet add package HotChocolate.AspNetCore.Interceptors
 
 <p><a href="https://github.com/hbolajraf/GraphQLExample">Source Code</a></p>
 
-</div>
-
-<div class="post-tail-wrapper text-muted">
-  <!-- categories -->
-  
-    <div class="post-meta mb-3">
-      <i class="far fa-folder-open fa-fw me-1"></i>
-      
-        <a href="/categories/c/">C#</a>,
-        <a href="/categories/web-api/">Web API</a>
-    </div>
-  
-
-  <!-- tags -->
-  
-    <div class="post-tags">
-      <i class="fa fa-tags fa-fw me-1"></i>
-      
-        <a
-          href="/tags/microsoft/"
-          class="post-tag no-text-decoration"
-        >microsoft</a>
-      
-        <a
-          href="/tags/csharp/"
-          class="post-tag no-text-decoration"
-        >csharp</a>
-      
-        <a
-          href="/tags/c/"
-          class="post-tag no-text-decoration"
-        >c#</a>
-      
-        <a
-          href="/tags/webapi/"
-          class="post-tag no-text-decoration"
-        >webapi</a>
-      
-        <a
-          href="/tags/graphql/"
-          class="post-tag no-text-decoration"
-        >graphql</a>
-      
-    </div>
-  
-  
-  <div>
-  <!-- Giscus configuration -->
-  <!-- Manually added -->  
-<script src="https://giscus.app/client.js"
-        data-repo="hbolajraf/hbolajraf.github.io"
-        data-repo-id="R_kgDOKjs-PQ"
-        data-category="Announcements"
-        data-category-id="DIC_kwDOKjs-Pc4CazvF"
-        data-mapping="title"
-        data-strict="0"
-        data-reactions-enabled="1"
-        data-emit-metadata="1"
-        data-input-position="top"
-        data-theme="dark_dimmed"
-        data-lang="en"
-        crossorigin="anonymous"
-        async>
-</script>
   </div>
 
-  <div
-    class="
-      post-tail-bottom
-      d-flex justify-content-between align-items-center mt-5 pb-2
-    "
-  >
-    <div class="license-wrapper">
-      
+  <div class="post-tail-wrapper text-muted">
+    <!-- categories -->
+    
+      <div class="post-meta mb-3">
+        <i class="far fa-folder-open fa-fw me-1"></i>
         
+          <a href="/categories/c/">C#</a>,
+          <a href="/categories/web-api/">Web API</a>
+      </div>
+    
 
-        This post is licensed under 
+    <!-- tags -->
+    
+      <div class="post-tags">
+        <i class="fa fa-tags fa-fw me-1"></i>
+        
+          <a
+            href="/tags/microsoft/"
+            class="post-tag no-text-decoration"
+          >microsoft</a>
+        
+          <a
+            href="/tags/csharp/"
+            class="post-tag no-text-decoration"
+          >csharp</a>
+        
+          <a
+            href="/tags/c/"
+            class="post-tag no-text-decoration"
+          >c#</a>
+        
+          <a
+            href="/tags/webapi/"
+            class="post-tag no-text-decoration"
+          >webapi</a>
+        
+          <a
+            href="/tags/graphql/"
+            class="post-tag no-text-decoration"
+          >graphql</a>
+        
+      </div>
+    
+
+    <div
+      class="
+        post-tail-bottom
+        d-flex justify-content-between align-items-center mt-5 pb-2
+      "
+    >
+      <div class="license-wrapper">
+        
+          
+
+          This post is licensed under 
         <a href="https://creativecommons.org/licenses/by/4.0/">
           CC BY 4.0
         </a>
          by the author.
-      
-    </div>
+        
+      </div>
 
-    <!-- Post sharing snippet -->
+      <!-- Post sharing snippet -->
 
 <div class="share-wrapper d-flex align-items-center">
-  <span class="share-label text-muted me-1">Share</span>
+  <span class="share-label text-muted">Share</span>
   <span class="share-icons">
     
     
     
 
     
+
       
-      <a
-        href="https://www.linkedin.com/sharing/share-offsite/?url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2FC-GraphQL-in-.NET-Core-and-C%2F"
-        data-bs-toggle="tooltip"
-        data-bs-placement="top"
-        title="Linkedin"
-        target="_blank"
-        rel="noopener"
-        aria-label="Linkedin"
-      >
+
+      <a href="https://www.linkedin.com/sharing/share-offsite/?url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2FC-GraphQL-in-.NET-Core-and-C%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Linkedin" aria-label="Linkedin">
         <i class="fa-fw fab fa-linkedin"></i>
       </a>
     
+
       
-      <a
-        href="https://twitter.com/intent/tweet?text=C#%20%7C%20Building%20GraphQL%20APIs%20in%20C#%20-%20&url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2FC-GraphQL-in-.NET-Core-and-C%2F"
-        data-bs-toggle="tooltip"
-        data-bs-placement="top"
-        title="Twitter"
-        target="_blank"
-        rel="noopener"
-        aria-label="Twitter"
-      >
+
+      <a href="https://twitter.com/intent/tweet?text=C#%20%7C%20Building%20GraphQL%20APIs%20in%20C#%20-%20&url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2FC-GraphQL-in-.NET-Core-and-C%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
         <i class="fa-fw fa-brands fa-square-x-twitter"></i>
       </a>
     
+
       
-      <a
-        href="https://www.facebook.com/sharer/sharer.php?title=C#%20%7C%20Building%20GraphQL%20APIs%20in%20C#%20-%20&u=http%3A%2F%2Flocalhost%3A4000%2Fposts%2FC-GraphQL-in-.NET-Core-and-C%2F"
-        data-bs-toggle="tooltip"
-        data-bs-placement="top"
-        title="Facebook"
-        target="_blank"
-        rel="noopener"
-        aria-label="Facebook"
-      >
+
+      <a href="https://www.facebook.com/sharer/sharer.php?title=C#%20%7C%20Building%20GraphQL%20APIs%20in%20C#%20-%20&u=http%3A%2F%2Flocalhost%3A4000%2Fposts%2FC-GraphQL-in-.NET-Core-and-C%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
         <i class="fa-fw fab fa-facebook-square"></i>
       </a>
     
@@ -1279,28 +1184,25 @@ dotnet add package HotChocolate.AspNetCore.Interceptors
       title="Copy link"
       data-title-succeed="Link copied successfully!"
     >
-      <i class="fa-fw fas fa-link pe-none"></i>
+      <i class="fa-fw fas fa-link pe-none fs-6"></i>
     </button>
   </span>
 </div>
 
+    </div>
+    <!-- .post-tail-bottom -->
   </div>
-  <!-- .post-tail-bottom -->
-</div>
-<!-- div.post-tail-wrapper -->
-
-
-  
-
-  
+  <!-- div.post-tail-wrapper -->
 </article>
 
+
+            
           </main>
 
           <!-- panel -->
-          <aside aria-label="Panel" id="panel-wrapper" class="col-xl-3 ps-2 text-muted">
+          <aside aria-label="Panel" id="panel-wrapper" class="col-xl-3 ps-2 mb-5 text-muted">
             <div class="access">
-              <!-- Get the last 5 posts from lastmod list. -->
+              <!-- Get 5 last posted/updated posts -->
 
 
 
@@ -1323,35 +1225,35 @@ dotnet add package HotChocolate.AspNetCore.Interceptors
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/C-Interview-Questions-and-Answers/">C# | Interview Questions and Answers</a>
+          <a href="/posts/ASP.NET-Web-APIs-with-Zipkin-and-C/">ASP.NET | Web APIs with Zipkin</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/C-GraphQL-in-.NET-Core-and-C/">C# | Building GraphQL APIs in C#</a>
+          <a href="/posts/Creating-Azure-Logic-Apps-to-integrate-workflows-for-sending-notifications-about-changes-within-a-Blob-Storage-container/">Azure | Creating Azure Logic Apps to integrate workflows for sending notifications about changes within a Blob Storage container</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/AZ-400-Certification-Path/">Certification | AZ-400 Certification Path</a>
+          <a href="/posts/Creating-an-Azure-Storage-Account-and-Uploading-Files-to-a-Container/">Azure | Creating an Azure Storage Account and Uploading Files to a Container</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/C-Tips-and-tricks/">C# | Tips and tricks</a>
+          <a href="/posts/Ways-to-Connect-to-Microsoft-Azure/">Azure | Ways to Connect to Microsoft Azure</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/C-Web-Api's-Tips-and-Tricks/">C# | Web Api's Tips and Tricks</a>
+          <a href="/posts/Connecting-to-GitHub-and-Pushing-Changes-Using-SSH-on-Windows/">Git | Connecting to GitHub and Pushing Changes Using SSH on Windows</a>
         </li>
       
     </ul>
@@ -2829,6 +2731,11 @@ dotnet add package HotChocolate.AspNetCore.Interceptors
     
     
     
+  
+    
+    
+    
+    
       
         
         
@@ -2881,7 +2788,7 @@ dotnet add package HotChocolate.AspNetCore.Interceptors
 
 
 
-  <section id="toc-wrapper" class="ps-0 pe-4 mb-5">
+  <section id="toc-wrapper" class="ps-0 pe-4">
     <h2 class="panel-heading ps-3 pt-2 mb-2">Contents</h2>
     <nav id="toc"></nav>
   </section>
@@ -2896,8 +2803,7 @@ dotnet add package HotChocolate.AspNetCore.Interceptors
           <div id="tail-wrapper" class="col-12 col-lg-11 col-xl-9 px-md-4">
             
               
-                
-                <!-- Recommend the other 3 posts according to the tags and categories of the current post. -->
+              <!-- Recommend the other 3 posts according to the tags and categories of the current post. -->
 
 <!-- The total size of related posts -->
 
@@ -3743,8 +3649,6 @@ dotnet add package HotChocolate.AspNetCore.Interceptors
 
 <time
   
-    class="small"
-  
   data-ts="1694556000"
   data-df="ll"
   
@@ -3753,7 +3657,7 @@ dotnet add package HotChocolate.AspNetCore.Interceptors
 </time>
 
               <h4 class="pt-0 my-2">C# | Implementing API gateway using ocelot in asp.net core application</h4>
-              <div class="text-muted small">
+              <div class="text-muted">
                 <p>
                   
 
@@ -3781,8 +3685,6 @@ dotnet add package HotChocolate.AspNetCore.Interceptors
 
 <time
   
-    class="small"
-  
   data-ts="1695506400"
   data-df="ll"
   
@@ -3791,7 +3693,7 @@ dotnet add package HotChocolate.AspNetCore.Interceptors
 </time>
 
               <h4 class="pt-0 my-2">C# | Configure Swagger on api gateway using ocelot in asp.net core application</h4>
-              <div class="text-muted small">
+              <div class="text-muted">
                 <p>
                   
 
@@ -3821,8 +3723,6 @@ Swagger configuration on API gateway is not as simple as you are configure norma
 
 <time
   
-    class="small"
-  
   data-ts="1695765600"
   data-df="ll"
   
@@ -3831,7 +3731,7 @@ Swagger configuration on API gateway is not as simple as you are configure norma
 </time>
 
               <h4 class="pt-0 my-2">C# | Configure QoS within API Gateway using ocelot and Polly</h4>
-              <div class="text-muted small">
+              <div class="text-muted">
                 <p>
                   
 
@@ -3852,9 +3752,9 @@ API Gateway is an entry point for backend application. It maintains routing, aut
   <!-- #related-posts -->
 
 
+            
               
-                
-                <!-- Navigation buttons at the bottom of the post. -->
+              <!-- Navigation buttons at the bottom of the post. -->
 
 <nav class="post-navigation d-flex justify-content-between" aria-label="Post Navigation">
   
@@ -3881,12 +3781,11 @@ API Gateway is an entry point for backend application. It maintains routing, aut
   
 </nav>
 
+            
               
-                
-                <!--  The comments switcher -->
+              <!--  The comments switcher -->
 
 
-              
             
 
             <!-- The Footer -->
@@ -3898,10 +3797,13 @@ API Gateway is an entry point for backend application. It maintains routing, aut
     flex-lg-row justify-content-lg-between align-items-lg-center pb-lg-3
   "
 >
-  <p>
-    ©
+  <p>©
     <time>2024</time>
-    <a href="https://twitter.com/hbolajraf">Hassan BOLAJRAF</a>.
+
+    
+      <a href="https://twitter.com/hbolajraf">Hassan BOLAJRAF</a>.
+    
+
     
       <span
         data-bs-toggle="tooltip"
@@ -3910,10 +3812,7 @@ API Gateway is an entry point for backend application. It maintains routing, aut
       >Some rights reserved.</span>
     
   </p>
-
- <!-- <p>Using the <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> theme <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a>
-  </p>
-  -->
+ 
 </footer>
 
           </div>
@@ -5394,6 +5293,11 @@ API Gateway is an entry point for backend application. It maintains routing, aut
     
     
     
+  
+    
+    
+    
+    
       
         
         
@@ -5491,6 +5395,8 @@ API Gateway is an entry point for backend application. It maintains routing, aut
 
 
 <!-- layout specified -->
+
+
 
 
   
@@ -5593,7 +5499,7 @@ API Gateway is an entry point for backend application. It maintains routing, aut
 
 
 
-  <script src="https://cdn.jsdelivr.net/combine/npm/jquery@3.7.1/dist/jquery.min.js,npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js,npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/lazysizes@5.3.2/lazysizes.min.js,npm/magnific-popup@1.1.0/dist/jquery.magnific-popup.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.9/dayjs.min.js,npm/dayjs@1.11.9/locale/en.min.js,npm/dayjs@1.11.9/plugin/relativeTime.min.js,npm/dayjs@1.11.9/plugin/localizedFormat.min.js,npm/tocbot@4.21.1/dist/tocbot.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/combine/npm/jquery@3.7.1/dist/jquery.min.js,npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js,npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/magnific-popup@1.1.0/dist/jquery.magnific-popup.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.10/dayjs.min.js,npm/dayjs@1.11.10/locale/en.min.js,npm/dayjs@1.11.10/plugin/relativeTime.min.js,npm/dayjs@1.11.10/plugin/localizedFormat.min.js,npm/tocbot@4.25.0/dist/tocbot.min.js"></script>
 
 
 

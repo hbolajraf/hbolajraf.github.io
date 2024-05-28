@@ -13,17 +13,9 @@
 
 
 
-
-
 <!-- `site.alt_lang` can specify a language different from the UI -->
-<html lang="en" 
-  
-    data-mode="dark"
-  
->
-  <!-- The Head -->
-
-<head>
+<html lang="en" data-mode="dark">
+  <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7f7f7">
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1b1b1e">
@@ -32,15 +24,12 @@
   <meta
     name="viewport"
     content="width=device-width, user-scalable=no initial-scale=1, shrink-to-fit=no, viewport-fit=cover"
-  >
+  ><!-- Setup Open Graph image -->
 
   
 
-  
-
-  
-    <!-- Begin Jekyll SEO tag v2.8.0 -->
-<meta name="generator" content="Jekyll v4.3.2" />
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v4.3.3" />
 <meta property="og:title" content="page 7 of 15" />
 <meta property="og:locale" content="en" />
 <link rel="canonical" href="http://localhost:4000/page7/" />
@@ -55,7 +44,6 @@
 {"@context":"https://schema.org","@type":"WebPage","headline":"page 7 of 15","url":"http://localhost:4000/page7/"}</script>
 <!-- End Jekyll SEO tag -->
 
-  
 
   <title>
   </title>
@@ -70,7 +58,9 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">
-<link rel="manifest" href="/assets/img/favicons/site.webmanifest">
+
+  <link rel="manifest" href="/assets/img/favicons/site.webmanifest">
+
 <link rel="shortcut icon" href="/assets/img/favicons/favicon.ico">
 <meta name="apple-mobile-web-app-title" content="">
 <meta name="application-name" content="">
@@ -93,6 +83,9 @@
       <link rel="preconnect" href="https://cdn.jsdelivr.net" >
       <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" >
     
+      <link rel="preconnect" href="https://cdnjs.cloudflare.com" >
+      <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" >
+    
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato&family=Source+Sans+Pro:wght@400;600;700;900&display=swap">
   
@@ -101,13 +94,17 @@
   
 
   <!-- Bootstrap -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
 
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css">
 
   <link rel="stylesheet" href="/assets/css/jekyll-theme-chirpy.css">
 
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.min.css">
   
 
   
@@ -119,23 +116,16 @@
   <!-- A placeholder to allow defining custom metadata -->
 
   
-    
-<!-- Google Analtics - tag (gtag.js) -->
-<!-- Manually added --> 
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-KPL0Y67SYB"></script>
-<script>
+  <!-- Google Analytics -->
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-KPL0Y67SYB"></script>
+  <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
   gtag('config', 'G-KPL0Y67SYB');
 </script>
-
-<!-- Google Adscence -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6318861990638219"
-     crossorigin="anonymous">
-</script>
-
+  
 </head>
 
 
@@ -144,17 +134,12 @@
 
 <aside aria-label="Sidebar" id="sidebar" class="d-flex flex-column align-items-end">
   <header class="profile-wrapper">
-    <a href="/" id="avatar" class="rounded-circle">
-      
-        
-        <img src="/assets/img/favicons/Owner.png" width="112" height="112" alt="avatar" onerror="this.style.display='none'">
-      
-    </a>
+    <a href="/" id="avatar" class="rounded-circle"><img src="/assets/img/favicons/Owner.png" width="112" height="112" alt="avatar" onerror="this.style.display='none'"></a>
 
     <h1 class="site-title">
       <a href="/"></a>
     </h1>
-    <p class="site-subtitle fst-italic mb-0"><h4><b>Hassan BOLAJRAF</b></h4>Fostering a culture of code quality and collaboration for .NET enthusiasts</p>
+    <p class="site-subtitle fst-italic mb-0"><h4><b>Hassan BOLAJRAF</b></h4>Fostering a culture of code quality and collaboration for .NET, azure and devops enthusiasts</p>
   </header>
   <!-- .profile-wrapper -->
 
@@ -343,7 +328,7 @@
 
 
     <div id="main-wrapper" class="d-flex justify-content-center">
-      <div class="container px-xxl-5">
+      <div class="container d-flex flex-column px-xxl-5">
         <!-- The Top Bar -->
 
 <header id="topbar-wrapper" aria-label="Top Bar">
@@ -390,42 +375,10 @@
 </header>
 
 
-        <div class="row">
-          <main
-            aria-label="Main Content"
-            class="col-12 col-lg-11 col-xl-9 px-md-4 pb-5"
-          >
+        <div class="row flex-grow-1">
+          <main aria-label="Main Content" class="col-12 col-lg-11 col-xl-9 px-md-4">
             
-
-
-
-
-
-
-
-
-<!-- Get pinned posts -->
-
-
-
-
-
-
-<!-- Get default posts -->
-
-
-
-
-
-
-
-
-
-
-
-
-<div id="post-list" class="flex-grow-1 pe-xl-2">
-  <!-- Refactor the HTML structure -->
+              <!-- Refactor the HTML structure -->
 
 
 
@@ -447,7 +400,9 @@
 <!-- Change the icon of checkbox -->
 
 
-<!-- images -->
+
+<!-- Handle images -->
+
 
 
 
@@ -487,31 +442,129 @@
 
 <!-- return -->
 
+
+
+
+
+
+
+
+
+<!-- Get pinned posts -->
+
+
+
+
+
+
+<!-- Get default posts -->
+
+
+
+
+
+
+
+
+
+
+<div id="post-list" class="flex-grow-1 px-xl-1">
   
-    <article class="card-wrapper">
-      <a href="/posts/Best-Practices-for-Pagination-using-EF-Core-8/" class="card post-preview flex-md-row-reverse">
+    <article class="card-wrapper card">
+      <a href="/posts/Use-of-the-short-Keyword/" class="post-preview row g-0 flex-md-row-reverse">
         
 
-        <div class="card-body d-flex flex-column">
-          <h1 class="card-title my-2 mt-md-0">C# | Best Practices for Pagination using EF Core 8</h1>
+        
 
-          <div class="card-text content mt-0 mb-2">
-            <p>
+        <div class="col-md-12">
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title my-2 mt-md-0">C# | Use of the short Keyword</h1>
+
+            <div class="card-text content mt-0 mb-3">
+              <p>
+                
+
+
+
+
+
+                In C#, short is a keyword used to declare a 16-bit signed integer data type. It is a primitive data type that can store whole numbers in the range of -32,768 to 32,767.
+
+Syntax
+
+short variableName;...
+              </p>
+            </div>
+
+            <div class="post-meta flex-grow-1 d-flex align-items-end">
+              <div class="me-auto">
+                <!-- posted date -->
+                <i class="far fa-calendar fa-fw me-1"></i>
+                <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1700694000"
+  data-df="ll"
+  
+>
+  Nov 23, 2023
+</time>
+
+
+                <!-- categories -->
+                
+                  <i class="far fa-folder-open fa-fw me-1"></i>
+                  <span class="categories">
+                    
+                      C#,
+                      Development
+                  </span>
+                
+              </div>
+
               
-
-
-
-
-
-              Pagination is a crucial aspect of application development, especially when dealing with large datasets. Entity Framework (EF) Core 8 in C# provides powerful features for implementing efficient pagi...
-            </p>
+            </div>
+            <!-- .post-meta -->
           </div>
+          <!-- .card-body -->
+        </div>
+      </a>
+    </article>
+  
+    <article class="card-wrapper card">
+      <a href="/posts/Best-Practices-for-Pagination-using-EF-Core-8/" class="post-preview row g-0 flex-md-row-reverse">
+        
 
-          <div class="post-meta flex-grow-1 d-flex align-items-end">
-            <div class="me-auto">
-              <!-- posted date -->
-              <i class="far fa-calendar fa-fw me-1"></i>
-              <!--
+        
+
+        <div class="col-md-12">
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title my-2 mt-md-0">C# | Best Practices for Pagination using EF Core 8</h1>
+
+            <div class="card-text content mt-0 mb-3">
+              <p>
+                
+
+
+
+
+
+                Pagination is a crucial aspect of application development, especially when dealing with large datasets. Entity Framework (EF) Core 8 in C# provides powerful features for implementing efficient pagi...
+              </p>
+            </div>
+
+            <div class="post-meta flex-grow-1 d-flex align-items-end">
+              <div class="me-auto">
+                <!-- posted date -->
+                <i class="far fa-calendar fa-fw me-1"></i>
+                <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
 -->
@@ -529,49 +582,53 @@
 </time>
 
 
-              <!-- categories -->
-              
-                <i class="far fa-folder-open fa-fw me-1"></i>
-                <span class="categories">
-                  
-                    C#,
-                    Entity Framework
-                </span>
+                <!-- categories -->
+                
+                  <i class="far fa-folder-open fa-fw me-1"></i>
+                  <span class="categories">
+                    
+                      C#,
+                      Entity Framework
+                  </span>
+                
+              </div>
+
               
             </div>
-
-            
+            <!-- .post-meta -->
           </div>
-          <!-- .post-meta -->
+          <!-- .card-body -->
         </div>
-        <!-- .card-body -->
       </a>
     </article>
   
-    <article class="card-wrapper">
-      <a href="/posts/var-vs-Explicit-Type-Declarations/" class="card post-preview flex-md-row-reverse">
+    <article class="card-wrapper card">
+      <a href="/posts/var-vs-Explicit-Type-Declarations/" class="post-preview row g-0 flex-md-row-reverse">
         
 
-        <div class="card-body d-flex flex-column">
-          <h1 class="card-title my-2 mt-md-0">C# | var vs Explicit Type Declarations</h1>
+        
 
-          <div class="card-text content mt-0 mb-2">
-            <p>
-              
+        <div class="col-md-12">
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title my-2 mt-md-0">C# | var vs Explicit Type Declarations</h1>
+
+            <div class="card-text content mt-0 mb-3">
+              <p>
+                
 
 
 
 
 
-              In C#, developers have the option to use var for implicit type inference or explicitly declare the data type of a variable. Both approaches have their advantages and use cases. Let’s explore when t...
-            </p>
-          </div>
+                In C#, developers have the option to use var for implicit type inference or explicitly declare the data type of a variable. Both approaches have their advantages and use cases. Let’s explore when t...
+              </p>
+            </div>
 
-          <div class="post-meta flex-grow-1 d-flex align-items-end">
-            <div class="me-auto">
-              <!-- posted date -->
-              <i class="far fa-calendar fa-fw me-1"></i>
-              <!--
+            <div class="post-meta flex-grow-1 d-flex align-items-end">
+              <div class="me-auto">
+                <!-- posted date -->
+                <i class="far fa-calendar fa-fw me-1"></i>
+                <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
 -->
@@ -589,51 +646,55 @@
 </time>
 
 
-              <!-- categories -->
-              
-                <i class="far fa-folder-open fa-fw me-1"></i>
-                <span class="categories">
-                  
-                    C#,
-                    Development
-                </span>
+                <!-- categories -->
+                
+                  <i class="far fa-folder-open fa-fw me-1"></i>
+                  <span class="categories">
+                    
+                      C#,
+                      Development
+                  </span>
+                
+              </div>
+
               
             </div>
-
-            
+            <!-- .post-meta -->
           </div>
-          <!-- .post-meta -->
+          <!-- .card-body -->
         </div>
-        <!-- .card-body -->
       </a>
     </article>
   
-    <article class="card-wrapper">
-      <a href="/posts/Balancing-Cross-Cutting-Concerns-in-Clean-Architecture/" class="card post-preview flex-md-row-reverse">
+    <article class="card-wrapper card">
+      <a href="/posts/Balancing-Cross-Cutting-Concerns-in-Clean-Architecture/" class="post-preview row g-0 flex-md-row-reverse">
         
 
-        <div class="card-body d-flex flex-column">
-          <h1 class="card-title my-2 mt-md-0">C# | Balancing Cross-Cutting Concerns in Clean Architecture</h1>
+        
 
-          <div class="card-text content mt-0 mb-2">
-            <p>
-              
+        <div class="col-md-12">
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title my-2 mt-md-0">C# | Balancing Cross-Cutting Concerns in Clean Architecture</h1>
+
+            <div class="card-text content mt-0 mb-3">
+              <p>
+                
 
 
 
 
 
-              Introduction
+                Introduction
 
 Clean Architecture is an architectural pattern that promotes separation of concerns and maintainability in software development. However, managing cross-cutting concerns can be challe...
-            </p>
-          </div>
+              </p>
+            </div>
 
-          <div class="post-meta flex-grow-1 d-flex align-items-end">
-            <div class="me-auto">
-              <!-- posted date -->
-              <i class="far fa-calendar fa-fw me-1"></i>
-              <!--
+            <div class="post-meta flex-grow-1 d-flex align-items-end">
+              <div class="me-auto">
+                <!-- posted date -->
+                <i class="far fa-calendar fa-fw me-1"></i>
+                <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
 -->
@@ -651,50 +712,54 @@ Clean Architecture is an architectural pattern that promotes separation of conce
 </time>
 
 
-              <!-- categories -->
-              
-                <i class="far fa-folder-open fa-fw me-1"></i>
-                <span class="categories">
-                  
-                    C#,
-                    Development
-                </span>
+                <!-- categories -->
+                
+                  <i class="far fa-folder-open fa-fw me-1"></i>
+                  <span class="categories">
+                    
+                      C#,
+                      Development
+                  </span>
+                
+              </div>
+
               
             </div>
-
-            
+            <!-- .post-meta -->
           </div>
-          <!-- .post-meta -->
+          <!-- .card-body -->
         </div>
-        <!-- .card-body -->
       </a>
     </article>
   
-    <article class="card-wrapper">
-      <a href="/posts/Building-a-Command-Line-App-using-System.CommandLine-Library/" class="card post-preview flex-md-row-reverse">
+    <article class="card-wrapper card">
+      <a href="/posts/Building-a-Command-Line-App-using-System.CommandLine-Library/" class="post-preview row g-0 flex-md-row-reverse">
         
 
-        <div class="card-body d-flex flex-column">
-          <h1 class="card-title my-2 mt-md-0">C# | Building a Command-Line (CLI) App using System.CommandLine Library</h1>
+        
 
-          <div class="card-text content mt-0 mb-2">
-            <p>
-              
+        <div class="col-md-12">
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title my-2 mt-md-0">C# | Building a Command-Line (CLI) App using System.CommandLine Library</h1>
+
+            <div class="card-text content mt-0 mb-3">
+              <p>
+                
 
 
 
 
 
-              Introduction
+                Introduction
 In this guide, we will explore how to build a Command-Line Interface (CLI) application using the System.CommandLine library in C# and .NET. System.CommandLine simplifies the process of...
-            </p>
-          </div>
+              </p>
+            </div>
 
-          <div class="post-meta flex-grow-1 d-flex align-items-end">
-            <div class="me-auto">
-              <!-- posted date -->
-              <i class="far fa-calendar fa-fw me-1"></i>
-              <!--
+            <div class="post-meta flex-grow-1 d-flex align-items-end">
+              <div class="me-auto">
+                <!-- posted date -->
+                <i class="far fa-calendar fa-fw me-1"></i>
+                <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
 -->
@@ -712,91 +777,26 @@ In this guide, we will explore how to build a Command-Line Interface (CLI) appli
 </time>
 
 
-              <!-- categories -->
-              
-                <i class="far fa-folder-open fa-fw me-1"></i>
-                <span class="categories">
-                  
-                    C#,
-                    Development
-                </span>
+                <!-- categories -->
+                
+                  <i class="far fa-folder-open fa-fw me-1"></i>
+                  <span class="categories">
+                    
+                      C#,
+                      Development
+                  </span>
+                
+              </div>
+
               
             </div>
-
-            
+            <!-- .post-meta -->
           </div>
-          <!-- .post-meta -->
+          <!-- .card-body -->
         </div>
-        <!-- .card-body -->
       </a>
     </article>
   
-    <article class="card-wrapper">
-      <a href="/posts/Azure-API-Management/" class="card post-preview flex-md-row-reverse">
-        
-
-        <div class="card-body d-flex flex-column">
-          <h1 class="card-title my-2 mt-md-0">Azure | Azure API Management</h1>
-
-          <div class="card-text content mt-0 mb-2">
-            <p>
-              
-
-
-
-
-
-              
-
-Azure API Management
-
-Azure API Management is a comprehensive solution for publishing, managing, securing, and analyzing APIs. It allows organizations to expose their services as APIs to internal...
-            </p>
-          </div>
-
-          <div class="post-meta flex-grow-1 d-flex align-items-end">
-            <div class="me-auto">
-              <!-- posted date -->
-              <i class="far fa-calendar fa-fw me-1"></i>
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1699052400"
-  data-df="ll"
-  
->
-  Nov  4, 2023
-</time>
-
-
-              <!-- categories -->
-              
-                <i class="far fa-folder-open fa-fw me-1"></i>
-                <span class="categories">
-                  
-                    Azure,
-                    API Management
-                </span>
-              
-            </div>
-
-            
-          </div>
-          <!-- .post-meta -->
-        </div>
-        <!-- .card-body -->
-      </a>
-    </article>
-  
-
-
 </div>
 <!-- #post-list -->
 
@@ -1070,12 +1070,14 @@ Azure API Management is a comprehensive solution for publishing, managing, secur
 
 
 
+
+            
           </main>
 
           <!-- panel -->
-          <aside aria-label="Panel" id="panel-wrapper" class="col-xl-3 ps-2 text-muted">
+          <aside aria-label="Panel" id="panel-wrapper" class="col-xl-3 ps-2 mb-5 text-muted">
             <div class="access">
-              <!-- Get the last 5 posts from lastmod list. -->
+              <!-- Get 5 last posted/updated posts -->
 
 
 
@@ -1098,35 +1100,35 @@ Azure API Management is a comprehensive solution for publishing, managing, secur
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/C-Interview-Questions-and-Answers/">C# | Interview Questions and Answers</a>
+          <a href="/posts/ASP.NET-Web-APIs-with-Zipkin-and-C/">ASP.NET | Web APIs with Zipkin</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/C-GraphQL-in-.NET-Core-and-C/">C# | Building GraphQL APIs in C#</a>
+          <a href="/posts/Creating-Azure-Logic-Apps-to-integrate-workflows-for-sending-notifications-about-changes-within-a-Blob-Storage-container/">Azure | Creating Azure Logic Apps to integrate workflows for sending notifications about changes within a Blob Storage container</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/AZ-400-Certification-Path/">Certification | AZ-400 Certification Path</a>
+          <a href="/posts/Creating-an-Azure-Storage-Account-and-Uploading-Files-to-a-Container/">Azure | Creating an Azure Storage Account and Uploading Files to a Container</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/C-Tips-and-tricks/">C# | Tips and tricks</a>
+          <a href="/posts/Ways-to-Connect-to-Microsoft-Azure/">Azure | Ways to Connect to Microsoft Azure</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/C-Web-Api's-Tips-and-Tricks/">C# | Web Api's Tips and Tricks</a>
+          <a href="/posts/Connecting-to-GitHub-and-Pushing-Changes-Using-SSH-on-Windows/">Git | Connecting to GitHub and Pushing Changes Using SSH on Windows</a>
         </li>
       
     </ul>
@@ -2604,6 +2606,11 @@ Azure API Management is a comprehensive solution for publishing, managing, secur
     
     
     
+  
+    
+    
+    
+    
       
         
         
@@ -2668,10 +2675,13 @@ Azure API Management is a comprehensive solution for publishing, managing, secur
     flex-lg-row justify-content-lg-between align-items-lg-center pb-lg-3
   "
 >
-  <p>
-    ©
+  <p>©
     <time>2024</time>
-    <a href="https://twitter.com/hbolajraf">Hassan BOLAJRAF</a>.
+
+    
+      <a href="https://twitter.com/hbolajraf">Hassan BOLAJRAF</a>.
+    
+
     
       <span
         data-bs-toggle="tooltip"
@@ -2680,10 +2690,7 @@ Azure API Management is a comprehensive solution for publishing, managing, secur
       >Some rights reserved.</span>
     
   </p>
-
- <!-- <p>Using the <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> theme <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a>
-  </p>
-  -->
+ 
 </footer>
 
           </div>
@@ -4164,6 +4171,11 @@ Azure API Management is a comprehensive solution for publishing, managing, secur
     
     
     
+  
+    
+    
+    
+    
       
         
         
@@ -4263,30 +4275,25 @@ Azure API Management is a comprehensive solution for publishing, managing, secur
 <!-- layout specified -->
 
 
-  
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
   
-    
-
-    
 
   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   
     
@@ -4337,9 +4344,16 @@ Azure API Management is a comprehensive solution for publishing, managing, secur
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script src="https://cdn.jsdelivr.net/combine/npm/jquery@3.7.1/dist/jquery.min.js,npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js,npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/lazysizes@5.3.2/lazysizes.min.js,npm/dayjs@1.11.9/dayjs.min.js,npm/dayjs@1.11.9/locale/en.min.js,npm/dayjs@1.11.9/plugin/relativeTime.min.js,npm/dayjs@1.11.9/plugin/localizedFormat.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/combine/npm/jquery@3.7.1/dist/jquery.min.js,npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js,npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/dayjs@1.11.10/dayjs.min.js,npm/dayjs@1.11.10/locale/en.min.js,npm/dayjs@1.11.10/plugin/relativeTime.min.js,npm/dayjs@1.11.10/plugin/localizedFormat.min.js"></script>
 
 
 
