@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title></title>
   <subtitle></subtitle>
-  <updated>2024-05-28T21:49:41+02:00</updated>
+  <updated>2024-06-04T12:40:56+02:00</updated>
   <author>
     <name>Hassan BOLAJRAF</name>
     <uri>http://localhost:4000/</uri>
@@ -22,9 +22,9 @@
   <entry>
     <title>Azure | Creating Azure Logic Apps to integrate workflows for sending notifications about changes within a Blob Storage container</title>
     <link href="http://localhost:4000/posts/Creating-Azure-Logic-Apps-to-integrate-workflows-for-sending-notifications-about-changes-within-a-Blob-Storage-container/" rel="alternate" type="text/html" title="Azure | Creating Azure Logic Apps to integrate workflows for sending notifications about changes within a Blob Storage container" />
-    <published>2024-05-05T00:00:00+02:00</published>
+    <published>2024-06-01T00:00:00+02:00</published>
   
-    <updated>2024-05-05T00:00:00+02:00</updated>
+    <updated>2024-06-01T00:00:00+02:00</updated>
   
     <id>http://localhost:4000/posts/Creating-Azure-Logic-Apps-to-integrate-workflows-for-sending-notifications-about-changes-within-a-Blob-Storage-container/</id>
     <content src="http://localhost:4000/posts/Creating-Azure-Logic-Apps-to-integrate-workflows-for-sending-notifications-about-changes-within-a-Blob-Storage-container/" />
@@ -48,9 +48,7 @@
 
 
 
-      
-
-Azure Logic Apps is a cloud service that allows you to automate workflows by integrating various apps, data, and services. It provides a visual designer to build workflows without writing code.
+      Azure Logic Apps is a cloud service that allows you to automate workflows by integrating various apps, data, and services. It provides a visual designer to build workflows without writing code.
 
 
   
@@ -69,7 +67,7 @@ Azure Logic Apps is a cloud service that allows you to automate workflows by int
 
 Scenario
 
-Let’s consider a scenar...
+Let’s consider a scenario...
     </summary>
   
 
@@ -79,9 +77,9 @@ Let’s consider a scenar...
   <entry>
     <title>Azure | Creating an Azure Storage Account and Uploading Files to a Container</title>
     <link href="http://localhost:4000/posts/Creating-an-Azure-Storage-Account-and-Uploading-Files-to-a-Container/" rel="alternate" type="text/html" title="Azure | Creating an Azure Storage Account and Uploading Files to a Container" />
-    <published>2024-04-27T00:00:00+02:00</published>
+    <published>2024-05-27T00:00:00+02:00</published>
   
-    <updated>2024-04-27T00:00:00+02:00</updated>
+    <updated>2024-05-27T00:00:00+02:00</updated>
   
     <id>http://localhost:4000/posts/Creating-an-Azure-Storage-Account-and-Uploading-Files-to-a-Container/</id>
     <content src="http://localhost:4000/posts/Creating-an-Azure-Storage-Account-and-Uploading-Files-to-a-Container/" />
@@ -105,9 +103,7 @@ Let’s consider a scenar...
 
 
 
-      
-
-In this tutorial, we’ll walk through creating an Azure Storage account, setting up a container, and uploading a file to it.
+      In this tutorial, we’ll walk through creating an Azure Storage account, setting up a container, and uploading a file to it.
 Also it is a part of the following post.
 
 
@@ -128,7 +124,7 @@ Also it is a part of the following post.
 Step 1: Create an Azure Storage Account
 
 
-  Sign in to the Azu...
+  Sign in to the Azure...
     </summary>
   
 
@@ -164,9 +160,7 @@ Step 1: Create an Azure Storage Account
 
 
 
-      
-
-Microsoft Azure provides several ways to interact with its services, including the command-line interface (CLI), PowerShell, and other tools. Let’s explore each of these options:
+      Microsoft Azure provides several ways to interact with its services, including the command-line interface (CLI), PowerShell, and other tools. Let’s explore each of these options:
 
 1. Azure Portal
 
@@ -174,7 +168,7 @@ Azure Portal is a web-based interface for managing Azure resources. It provides 
 
 Connection
 
-  Open a web browser and navigate to the A...
+  Open a web browser and navigate to the Azu...
     </summary>
   
 
@@ -210,9 +204,7 @@ Connection
 
 
 
-      
-
-Connecting to GitHub and pushing changes using SSH on a Windows machine involves several steps:
+      Connecting to GitHub and pushing changes using SSH on a Windows machine involves several steps:
 
 
   Generate SSH Key Pair
@@ -231,7 +223,7 @@ Step-by-Step Instructions
   
     Generate a new SSH key pair by running:
 
-    ss...
+    ssh-...
     </summary>
   
 
