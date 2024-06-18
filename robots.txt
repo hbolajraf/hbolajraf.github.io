@@ -5,7 +5,7 @@
 # Last update: 2023-11-28  											   #						
 #############################   NOC NOC  ###############################
 # Hello,                                                               #
-# Since you are here, so you know you about robots.txt file and        # 
+# Since you are here, so you know about robots.txt file and            # 
 # information that can contain :=) 									   #
 # Wish you a good hanting !                                            #
 #############################***Hassan***###############################
