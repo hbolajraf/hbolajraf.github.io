@@ -1980,7 +1980,7 @@
 
 <p><a href="/assets/img/favicons/posts/EventHub/Main/5.png" class="popup img-link  shimmer"><img src="/assets/img/favicons/posts/EventHub/Main/5.png" alt="ScreenShot1" loading="lazy"></a></p>
 
-<h4 id="4main-solution-structure"><span class="me-2">4.Main Solution structure</span><a href="#4main-solution-structure" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h4 id="3main-solution-structure"><span class="me-2">3.Main Solution structure</span><a href="#3main-solution-structure" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 <p>The main solution will be presented as bellow:</p>
 <div class="language-bash highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
@@ -2003,8 +2003,8 @@
 </pre></td></tr></tbody></table></code></div></div>
 <p><a href="/assets/img/favicons/posts/EventHub/Main/16.png" class="popup img-link  shimmer"><img src="/assets/img/favicons/posts/EventHub/Main/16.png" alt="ScreenShot1" loading="lazy"></a></p>
 
-<h4 id="5sender-side"><span class="me-2">5.Sender Side</span><a href="#5sender-side" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
-<h5 id="51implementing-sending-events-to-event-hub-solution"><span class="me-2">5.1.Implementing Sending Events to Event Hub solution</span><a href="#51implementing-sending-events-to-event-hub-solution" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h4 id="4sender-side"><span class="me-2">4.Sender Side</span><a href="#4sender-side" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h5 id="41implementing-sending-events-to-event-hub-solution"><span class="me-2">4.1.Implementing Sending Events to Event Hub solution</span><a href="#41implementing-sending-events-to-event-hub-solution" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
 
 <p>Add the following C# code to the Sender Console App project in order to simulate sending financial transactions :</p>
 
@@ -2090,7 +2090,7 @@
 <span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<h5 id="52launch-the-sender-app"><span class="me-2">5.2.Launch the Sender App</span><a href="#52launch-the-sender-app" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h5 id="42launch-the-sender-app"><span class="me-2">4.2.Launch the Sender App</span><a href="#42launch-the-sender-app" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
 
 <p><a href="/assets/img/favicons/posts/EventHub/Main/10.png" class="popup img-link  shimmer"><img src="/assets/img/favicons/posts/EventHub/Main/10.png" alt="ScreenShot1" loading="lazy"></a></p>
 
@@ -2098,9 +2098,9 @@
 
 <p><a href="/assets/img/favicons/posts/EventHub/Main/11.png" class="popup img-link  shimmer"><img src="/assets/img/favicons/posts/EventHub/Main/11.png" alt="ScreenShot1" loading="lazy"></a></p>
 
-<h4 id="6consumer-side"><span class="me-2">6.Consumer Side</span><a href="#6consumer-side" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h4 id="5consumer-side"><span class="me-2">5.Consumer Side</span><a href="#5consumer-side" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
-<h5 id="61processing-events-from-event-hub-solution"><span class="me-2">6.1.Processing Events from Event Hub solution</span><a href="#61processing-events-from-event-hub-solution" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h5 id="51processing-events-from-event-hub-solution"><span class="me-2">5.1.Processing Events from Event Hub solution</span><a href="#51processing-events-from-event-hub-solution" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
 
 <p>Add the following C# code to the consumer Console App in order to read and process transactions :</p>
 
@@ -2202,7 +2202,7 @@
 <span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<h5 id="62launch-the-consumer-app"><span class="me-2">6.2.Launch the Consumer App</span><a href="#62launch-the-consumer-app" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h5 id="52launch-the-consumer-app"><span class="me-2">5.2.Launch the Consumer App</span><a href="#52launch-the-consumer-app" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
 
 <p>When we launch the Consumer Application, it will process events from an Azure Event Hub instance and retrieve the details of each event data as shown below:</p>
 
@@ -2218,11 +2218,11 @@ The checkpointing mechanism ensures that the event processor can resume from the
 
 <p><a href="/assets/img/favicons/posts/EventHub/Main/15.png" class="popup img-link  shimmer"><img src="/assets/img/favicons/posts/EventHub/Main/15.png" alt="ScreenShot1" loading="lazy"></a></p>
 
-<h4 id="7configure-the-security-settings-for-event-hub-and-storage-account"><span class="me-2">7.Configure the security settings for Event Hub and Storage Account</span><a href="#7configure-the-security-settings-for-event-hub-and-storage-account" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h4 id="6configure-the-security-settings-for-event-hub-and-storage-account"><span class="me-2">6.Configure the security settings for Event Hub and Storage Account</span><a href="#6configure-the-security-settings-for-event-hub-and-storage-account" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 <p>In the following configuration, we will outline how to obtain connection strings for both Event Hub and Storage Account. 
 These connection strings are necessary to connect to each service and launch our project as previously described.</p>
 
-<h5 id="71create-shared-access-policies-for-event-hub"><span class="me-2">7.1.Create Shared access policies for Event Hub</span><a href="#71create-shared-access-policies-for-event-hub" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h5 id="61create-shared-access-policies-for-event-hub"><span class="me-2">6.1.Create Shared access policies for Event Hub</span><a href="#61create-shared-access-policies-for-event-hub" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
 
 <p>To create a Shared Access Policy, follow these steps:</p>
 
@@ -2251,7 +2251,7 @@ These connection strings are necessary to connect to each service and launch our
 
 <p><a href="/assets/img/favicons/posts/EventHub/Main/9.png" class="popup img-link  shimmer"><img src="/assets/img/favicons/posts/EventHub/Main/9.png" alt="ScreenShot1" loading="lazy"></a></p>
 
-<h5 id="72create-access-keys-fro-storage-account"><span class="me-2">7.2.Create access Keys fro storage Account</span><a href="#72create-access-keys-fro-storage-account" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h5 id="62create-access-keys-for-storage-account"><span class="me-2">6.2.Create access Keys for storage Account</span><a href="#62create-access-keys-for-storage-account" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
 
 <p>To create the access Keys for <code class="language-plaintext highlighter-rouge">hbolajraf0007storageacct</code> storage Account , follow these steps:</p>
 
