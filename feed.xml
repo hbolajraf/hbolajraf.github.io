@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title></title>
   <subtitle></subtitle>
-  <updated>2024-06-18T13:47:44+02:00</updated>
+  <updated>2024-07-17T12:08:54+02:00</updated>
   <author>
     <name>Hassan BOLAJRAF</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,61 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>Azure | Real-Time Financial Transaction Monitoring in Banking Using Azure Event Hub</title>
+    <link href="http://localhost:4000/posts/Real-Time-Financial-Transaction-Monitoring-in-Banking-Using-Azure-Event-Hub/" rel="alternate" type="text/html" title="Azure | Real-Time Financial Transaction Monitoring in Banking Using Azure Event Hub" />
+    <published>2024-07-17T00:00:00+02:00</published>
+  
+    <updated>2024-07-17T00:00:00+02:00</updated>
+  
+    <id>http://localhost:4000/posts/Real-Time-Financial-Transaction-Monitoring-in-Banking-Using-Azure-Event-Hub/</id>
+    <content src="http://localhost:4000/posts/Real-Time-Financial-Transaction-Monitoring-in-Banking-Using-Azure-Event-Hub/" />
+    <author>
+      <name>Hassan BOLAJRAF</name>
+    </author>
+
+  
+    
+    <category term="Azure" />
+    
+    <category term="Azure Event Hub" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      
+  
+    
+      
+          Note
+      
+    
+    
+      
+        I highlighted screenshots with a yellow color to focus on some important informations.
+      
+      
+        You can download the C# solution from GitHub
+      
+    
+  
+
+
+Scenario
+In the banking sector, real-time monitoring of financial transactions is crucial for detecting fraudulent activities, ensuring compliance, and maintaining...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -222,61 +277,6 @@ Azure Portal is a web-based interface for managing Azure resources. It provides 
 Connection
 
   Open a web browser and navigate to the Azu...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Git | Connecting to GitHub and Pushing Changes Using SSH on Windows</title>
-    <link href="http://localhost:4000/posts/Connecting-to-GitHub-and-Pushing-Changes-Using-SSH-on-Windows/" rel="alternate" type="text/html" title="Git | Connecting to GitHub and Pushing Changes Using SSH on Windows" />
-    <published>2024-04-07T00:00:00+02:00</published>
-  
-    <updated>2024-06-04T12:55:39+02:00</updated>
-  
-    <id>http://localhost:4000/posts/Connecting-to-GitHub-and-Pushing-Changes-Using-SSH-on-Windows/</id>
-    <content src="http://localhost:4000/posts/Connecting-to-GitHub-and-Pushing-Changes-Using-SSH-on-Windows/" />
-    <author>
-      <name>Hassan BOLAJRAF</name>
-    </author>
-
-  
-    
-    <category term="GitHub" />
-    
-    <category term="Git" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      Connecting to GitHub and pushing changes using SSH on a Windows machine involves several steps:
-
-
-  Generate SSH Key Pair
-  Add SSH Key to GitHub Account
-  Configure SSH for GitHub
-  Clone Repository or Add Remote URL
-  Commit and Push Changes
-
-
-Step-by-Step Instructions
-
-1. Generate SSH Key Pair
-
-
-  Open Git Bash on your Windows machine.
-  
-    Generate a new SSH key pair by running:
-
-    ssh-...
     </summary>
   
 
