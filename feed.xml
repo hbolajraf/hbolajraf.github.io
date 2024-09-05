@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title></title>
   <subtitle></subtitle>
-  <updated>2024-07-17T12:48:44+02:00</updated>
+  <updated>2024-09-05T23:45:39+02:00</updated>
   <author>
     <name>Hassan BOLAJRAF</name>
     <uri>http://localhost:4000/</uri>
@@ -24,7 +24,7 @@
     <link href="http://localhost:4000/posts/Real-Time-Financial-Transaction-Monitoring-in-Banking-Using-Azure-Event-Hub/" rel="alternate" type="text/html" title="Azure | Real-Time Financial Transaction Monitoring in Banking Using Azure Event Hub" />
     <published>2024-07-17T00:00:00+02:00</published>
   
-    <updated>2024-07-17T00:00:00+02:00</updated>
+    <updated>2024-07-17T12:52:21+02:00</updated>
   
     <id>http://localhost:4000/posts/Real-Time-Financial-Transaction-Monitoring-in-Banking-Using-Azure-Event-Hub/</id>
     <content src="http://localhost:4000/posts/Real-Time-Financial-Transaction-Monitoring-in-Banking-Using-Azure-Event-Hub/" />
