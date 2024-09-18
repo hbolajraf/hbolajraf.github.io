@@ -1,0 +1,86 @@
+<h2 style="color: #333333; font-family: Arial, sans-serif; margin-bottom: 20px; text-align: center;">
+    We're happy to help you!&nbsp;</h2>
+<h2 style="color: #333333; font-family: Arial, sans-serif; margin-bottom: 20px; text-align: center;">Fill out the form below to contact us.
+</h2>
+
+<p style="color: #555555; font-family: Arial, sans-serif; line-height: 1.6; margin-bottom: 20px; text-align: center;">
+    We’d love to hear from you. It feels good when you send us a message. If you have any issues related to broken links for any post, document or book, we’ll fix it as soon as possible.&nbsp;</p>
+
+<div style="margin-bottom: 20px; text-align: center;">
+    <p style="color: #333333; font-family: Arial, sans-serif;">
+        Thanks and Regards, <br /> hbolajraf.net Team</p>
+</div>
+
+<div style="color: green; font-family: Arial, sans-serif; margin-bottom: 20px; text-align: center;">
+    You can reach us by filling out this form
+</div>
+
+<div class="contact-form-widget" style="background-color: #f9f9f9; border-radius: 8px; box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 10px; margin: 0px auto; max-width: 600px; padding: 20px;">
+    <div class="form">
+        <form id="contact-form" name="contact-form">
+            <div style="margin-bottom: 15px;">
+                <label style="color: #333333; display: block; font-family: Arial, sans-serif; font-weight: bold;">Name</label>
+                <input class="contact-form-name" id="ContactForm1_contact-form-name" name="name" required="" style="border-radius: 4px; border: 1px solid rgb(204, 204, 204); padding: 10px; width: 100%;" type="text" value="" />
+            </div>
+
+            <div style="margin-bottom: 15px;">
+                <label style="color: #333333; display: block; font-family: Arial, sans-serif; font-weight: bold;">Email <span style="color: red;">*</span></label>
+                <input class="contact-form-email" id="ContactForm1_contact-form-email" name="email" required="" style="border-radius: 4px; border: 1px solid rgb(204, 204, 204); padding: 10px; width: 100%;" type="email" value="" />
+            </div>
+
+            <div style="margin-bottom: 15px;">
+                <label style="color: #333333; display: block; font-family: Arial, sans-serif; font-weight: bold;">Message <span style="color: red;">*</span></label>
+                <textarea class="contact-form-email-message" cols="25" id="ContactForm1_contact-form-email-message" name="email-message" required="" rows="5" style="border-radius: 4px; border: 1px solid rgb(204, 204, 204); padding: 10px; width: 100%;"></textarea>
+            </div>
+
+            <div style="margin-top: 20px; text-align: center;">
+                <input class="contact-form-button contact-form-button-submit" id="ContactForm1_contact-form-submit" style="background-color: #5cb85c; border-radius: 4px; border: none; color: white; cursor: pointer; font-family: Arial, sans-serif; font-size: 16px; padding: 10px 20px;" type="submit" value="Send" />
+            </div>
+
+            <div style="margin-left: auto; margin-right: auto; margin-top: 20px; max-width: 222px; text-align: center;">
+                <p class="contact-form-error-message" id="ContactForm1_contact-form-error-message" style="color: red; font-family: Arial, sans-serif;"></p>
+                <p class="contact-form-success-message" id="ContactForm1_contact-form-success-message" style="color: green; font-family: Arial, sans-serif;"></p>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">></script>
+
+<script type="text/javascript">
+    (function() {
+        emailjs.init("Fl-jdhruqYggUIqlq"); // Replace with your EmailJS user ID
+    })();
+
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        var name = document.getElementById('ContactForm1_contact-form-name').value;
+        var email = document.getElementById('ContactForm1_contact-form-email').value;
+        var message = document.getElementById('ContactForm1_contact-form-email-message').value;
+
+        if (name === "" || email === "" || message === "") {
+            document.getElementById('ContactForm1_contact-form-error-message').innerText = "All fields are required.";
+            return;
+        }
+
+        var templateParams = {
+            from_name: name,
+            from_email: email,
+            message: message
+        };
+      
+      emailjs.send('service_j2a3mx7', 'template_aqjp9ru', templateParams)
+    .then(function(response) {
+        console.log('SUCCESS!', response.status, response.text);
+        document.getElementById('ContactForm1_contact-form-success-message').innerText = "Your message was sent successfully!";
+        document.getElementById('ContactForm1_contact-form-error-message').innerText = "";
+        document.getElementById('contact-form').reset();
+    }, function(error) {
+        console.error('FAILED...', error);
+        document.getElementById('ContactForm1_contact-form-error-message').innerText = "Failed to send message. Please try again later.";
+    });
+ });
+     
+</script>
+
