@@ -1,7 +1,1 @@
-User-agent: *
-Disallow: /search?updated-min=
-Disallow: /search?updated-max=
-Disallow: /search?q=
-
-Allow: /
 Sitemap: https://hbolajraf.net/sitemap.xml
