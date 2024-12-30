@@ -1,4 +1,1722 @@
-<!doctype html><html lang="en" ><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7f7f7"><meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1b1b1e"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="description" content="Azure | Terraform project for creating Azure Resources, microsoft, dotnet, .net, azure, mvpbuzz, mvpaward, c#, docker, devops, kubernetes, database, terraform"/><meta property="og:description" content="Azure | Terraform project for creating Azure Resources, microsoft, dotnet, .net, azure, mvpbuzz, mvpaward, c#, docker, devops, kubernetes, database, terraform"/><meta name="viewport" content="width=device-width, user-scalable=no initial-scale=1, shrink-to-fit=no, viewport-fit=cover" ><meta name="google-adsense-account" content="ca-pub-6318861990638219"><meta name="generator" content="Jekyll v4.3.3" /><meta property="og:title" content="Azure Terraform project for creating Azure Resources" /><meta property="og:locale" content="en" /><link rel="canonical" href="https://hbolajraf.net/posts/Terraform-project-for-creating-Azure-Resources.html" /><meta property="og:url" content="https://hbolajraf.net/posts/Terraform-project-for-creating-Azure-Resources.html" /><meta property="og:site_name" content="Hassan BOLAJRAF Blog" /><meta property="og:image" content="https://hbolajraf.net/assets/img/favicons/posts/EventHub/Terraform/Main.png" /><meta property="og:type" content="article" /><meta property="article:published_time" content="2024-06-17T00:00:00+02:00" /><meta name="twitter:card" content="summary_large_image" /><meta property="twitter:image" content="https://hbolajraf.net/assets/img/favicons/posts/EventHub/Terraform/Main.png" /><meta property="twitter:title" content="Azure Terraform project for creating Azure Resources" /><meta name="twitter:site" content="@hbolajraf" /> <script type="application/ld+json"> {"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-06-17T00:00:00+02:00","datePublished":"2024-06-17T00:00:00+02:00","description":"Note I highlighted screenshots with a yellow color to focus on some important informations.","headline":"Azure Terraform project for creating Azure Resources","image":"https://hbolajraf.net/assets/img/favicons/posts/EventHub/Terraform/Main.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://hbolajraf.net/posts/Terraform-project-for-creating-Azure-Resources.html"},"url":"https://hbolajraf.net/posts/Terraform-project-for-creating-Azure-Resources.html"}</script><title>Azure | Terraform project for creating Azure Resources | Hassan BOLAJRAF Blog</title><link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png"><link rel="manifest" href="/assets/img/favicons/site.webmanifest"><link rel="shortcut icon" href="/assets/img/favicons/favicon.ico"><meta name="apple-mobile-web-app-title" content="Hassan BOLAJRAF Blog"><meta name="application-name" content="Hassan BOLAJRAF Blog"><meta name="msapplication-TileColor" content="#da532c"><meta name="msapplication-config" content="/assets/img/favicons/browserconfig.xml"><meta name="theme-color" content="#ffffff"><link rel="preconnect" href="https://fonts.googleapis.com" ><link rel="dns-prefetch" href="https://fonts.googleapis.com" ><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="dns-prefetch" href="https://fonts.gstatic.com" crossorigin><link rel="preconnect" href="https://fonts.googleapis.com" ><link rel="dns-prefetch" href="https://fonts.googleapis.com" ><link rel="preconnect" href="https://cdn.jsdelivr.net" ><link rel="dns-prefetch" href="https://cdn.jsdelivr.net" ><link rel="preconnect" href="https://cdnjs.cloudflare.com" ><link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" ><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato&family=Source+Sans+Pro:wght@400;600;700;900&display=swap"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="/assets/css/jekyll-theme-chirpy.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4.25.0/dist/tocbot.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/magnific-popup@1.1.0/dist/magnific-popup.min.css"> <script type="text/javascript"> class ModeToggle { static get MODE_KEY() { return 'mode'; } static get MODE_ATTR() { return 'data-mode'; } static get DARK_MODE() { return 'dark'; } static get LIGHT_MODE() { return 'light'; } static get ID() { return 'mode-toggle'; } constructor() { if (this.hasMode) { if (this.isDarkMode) { if (!this.isSysDarkPrefer) { this.setDark(); } } else { if (this.isSysDarkPrefer) { this.setLight(); } } } let self = this; /* always follow the system prefers */ this.sysDarkPrefers.addEventListener('change', () => { if (self.hasMode) { if (self.isDarkMode) { if (!self.isSysDarkPrefer) { self.setDark(); } } else { if (self.isSysDarkPrefer) { self.setLight(); } } self.clearMode(); } self.notify(); }); } /* constructor() */ get sysDarkPrefers() { return window.matchMedia('(prefers-color-scheme: dark)'); } get isSysDarkPrefer() { return this.sysDarkPrefers.matches; } get isDarkMode() { return this.mode === ModeToggle.DARK_MODE; } get isLightMode() { return this.mode === ModeToggle.LIGHT_MODE; } get hasMode() { return this.mode != null; } get mode() { return sessionStorage.getItem(ModeToggle.MODE_KEY); } /* get the current mode on screen */ get modeStatus() { if (this.isDarkMode || (!this.hasMode && this.isSysDarkPrefer)) { return ModeToggle.DARK_MODE; } else { return ModeToggle.LIGHT_MODE; } } setDark() { document.documentElement.setAttribute(ModeToggle.MODE_ATTR, ModeToggle.DARK_MODE); sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.DARK_MODE); } setLight() { document.documentElement.setAttribute(ModeToggle.MODE_ATTR, ModeToggle.LIGHT_MODE); sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.LIGHT_MODE); } clearMode() { document.documentElement.removeAttribute(ModeToggle.MODE_ATTR); sessionStorage.removeItem(ModeToggle.MODE_KEY); } /* Notify another plugins that the theme mode has changed */ notify() { window.postMessage( { direction: ModeToggle.ID, message: this.modeStatus }, '*' ); } flipMode() { if (this.hasMode) { if (this.isSysDarkPrefer) { if (this.isLightMode) { this.clearMode(); } else { this.setLight(); } } else { if (this.isDarkMode) { this.clearMode(); } else { this.setDark(); } } } else { if (this.isSysDarkPrefer) { this.setLight(); } else { this.setDark(); } } this.notify(); } /* flipMode() */ } /* ModeToggle */ const modeToggle = new ModeToggle(); </script> <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-KPL0Y67SYB"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-KPL0Y67SYB'); </script> <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6318861990638219" crossorigin="anonymous"> </script><body><aside aria-label="Sidebar" id="sidebar" class="d-flex flex-column align-items-end"><header class="profile-wrapper"> <a href="/" id="avatar" class="rounded-circle"><img src="/assets/img/favicons/Owner.png" width="112" height="112" alt="avatar" onerror="this.style.display='none'"></a><h1 class="site-title"> <a href="/">Hassan BOLAJRAF Blog</a></h1><p class="site-subtitle fst-italic mb-0">Fostering a culture of code quality and collaboration for .NET, azure and devops enthusiasts</p></header><nav class="flex-column flex-grow-1 w-100 ps-0"><ul class="nav"><li class="nav-item"> <a href="/" class="nav-link"> <i class="fa-fw fas fa-home"></i> <span>HOME</span> </a><li class="nav-item"> <a href="/categories.html" class="nav-link"> <i class="fa-fw fas fa-stream"></i> <span>CATEGORIES</span> </a><li class="nav-item"> <a href="/tags.html" class="nav-link"> <i class="fa-fw fas fa-tags"></i> <span>TAGS</span> </a><li class="nav-item"> <a href="/archives.html" class="nav-link"> <i class="fa-fw fas fa-archive"></i> <span>ARCHIVES</span> </a><li class="nav-item"> <a href="/certificate.html" class="nav-link"> <i class="fa-fw fas fa-certificate"></i> <span>CERTIFICATE</span> </a><li class="nav-item"> <a href="/about.html" class="nav-link"> <i class="fa-fw fas fa-info-circle"></i> <span>ABOUT</span> </a><li class="nav-item"> <a href="/privacy-policy.html" class="nav-link"> <i class="fa-fw fas fa-user-shield"></i> <span>PRIVACY POLICY</span> </a><li class="nav-item"> <a href="/contact-us.html" class="nav-link"> <i class="fa-fw fas fa-message"></i> <span>CONTACT US</span> </a></ul></nav><div class="sidebar-bottom d-flex flex-wrap align-items-center w-100"> <button type="button" class="mode-toggle btn" aria-label="Switch Mode"> <i class="fas fa-adjust"></i> </button> <span class="icon-border"></span> <a href="https://www.linkedin.com/in/hassan-bolajraf-56a3a420/" aria-label="linkedin" target="_blank" rel="noopener noreferrer" > <i class="fab fa-linkedin"></i> </a> <a href="https://twitter.com/hbolajraf" aria-label="twitter" target="_blank" rel="noopener noreferrer" > <i class="fa-brands fa-x-twitter"></i> </a> <a href="https://www.facebook.com/hbolajraf" aria-label="facebook" target="_blank" rel="noopener noreferrer" > <i class="fab fa-facebook"></i> </a> <a href="" aria-label="Youtube" target="_blank" rel="noopener noreferrer" > <i class="fab fa-youtube"></i> </a></div></aside><div id="main-wrapper" class="d-flex justify-content-center"><div class="container d-flex flex-column px-xxl-5"><header id="topbar-wrapper" aria-label="Top Bar"><div id="topbar" class="d-flex align-items-center justify-content-between px-lg-3 h-100" ><nav id="breadcrumb" aria-label="Breadcrumb"> <span> <a href="/">Home</a> </span> <span>Azure | Terraform project for creating Azure Resources</span></nav><button type="button" id="sidebar-trigger" class="btn btn-link"> <i class="fas fa-bars fa-fw"></i> </button><div id="topbar-title"> Post</div><button type="button" id="search-trigger" class="btn btn-link"> <i class="fas fa-search fa-fw"></i> </button> <search class="align-items-center ms-3 ms-lg-0"> <i class="fas fa-search fa-fw"></i> <input class="form-control" id="search-input" type="search" aria-label="search" autocomplete="off" placeholder="Search..." > </search> <button type="button" class="btn btn-link text-decoration-none" id="search-cancel">Cancel</button></div></header><div class="row flex-grow-1"><main aria-label="Main Content" class="col-12 col-lg-11 col-xl-9 px-md-4"><article class="px-1"><header><h2 data-toc-skip>Azure | Terraform project for creating Azure Resources</h2><div class="post-meta text-muted"> <span> Posted <time data-ts="1718575200" data-df="ll" data-bs-toggle="tooltip" data-bs-placement="bottom" > Jun 17, 2024 </time> </span><div class="mt-3 mb-3"> <a href="/assets/img/favicons/posts/EventHub/Terraform/Main.png" class="popup img-link preview-img shimmer"><img src="/assets/img/favicons/posts/EventHub/Terraform/Main.png" alt="Preview Image" width="1200" height="630" loading="lazy"></a></div><div class="d-flex justify-content-between"> <span> By <em> <a href="https://twitter.com/hbolajraf">Hassan BOLAJRAF</a> </em> </span> <span class="readtime" data-bs-toggle="tooltip" data-bs-placement="bottom" title="823 words" > <em>4 min</em> read</span></div></div></header><div class="content"><blockquote><div class="table-wrapper"><table><thead><tr><th><i class="fa-solid fa-circle-info" style="color: lightblue"></i> <strong><font color="lightblue"> Note</font></strong><tbody><tr><td><strong>I highlighted screenshots with a <font color="yellow">yellow</font> color to focus on some important informations.</strong></table></div></blockquote><p><a href="https://github.com/hbolajraf/Terraform_Project">You can download the Terraform project from Here</a></p><h2 id="description"><span class="me-2">Description</span><a href="#description" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p>This Terraform script automates the provisioning of Azure resources required for implementing a real-time financial transaction monitoring system using Azure Event Hub. The script will create the following resources:</p><ul><li>Azure Event Hub Namespace<li>Azure Event Hub<li>Azure Event Hub shared access policy<li>Azure Blob Storage Account (for checkpoints)<li>Azure Storage Container (within the Blob Storage account)</ul><h3 id="prerequisites"><span class="me-2">Prerequisites</span><a href="#prerequisites" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3><ul><li>Terraform installed on your machine<li>Azure CLI installed and authenticated</ul><p>The terraform folder project will have the following structure :</p><div class="language-bash highlighter-rouge"><div class="code-header"> <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<!doctype html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- `site.alt_lang` can specify a language different from the UI -->
+<html lang="en" >
+  <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7f7f7">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1b1b1e">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="description" content="Azure | Terraform project for creating Azure Resources, microsoft, dotnet, .net, azure, mvpbuzz, mvpaward, c#, docker, devops, kubernetes, database, terraform"/>
+  <meta property="og:description" content="Azure | Terraform project for creating Azure Resources, microsoft, dotnet, .net, azure, mvpbuzz, mvpaward, c#, docker, devops, kubernetes, database, terraform"/>
+  <meta
+    name="viewport"
+    content="width=device-width, user-scalable=no initial-scale=1, shrink-to-fit=no, viewport-fit=cover"
+  >
+  <!-- Google Adsense -->
+  <meta name="google-adsense-account" content="ca-pub-6318861990638219"><!-- Setup Open Graph image -->
+
+  
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v4.3.3" />
+<meta property="og:title" content="Azure Terraform project for creating Azure Resources" />
+<meta property="og:locale" content="en" />
+<!--
+<meta name="description" content="Note I highlighted screenshots with a yellow color to focus on some important informations.lll" />
+<meta property="og:description" content="Note I highlighted screenshots with a yellow color to focus on some important informations.llll" />
+
+-->
+<link rel="canonical" href="http://localhost:4000/posts/Terraform-project-for-creating-Azure-Resources.html" />
+<meta property="og:url" content="http://localhost:4000/posts/Terraform-project-for-creating-Azure-Resources.html" />
+<meta property="og:site_name" content="Hassan BOLAJRAF Blog" />
+<meta property="og:image" content="http://localhost:4000/assets/img/favicons/posts/EventHub/Terraform/Main.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-06-17T00:00:00+02:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="http://localhost:4000/assets/img/favicons/posts/EventHub/Terraform/Main.png" />
+<meta property="twitter:title" content="Azure Terraform project for creating Azure Resources" />
+<meta name="twitter:site" content="@hbolajraf" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-06-17T00:00:00+02:00","datePublished":"2024-06-17T00:00:00+02:00","description":"Note I highlighted screenshots with a yellow color to focus on some important informations.","headline":"Azure Terraform project for creating Azure Resources","image":"http://localhost:4000/assets/img/favicons/posts/EventHub/Terraform/Main.png","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/Terraform-project-for-creating-Azure-Resources.html"},"url":"http://localhost:4000/posts/Terraform-project-for-creating-Azure-Resources.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <title>Azure | Terraform project for creating Azure Resources | Hassan BOLAJRAF Blog
+  </title>
+
+  <!--
+  The Favicons for Web, Android, Microsoft, and iOS (iPhone and iPad) Apps
+  Generated by: https://realfavicongenerator.net/
+-->
+
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">
+
+  <link rel="manifest" href="/assets/img/favicons/site.webmanifest">
+
+<link rel="shortcut icon" href="/assets/img/favicons/favicon.ico">
+<meta name="apple-mobile-web-app-title" content="Hassan BOLAJRAF Blog">
+<meta name="application-name" content="Hassan BOLAJRAF Blog">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="/assets/img/favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+
+  
+    
+      <link rel="preconnect" href="https://fonts.googleapis.com" >
+      <link rel="dns-prefetch" href="https://fonts.googleapis.com" >
+    
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link rel="dns-prefetch" href="https://fonts.gstatic.com" crossorigin>
+    
+      <link rel="preconnect" href="https://fonts.googleapis.com" >
+      <link rel="dns-prefetch" href="https://fonts.googleapis.com" >
+    
+      <link rel="preconnect" href="https://cdn.jsdelivr.net" >
+      <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" >
+    
+      <link rel="preconnect" href="https://cdnjs.cloudflare.com" >
+      <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" >
+    
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato&family=Source+Sans+Pro:wght@400;600;700;900&display=swap">
+  
+
+  <!-- GA -->
+  
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css">
+
+  <link rel="stylesheet" href="/assets/css/jekyll-theme-chirpy.css">
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4.25.0/dist/tocbot.min.css">
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.min.css">
+  
+
+  
+    <!-- Manific Popup -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/magnific-popup@1.1.0/dist/magnific-popup.min.css">
+  
+
+  <!-- JavaScript -->
+
+  
+    <!-- Switch the mode between dark and light. -->
+
+<script type="text/javascript">
+  class ModeToggle {
+    static get MODE_KEY() {
+      return 'mode';
+    }
+    static get MODE_ATTR() {
+      return 'data-mode';
+    }
+    static get DARK_MODE() {
+      return 'dark';
+    }
+    static get LIGHT_MODE() {
+      return 'light';
+    }
+    static get ID() {
+      return 'mode-toggle';
+    }
+
+    constructor() {
+      if (this.hasMode) {
+        if (this.isDarkMode) {
+          if (!this.isSysDarkPrefer) {
+            this.setDark();
+          }
+        } else {
+          if (this.isSysDarkPrefer) {
+            this.setLight();
+          }
+        }
+      }
+
+      let self = this;
+
+      /* always follow the system prefers */
+      this.sysDarkPrefers.addEventListener('change', () => {
+        if (self.hasMode) {
+          if (self.isDarkMode) {
+            if (!self.isSysDarkPrefer) {
+              self.setDark();
+            }
+          } else {
+            if (self.isSysDarkPrefer) {
+              self.setLight();
+            }
+          }
+
+          self.clearMode();
+        }
+
+        self.notify();
+      });
+    } /* constructor() */
+
+    get sysDarkPrefers() {
+      return window.matchMedia('(prefers-color-scheme: dark)');
+    }
+
+    get isSysDarkPrefer() {
+      return this.sysDarkPrefers.matches;
+    }
+
+    get isDarkMode() {
+      return this.mode === ModeToggle.DARK_MODE;
+    }
+
+    get isLightMode() {
+      return this.mode === ModeToggle.LIGHT_MODE;
+    }
+
+    get hasMode() {
+      return this.mode != null;
+    }
+
+    get mode() {
+      return sessionStorage.getItem(ModeToggle.MODE_KEY);
+    }
+
+    /* get the current mode on screen */
+    get modeStatus() {
+      if (this.isDarkMode || (!this.hasMode && this.isSysDarkPrefer)) {
+        return ModeToggle.DARK_MODE;
+      } else {
+        return ModeToggle.LIGHT_MODE;
+      }
+    }
+
+    setDark() {
+      document.documentElement.setAttribute(ModeToggle.MODE_ATTR, ModeToggle.DARK_MODE);
+      sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.DARK_MODE);
+    }
+
+    setLight() {
+      document.documentElement.setAttribute(ModeToggle.MODE_ATTR, ModeToggle.LIGHT_MODE);
+      sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.LIGHT_MODE);
+    }
+
+    clearMode() {
+      document.documentElement.removeAttribute(ModeToggle.MODE_ATTR);
+      sessionStorage.removeItem(ModeToggle.MODE_KEY);
+    }
+
+    /* Notify another plugins that the theme mode has changed */
+    notify() {
+      window.postMessage(
+        {
+          direction: ModeToggle.ID,
+          message: this.modeStatus
+        },
+        '*'
+      );
+    }
+
+    flipMode() {
+      if (this.hasMode) {
+        if (this.isSysDarkPrefer) {
+          if (this.isLightMode) {
+            this.clearMode();
+          } else {
+            this.setLight();
+          }
+        } else {
+          if (this.isDarkMode) {
+            this.clearMode();
+          } else {
+            this.setDark();
+          }
+        }
+      } else {
+        if (this.isSysDarkPrefer) {
+          this.setLight();
+        } else {
+          this.setDark();
+        }
+      }
+
+      this.notify();
+    } /* flipMode() */
+  } /* ModeToggle */
+
+  const modeToggle = new ModeToggle();
+</script>
+
+  
+
+  <!-- A placeholder to allow defining custom metadata -->
+
+  
+  <!-- Google Analytics -->
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-KPL0Y67SYB"></script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-KPL0Y67SYB');
+</script>
+  <!-- Google Adsense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6318861990638219"
+     crossorigin="anonymous">
+	 </script>
+</head>
+
+
+  <body>
+    <!-- The Side Bar -->
+
+<aside aria-label="Sidebar" id="sidebar" class="d-flex flex-column align-items-end">
+  <header class="profile-wrapper">
+    <a href="/" id="avatar" class="rounded-circle"><img src="/assets/img/favicons/Owner.png" width="112" height="112" alt="avatar" onerror="this.style.display='none'"></a>
+
+    <h1 class="site-title">
+      <a href="/">Hassan BOLAJRAF Blog</a>
+    </h1>
+    <p class="site-subtitle fst-italic mb-0">Fostering a culture of code quality and collaboration for .NET, azure and devops enthusiasts</p>
+  </header>
+  <!-- .profile-wrapper -->
+
+  <nav class="flex-column flex-grow-1 w-100 ps-0">
+    <ul class="nav">
+      <!-- home -->
+      <li class="nav-item">
+        <a href="/" class="nav-link">
+          <i class="fa-fw fas fa-home"></i>
+          <span>HOME</span>
+        </a>
+      </li>
+      <!-- the real tabs -->
+      
+        <li class="nav-item">
+          <a href="/categories.html" class="nav-link">
+            <i class="fa-fw fas fa-stream"></i>
+            
+
+            <span>CATEGORIES</span>
+          </a>
+        </li>
+        <!-- .nav-item -->
+      
+        <li class="nav-item">
+          <a href="/tags.html" class="nav-link">
+            <i class="fa-fw fas fa-tags"></i>
+            
+
+            <span>TAGS</span>
+          </a>
+        </li>
+        <!-- .nav-item -->
+      
+        <li class="nav-item">
+          <a href="/archives.html" class="nav-link">
+            <i class="fa-fw fas fa-archive"></i>
+            
+
+            <span>ARCHIVES</span>
+          </a>
+        </li>
+        <!-- .nav-item -->
+      
+        <li class="nav-item">
+          <a href="/certificate.html" class="nav-link">
+            <i class="fa-fw fas fa-certificate"></i>
+            
+
+            <span>CERTIFICATE</span>
+          </a>
+        </li>
+        <!-- .nav-item -->
+      
+        <li class="nav-item">
+          <a href="/about.html" class="nav-link">
+            <i class="fa-fw fas fa-info-circle"></i>
+            
+
+            <span>ABOUT</span>
+          </a>
+        </li>
+        <!-- .nav-item -->
+      
+        <li class="nav-item">
+          <a href="/privacy-policy.html" class="nav-link">
+            <i class="fa-fw fas fa-user-shield"></i>
+            
+
+            <span>PRIVACY POLICY</span>
+          </a>
+        </li>
+        <!-- .nav-item -->
+      
+        <li class="nav-item">
+          <a href="/contact-us.html" class="nav-link">
+            <i class="fa-fw fas fa-message"></i>
+            
+
+            <span>CONTACT US</span>
+          </a>
+        </li>
+        <!-- .nav-item -->
+      
+    </ul>
+  </nav>
+
+  <div class="sidebar-bottom d-flex flex-wrap  align-items-center w-100">
+    
+      <button type="button" class="mode-toggle btn" aria-label="Switch Mode">
+        <i class="fas fa-adjust"></i>
+      </button>
+
+      
+        <span class="icon-border"></span>
+      
+    
+
+    
+      
+
+      
+        <a
+          href="https://www.linkedin.com/in/hassan-bolajraf-56a3a420/"
+          aria-label="linkedin"
+          
+
+          
+            target="_blank"
+            
+          
+
+          
+
+          
+            rel="noopener noreferrer"
+          
+        >
+          <i class="fab fa-linkedin"></i>
+        </a>
+      
+    
+      
+
+      
+        <a
+          href="https://twitter.com/hbolajraf"
+          aria-label="twitter"
+          
+
+          
+            target="_blank"
+            
+          
+
+          
+
+          
+            rel="noopener noreferrer"
+          
+        >
+          <i class="fa-brands fa-x-twitter"></i>
+        </a>
+      
+    
+      
+
+      
+        <a
+          href="https://www.facebook.com/hbolajraf"
+          aria-label="facebook"
+          
+
+          
+            target="_blank"
+            
+          
+
+          
+
+          
+            rel="noopener noreferrer"
+          
+        >
+          <i class="fab fa-facebook"></i>
+        </a>
+      
+    
+      
+
+      
+        <a
+          href=""
+          aria-label="Youtube"
+          
+
+          
+            target="_blank"
+            
+          
+
+          
+
+          
+            rel="noopener noreferrer"
+          
+        >
+          <i class="fab fa-youtube"></i>
+        </a>
+      
+    
+  </div>
+  <!-- .sidebar-bottom -->
+</aside>
+<!-- #sidebar -->
+
+
+    <div id="main-wrapper" class="d-flex justify-content-center">
+      <div class="container d-flex flex-column px-xxl-5">
+        <!-- The Top Bar -->
+
+<header id="topbar-wrapper" aria-label="Top Bar">
+  <div
+    id="topbar"
+    class="d-flex align-items-center justify-content-between px-lg-3 h-100"
+  >
+    <nav id="breadcrumb" aria-label="Breadcrumb">
+      
+
+      
+        
+          
+            <span>
+              <a href="/">Home</a>
+            </span>
+
+          
+        
+          
+        
+          
+            
+              <span>Azure | Terraform project for creating Azure Resources</span>
+            
+
+          
+        
+      
+    </nav>
+    <!-- endof #breadcrumb -->
+
+    <button type="button" id="sidebar-trigger" class="btn btn-link">
+      <i class="fas fa-bars fa-fw"></i>
+    </button>
+
+    <div id="topbar-title">
+      Post
+    </div>
+
+    <button type="button" id="search-trigger" class="btn btn-link">
+      <i class="fas fa-search fa-fw"></i>
+    </button>
+
+    <search class="align-items-center ms-3 ms-lg-0">
+      <i class="fas fa-search fa-fw"></i>
+      <input
+        class="form-control"
+        id="search-input"
+        type="search"
+        aria-label="search"
+        autocomplete="off"
+        placeholder="Search..."
+      >
+    </search>
+    <button type="button" class="btn btn-link text-decoration-none" id="search-cancel">Cancel</button>
+  </div>
+</header>
+
+
+        <div class="row flex-grow-1">
+          <main aria-label="Main Content" class="col-12 col-lg-11 col-xl-9 px-md-4">
+            
+              <!-- Refactor the HTML structure -->
+
+
+
+<!--
+  In order to allow a wide table to scroll horizontally,
+  we suround the markdown table with `<div class="table-wrapper">` and `</div>`
+-->
+
+
+
+<!--
+  Fixed kramdown code highlight rendering:
+  https://github.com/penibelst/jekyll-compress-html/issues/101
+  https://github.com/penibelst/jekyll-compress-html/issues/71#issuecomment-188144901
+-->
+
+
+
+<!-- Change the icon of checkbox -->
+
+
+
+<!-- Handle images -->
+
+
+
+
+  
+  
+
+  
+    
+      
+      
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
+
+  
+
+
+<!-- Add header for code snippets -->
+
+
+
+<!-- Create heading anchors -->
+
+
+
+
+
+  
+  
+
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
+
+  
+  
+
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
+
+  
+  
+
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
+
+  
+  
+
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
+
+
+
+
+<!-- return -->
+
+
+
+
+<article class="px-1">
+  <header>
+    <h2 data-toc-skip>Azure | Terraform project for creating Azure Resources</h2>
+
+    <div class="post-meta text-muted">
+      <!-- published date -->
+      <span>
+        Posted
+        <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1718575200"
+  data-df="ll"
+  
+    data-bs-toggle="tooltip" data-bs-placement="bottom"
+  
+>
+  Jun 17, 2024
+</time>
+
+      </span>
+
+      <!-- lastmod date -->
+      
+
+      
+        
+        
+        
+
+        
+
+        <div class="mt-3 mb-3">
+          <a href="/assets/img/favicons/posts/EventHub/Terraform/Main.png" class="popup img-link preview-img shimmer"><img src="/assets/img/favicons/posts/EventHub/Terraform/Main.png"  alt="Preview Image" width="1200" height="630"  loading="lazy"></a></div>
+      
+
+      <div class="d-flex justify-content-between">
+        <!-- author(s) -->
+        <span>
+          
+
+          By
+
+          <em>
+            
+              <a href="https://twitter.com/hbolajraf">Hassan BOLAJRAF</a>
+            
+          </em>
+        </span>
+
+        <!-- read time -->
+        <!-- Calculate the post's reading time, and display the word count in tooltip -->
+
+
+
+<!-- words per minute -->
+
+
+
+
+
+
+
+
+
+
+<!-- return element -->
+<span
+  class="readtime"
+  data-bs-toggle="tooltip"
+  data-bs-placement="bottom"
+  title="823 words"
+>
+  <em>4 min</em> read</span>
+
+      </div>
+      <!-- .d-flex -->
+    </div>
+    <!-- .post-meta -->
+  </header>
+
+  <div class="content">
+    <blockquote>
+  <div class="table-wrapper"><table>
+    <thead>
+      <tr>
+        <th><i class="fa-solid fa-circle-info" style="color: lightblue"></i> <strong><font color="lightblue"> Note</font></strong></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>I highlighted screenshots with a <font color="yellow">yellow</font> color to focus on some important informations.</strong></td>
+      </tr>
+    </tbody>
+  </table></div>
+</blockquote>
+
+<p><a href="https://github.com/hbolajraf/Terraform_Project">You can download the Terraform project from Here</a></p>
+<h2 id="description"><span class="me-2">Description</span><a href="#description" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<p>This Terraform script automates the provisioning of Azure resources required for implementing a real-time financial transaction monitoring system using Azure Event Hub. The script will create the following resources:</p>
+<ul>
+  <li>Azure Event Hub Namespace</li>
+  <li>Azure Event Hub</li>
+  <li>Azure Event Hub shared access policy</li>
+  <li>Azure Blob Storage Account (for checkpoints)</li>
+  <li>Azure Storage Container (within the Blob Storage account)</li>
+</ul>
+
+<h3 id="prerequisites"><span class="me-2">Prerequisites</span><a href="#prerequisites" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<ul>
+  <li>Terraform installed on your machine</li>
+  <li>Azure CLI installed and authenticated</li>
+</ul>
+
+<p>The terraform folder project will have the following structure  :</p>
+
+<div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -8,7 +1726,7 @@
 8
 9
 10
-</pre><td class="rouge-code"><pre>Terraform_Project
+</pre></td><td class="rouge-code"><pre>Terraform_Project
 │   .terraform.lock.hcl        <span class="c"># Lock file generated by Terraform to track provider dependencies</span>
 │   main.tf                    <span class="c"># Main Terraform configuration file that contains the Azure resources to be created</span>
 │   outputs.tf                 <span class="c"># Output definitions for Terraform</span>
@@ -18,19 +1736,79 @@
 │   variables.tf               <span class="c"># Variable definitions for Terraform</span>
 │
 └── .terraform                 <span class="c"># Directory containing Terraform's internal files</span>
-</pre></table></code></div></div><h3 id="usage-instructions"><span class="me-2">Usage Instructions</span><a href="#usage-instructions" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3><h4 id="1-pre-requisites"><span class="me-2">1. <strong>Pre-requisites</strong>:</span><a href="#1-pre-requisites" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4><ul><li>Install Terraform and configure Azure CLI with appropriate credentials.</ul><h4 id="2-customization"><span class="me-2">2. <strong>Customization</strong>:</span><a href="#2-customization" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4><ul><li>Modify variables (<code class="language-plaintext highlighter-rouge">resource_group_name</code>, <code class="language-plaintext highlighter-rouge">location</code>, <code class="language-plaintext highlighter-rouge">eventhub_namespace_name</code>, etc.) as per your naming conventions and preferences.</ul><h4 id="3-deployment"><span class="me-2">3. <strong>Deployment</strong>:</span><a href="#3-deployment" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4><h4 id="31-run-terraform-init-to-initialize-the-terraform-configuration"><span class="me-2">3.1 Run <code class="language-plaintext highlighter-rouge">terraform init</code> to initialize the Terraform configuration.</span><a href="#31-run-terraform-init-to-initialize-the-terraform-configuration" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4><p><a href="/assets/img/favicons/posts/EventHub/Terraform/1.png" class="popup img-link shimmer"><img src="/assets/img/favicons/posts/EventHub/Terraform/1.png" alt="ScreenShot1" loading="lazy"></a></p><h4 id="32-run-az-login---tenant-xxxxxxxx-xxxxx-xxxxx-xxxxx-xxxxxxxx---use-device-code-in-order-to-connect-to-azure-using-azure-cli"><span class="me-2">3.2 Run <code class="language-plaintext highlighter-rouge">az login --tenant XXXXXXXX-XXXXX-XXXXX-XXXXX-XXXXXXXX --use-device-code</code> in order to connect to Azure using Azure CLI.</span><a href="#32-run-az-login---tenant-xxxxxxxx-xxxxx-xxxxx-xxxxx-xxxxxxxx---use-device-code-in-order-to-connect-to-azure-using-azure-cli" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4><p><a href="/assets/img/favicons/posts/EventHub/Terraform/6.png" class="popup img-link shimmer"><img src="/assets/img/favicons/posts/EventHub/Terraform/6.png" alt="ScreenShot1" loading="lazy"></a></p><h4 id="33-run-terraform-plan-to-review-the-resources-that-will-be-created"><span class="me-2">3.3 Run <code class="language-plaintext highlighter-rouge">terraform plan</code> to review the resources that will be created.</span><a href="#33-run-terraform-plan-to-review-the-resources-that-will-be-created" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4><p><a href="/assets/img/favicons/posts/EventHub/Terraform/3.png" class="popup img-link shimmer"><img src="/assets/img/favicons/posts/EventHub/Terraform/3.png" alt="ScreenShot1" loading="lazy"></a></p><h4 id="34-run-terraform-apply-to-provision-the-azure-resources"><span class="me-2">3.4 Run <code class="language-plaintext highlighter-rouge">terraform apply</code> to provision the Azure resources.</span><a href="#34-run-terraform-apply-to-provision-the-azure-resources" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4><p><a href="/assets/img/favicons/posts/EventHub/Terraform/4.png" class="popup img-link shimmer"><img src="/assets/img/favicons/posts/EventHub/Terraform/4.png" alt="ScreenShot1" loading="lazy"></a></p><h5 id="341-then-validate-perform-apply-action-"><span class="me-2">3.4.1 Then validate Perform apply action :</span><a href="#341-then-validate-perform-apply-action-" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5><p><a href="/assets/img/favicons/posts/EventHub/Terraform/5.png" class="popup img-link shimmer"><img src="/assets/img/favicons/posts/EventHub/Terraform/5.png" alt="ScreenShot1" loading="lazy"></a></p><h5 id="342-check-the-created-ressources-"><span class="me-2">3.4.2 Check the created ressources :</span><a href="#342-check-the-created-ressources-" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5><p><a href="/assets/img/favicons/posts/EventHub/Terraform/11.png" class="popup img-link shimmer"><img src="/assets/img/favicons/posts/EventHub/Terraform/11.png" alt="ScreenShot1" loading="lazy"></a></p><h4 id="35-run-terraform-destroy-when-you-no-longer-need-the-resources-clean-up-by-destroying-them-with-terraform"><span class="me-2">3.5 Run <code class="language-plaintext highlighter-rouge">terraform destroy</code> When you no longer need the resources, clean up by destroying them with Terraform.</span><a href="#35-run-terraform-destroy-when-you-no-longer-need-the-resources-clean-up-by-destroying-them-with-terraform" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4><p><a href="/assets/img/favicons/posts/EventHub/Terraform/7.png" class="popup img-link shimmer"><img src="/assets/img/favicons/posts/EventHub/Terraform/7.png" alt="ScreenShot1" loading="lazy"></a></p><h5 id="351-then-validate-destroy-all-resources-action-"><span class="me-2">3.5.1 Then validate destroy all resources action :</span><a href="#351-then-validate-destroy-all-resources-action-" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5><p><a href="/assets/img/favicons/posts/EventHub/Terraform/8.png" class="popup img-link shimmer"><img src="/assets/img/favicons/posts/EventHub/Terraform/8.png" alt="ScreenShot1" loading="lazy"></a></p><h5 id="352-tcheck-the-destroyed-ressources-"><span class="me-2">3.5.2 TCheck the destroyed ressources :</span><a href="#352-tcheck-the-destroyed-ressources-" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5><p><a href="/assets/img/favicons/posts/EventHub/Terraform/12.png" class="popup img-link shimmer"><img src="/assets/img/favicons/posts/EventHub/Terraform/12.png" alt="ScreenShot1" loading="lazy"></a></p><h4 id="4-outputs"><span class="me-2">4. <strong>Outputs</strong>:</span><a href="#4-outputs" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4><ul><li>After deployment, Terraform will output connection strings (<code class="language-plaintext highlighter-rouge">eventhub_namespace_connection_string</code>, <code class="language-plaintext highlighter-rouge">eventhub_connection_string</code>, <code class="language-plaintext highlighter-rouge">storage_account_connection_string</code>) which can be used in your C# applications.</ul><h2 id="terraform-code"><span class="me-2">Terraform Code</span><a href="#terraform-code" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><h3 id="step-1-initialize-terraform"><span class="me-2">Step 1: Initialize Terraform</span><a href="#step-1-initialize-terraform" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3><p>Create a new directory and save the following files in it. Run <code class="language-plaintext highlighter-rouge">terraform init</code> to initialize the configuration.</p><h3 id="step-2-provider-configuration"><span class="me-2">Step 2: Provider Configuration</span><a href="#step-2-provider-configuration" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3><p>Create a file named <code class="language-plaintext highlighter-rouge">provider.tf</code>:</p><div class="language-hcl highlighter-rouge"><div class="code-header"> <span data-label-text="Hcl"><i class="fas fa-code fa-fw small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td></tr></tbody></table></code></div></div>
+
+<h3 id="usage-instructions"><span class="me-2">Usage Instructions</span><a href="#usage-instructions" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<h4 id="1-pre-requisites"><span class="me-2">1. <strong>Pre-requisites</strong>:</span><a href="#1-pre-requisites" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<ul>
+  <li>Install Terraform and configure Azure CLI with appropriate credentials.</li>
+</ul>
+
+<h4 id="2-customization"><span class="me-2">2. <strong>Customization</strong>:</span><a href="#2-customization" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<ul>
+  <li>Modify variables (<code class="language-plaintext highlighter-rouge">resource_group_name</code>, <code class="language-plaintext highlighter-rouge">location</code>, <code class="language-plaintext highlighter-rouge">eventhub_namespace_name</code>, etc.) as per your naming conventions and preferences.</li>
+</ul>
+
+<h4 id="3-deployment"><span class="me-2">3. <strong>Deployment</strong>:</span><a href="#3-deployment" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
+<h4 id="31-run-terraform-init-to-initialize-the-terraform-configuration"><span class="me-2">3.1 Run <code class="language-plaintext highlighter-rouge">terraform init</code> to initialize the Terraform configuration.</span><a href="#31-run-terraform-init-to-initialize-the-terraform-configuration" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<p><a href="/assets/img/favicons/posts/EventHub/Terraform/1.png" class="popup img-link  shimmer"><img src="/assets/img/favicons/posts/EventHub/Terraform/1.png" alt="ScreenShot1" loading="lazy"></a></p>
+<h4 id="32-run-az-login---tenant-xxxxxxxx-xxxxx-xxxxx-xxxxx-xxxxxxxx---use-device-code-in-order-to-connect-to-azure-using-azure-cli"><span class="me-2">3.2 Run <code class="language-plaintext highlighter-rouge">az login --tenant XXXXXXXX-XXXXX-XXXXX-XXXXX-XXXXXXXX --use-device-code</code> in order to connect to Azure using Azure CLI.</span><a href="#32-run-az-login---tenant-xxxxxxxx-xxxxx-xxxxx-xxxxx-xxxxxxxx---use-device-code-in-order-to-connect-to-azure-using-azure-cli" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<p><a href="/assets/img/favicons/posts/EventHub/Terraform/6.png" class="popup img-link  shimmer"><img src="/assets/img/favicons/posts/EventHub/Terraform/6.png" alt="ScreenShot1" loading="lazy"></a></p>
+<h4 id="33-run-terraform-plan-to-review-the-resources-that-will-be-created"><span class="me-2">3.3 Run <code class="language-plaintext highlighter-rouge">terraform plan</code> to review the resources that will be created.</span><a href="#33-run-terraform-plan-to-review-the-resources-that-will-be-created" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<p><a href="/assets/img/favicons/posts/EventHub/Terraform/3.png" class="popup img-link  shimmer"><img src="/assets/img/favicons/posts/EventHub/Terraform/3.png" alt="ScreenShot1" loading="lazy"></a></p>
+<h4 id="34-run-terraform-apply-to-provision-the-azure-resources"><span class="me-2">3.4 Run <code class="language-plaintext highlighter-rouge">terraform apply</code> to provision the Azure resources.</span><a href="#34-run-terraform-apply-to-provision-the-azure-resources" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<p><a href="/assets/img/favicons/posts/EventHub/Terraform/4.png" class="popup img-link  shimmer"><img src="/assets/img/favicons/posts/EventHub/Terraform/4.png" alt="ScreenShot1" loading="lazy"></a></p>
+<h5 id="341-then-validate-perform-apply-action-"><span class="me-2">3.4.1 Then validate Perform apply action :</span><a href="#341-then-validate-perform-apply-action-" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<p><a href="/assets/img/favicons/posts/EventHub/Terraform/5.png" class="popup img-link  shimmer"><img src="/assets/img/favicons/posts/EventHub/Terraform/5.png" alt="ScreenShot1" loading="lazy"></a></p>
+<h5 id="342-check-the-created-ressources-"><span class="me-2">3.4.2 Check the created ressources :</span><a href="#342-check-the-created-ressources-" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<p><a href="/assets/img/favicons/posts/EventHub/Terraform/11.png" class="popup img-link  shimmer"><img src="/assets/img/favicons/posts/EventHub/Terraform/11.png" alt="ScreenShot1" loading="lazy"></a></p>
+<h4 id="35-run-terraform-destroy-when-you-no-longer-need-the-resources-clean-up-by-destroying-them-with-terraform"><span class="me-2">3.5 Run <code class="language-plaintext highlighter-rouge">terraform destroy</code> When you no longer need the resources, clean up by destroying them with Terraform.</span><a href="#35-run-terraform-destroy-when-you-no-longer-need-the-resources-clean-up-by-destroying-them-with-terraform" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<p><a href="/assets/img/favicons/posts/EventHub/Terraform/7.png" class="popup img-link  shimmer"><img src="/assets/img/favicons/posts/EventHub/Terraform/7.png" alt="ScreenShot1" loading="lazy"></a></p>
+<h5 id="351-then-validate-destroy-all-resources-action-"><span class="me-2">3.5.1 Then validate destroy all resources action :</span><a href="#351-then-validate-destroy-all-resources-action-" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<p><a href="/assets/img/favicons/posts/EventHub/Terraform/8.png" class="popup img-link  shimmer"><img src="/assets/img/favicons/posts/EventHub/Terraform/8.png" alt="ScreenShot1" loading="lazy"></a></p>
+<h5 id="352-tcheck-the-destroyed-ressources-"><span class="me-2">3.5.2 TCheck the destroyed ressources :</span><a href="#352-tcheck-the-destroyed-ressources-" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<p><a href="/assets/img/favicons/posts/EventHub/Terraform/12.png" class="popup img-link  shimmer"><img src="/assets/img/favicons/posts/EventHub/Terraform/12.png" alt="ScreenShot1" loading="lazy"></a></p>
+
+<h4 id="4-outputs"><span class="me-2">4. <strong>Outputs</strong>:</span><a href="#4-outputs" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<ul>
+  <li>After deployment, Terraform will output connection strings (<code class="language-plaintext highlighter-rouge">eventhub_namespace_connection_string</code>, <code class="language-plaintext highlighter-rouge">eventhub_connection_string</code>, <code class="language-plaintext highlighter-rouge">storage_account_connection_string</code>) which can be used in your C# applications.</li>
+</ul>
+
+<h2 id="terraform-code"><span class="me-2">Terraform Code</span><a href="#terraform-code" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<h3 id="step-1-initialize-terraform"><span class="me-2">Step 1: Initialize Terraform</span><a href="#step-1-initialize-terraform" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>Create a new directory and save the following files in it. Run <code class="language-plaintext highlighter-rouge">terraform init</code> to initialize the configuration.</p>
+
+<h3 id="step-2-provider-configuration"><span class="me-2">Step 2: Provider Configuration</span><a href="#step-2-provider-configuration" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>Create a file named <code class="language-plaintext highlighter-rouge">provider.tf</code>:</p>
+
+<div class="language-hcl highlighter-rouge"><div class="code-header">
+        <span data-label-text="Hcl"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 6
-</pre><td class="rouge-code"><pre><span class="c1"># provider.tf</span>
+</pre></td><td class="rouge-code"><pre><span class="c1"># provider.tf</span>
 
 <span class="c1"># Specify the provider (Azure)</span>
 <span class="nx">provider</span> <span class="s2">"azurerm"</span> <span class="p">{</span>
   <span class="nx">features</span> <span class="p">{}</span>
 <span class="p">}</span>
-</pre></table></code></div></div><h3 id="step-3-resource-configuration"><span class="me-2">Step 3: Resource Configuration</span><a href="#step-3-resource-configuration" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3><p>Create a file named <code class="language-plaintext highlighter-rouge">main.tf</code>:</p><div class="language-hcl highlighter-rouge"><div class="code-header"> <span data-label-text="Hcl"><i class="fas fa-code fa-fw small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td></tr></tbody></table></code></div></div>
+
+<h3 id="step-3-resource-configuration"><span class="me-2">Step 3: Resource Configuration</span><a href="#step-3-resource-configuration" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>Create a file named <code class="language-plaintext highlighter-rouge">main.tf</code>:</p>
+
+<div class="language-hcl highlighter-rouge"><div class="code-header">
+        <span data-label-text="Hcl"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -79,7 +1857,7 @@
 47
 48
 49
-</pre><td class="rouge-code"><pre><span class="c1"># main.tf</span>
+</pre></td><td class="rouge-code"><pre><span class="c1"># main.tf</span>
 
 <span class="c1"># Create a resource group</span>
 <span class="nx">resource</span> <span class="s2">"azurerm_resource_group"</span> <span class="s2">"rg"</span> <span class="p">{</span>
@@ -128,7 +1906,15 @@
   <span class="nx">storage_account_name</span>  <span class="p">=</span> <span class="nx">azurerm_storage_account</span><span class="p">.</span><span class="nx">storage_account</span><span class="p">.</span><span class="nx">name</span>
   <span class="nx">container_access_type</span> <span class="p">=</span> <span class="s2">"private"</span>
 <span class="p">}</span>
-</pre></table></code></div></div><h3 id="step-4-variables-configuration"><span class="me-2">Step 4: Variables Configuration</span><a href="#step-4-variables-configuration" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3><p>Create a file named <code class="language-plaintext highlighter-rouge">variables.tf</code>:</p><div class="language-hcl highlighter-rouge"><div class="code-header"> <span data-label-text="Hcl"><i class="fas fa-code fa-fw small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td></tr></tbody></table></code></div></div>
+
+<h3 id="step-4-variables-configuration"><span class="me-2">Step 4: Variables Configuration</span><a href="#step-4-variables-configuration" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>Create a file named <code class="language-plaintext highlighter-rouge">variables.tf</code>:</p>
+
+<div class="language-hcl highlighter-rouge"><div class="code-header">
+        <span data-label-text="Hcl"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -154,7 +1940,7 @@
 24
 25
 26
-</pre><td class="rouge-code"><pre><span class="c1"># variables.tf</span>
+</pre></td><td class="rouge-code"><pre><span class="c1"># variables.tf</span>
 
 <span class="c1"># Define variables (you may customize these)</span>
 <span class="nx">variable</span> <span class="s2">"resource_group_name"</span> <span class="p">{</span>
@@ -180,7 +1966,15 @@
 <span class="nx">variable</span> <span class="s2">"container_name"</span> <span class="p">{</span>
   <span class="nx">default</span> <span class="p">=</span> <span class="s2">"hbolajraf-eventhub-checkpoints"</span>
 <span class="p">}</span>
-</pre></table></code></div></div><h3 id="step-4-output-configuration"><span class="me-2">Step 4: Output Configuration</span><a href="#step-4-output-configuration" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3><p>Create a file named <code class="language-plaintext highlighter-rouge">outputs.tf</code>:</p><div class="language-hcl highlighter-rouge"><div class="code-header"> <span data-label-text="Hcl"><i class="fas fa-code fa-fw small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td></tr></tbody></table></code></div></div>
+
+<h3 id="step-4-output-configuration"><span class="me-2">Step 4: Output Configuration</span><a href="#step-4-output-configuration" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>Create a file named <code class="language-plaintext highlighter-rouge">outputs.tf</code>:</p>
+
+<div class="language-hcl highlighter-rouge"><div class="code-header">
+        <span data-label-text="Hcl"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -201,7 +1995,7 @@
 19
 20
 21
-</pre><td class="rouge-code"><pre><span class="c1"># outputs.tf</span>
+</pre></td><td class="rouge-code"><pre><span class="c1"># outputs.tf</span>
 
 <span class="c1"># Output the connection strings (for producer and consumer applications)</span>
 <span class="nx">output</span> <span class="s2">"eventhub_namespace_connection_string"</span> <span class="p">{</span>
@@ -222,4 +2016,5236 @@
 <span class="nx">output</span> <span class="s2">"blob_container_name"</span> <span class="p">{</span>
   <span class="nx">value</span> <span class="p">=</span> <span class="nx">azurerm_storage_container</span><span class="p">.</span><span class="nx">container</span><span class="p">.</span><span class="nx">name</span>
 <span class="p">}</span>
-</pre></table></code></div></div><h2 id="what-next-"><span class="me-2">What Next ?</span><a href="#what-next-" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p>This Terraform script automates the setup of Azure resources, making it easier to deploy and manage the infrastructure required for real-time financial transaction monitoring in banking using Azure Event Hub. Adjustments can be made to suit specific requirements or security policies within your organization.</p></div><div class="post-tail-wrapper text-muted"><div class="post-meta mb-3"> <i class="far fa-folder-open fa-fw me-1"></i> <a href="/categories/azure/">Azure</a>, <a href="/categories/terraform/">Terraform</a></div><div class="post-tags"> <i class="fa fa-tags fa-fw me-1"></i> <a href="/tags/microsoft/" class="post-tag no-text-decoration" >microsoft</a> <a href="/tags/azure/" class="post-tag no-text-decoration" >azure</a> <a href="/tags/terraform/" class="post-tag no-text-decoration" >terraform</a> <a href="/tags/iac/" class="post-tag no-text-decoration" >iac</a> <a href="/tags/eventhub/" class="post-tag no-text-decoration" >eventhub</a></div><div> <script src="https://giscus.app/client.js" data-repo="hbolajraf/hbolajraf.github.io" data-repo-id="R_kgDOKjs-PQ" data-category="Announcements" data-category-id="DIC_kwDOKjs-Pc4CazvF" data-mapping="title" data-strict="0" data-reactions-enabled="1" data-emit-metadata="1" data-input-position="top" data-theme="dark_dimmed" data-lang="en" crossorigin="anonymous" async> </script></div><div class=" post-tail-bottom d-flex justify-content-between align-items-center mt-5 pb-2 " ><div class="license-wrapper"> This post is licensed under <a href="https://creativecommons.org/licenses/by/4.0/"> CC BY 4.0 </a> by the author.</div><div class="share-wrapper d-flex align-items-center"> <span class="share-label text-muted">Share</span> <span class="share-icons"> <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fhbolajraf.net%2Fposts%2FTerraform-project-for-creating-Azure-Resources.html" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Linkedin" aria-label="Linkedin"> <i class="fa-fw fab fa-linkedin"></i> </a> <a href="https://twitter.com/intent/tweet?text=Azure%20%7C%20Terraform%20project%20for%20creating%20Azure%20Resources%20-%20Hassan%20BOLAJRAF%20Blog&url=https%3A%2F%2Fhbolajraf.net%2Fposts%2FTerraform-project-for-creating-Azure-Resources.html" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter"> <i class="fa-fw fa-brands fa-square-x-twitter"></i> </a> <a href="https://www.facebook.com/sharer/sharer.php?title=Azure%20%7C%20Terraform%20project%20for%20creating%20Azure%20Resources%20-%20Hassan%20BOLAJRAF%20Blog&u=https%3A%2F%2Fhbolajraf.net%2Fposts%2FTerraform-project-for-creating-Azure-Resources.html" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook"> <i class="fa-fw fab fa-facebook-square"></i> </a> <button id="copy-link" aria-label="Copy link" class="btn small" data-bs-toggle="tooltip" data-bs-placement="top" title="Copy link" data-title-succeed="Link copied successfully!" > <i class="fa-fw fas fa-link pe-none fs-6"></i> </button> </span></div></div></div></article></main><aside aria-label="Panel" id="panel-wrapper" class="col-xl-3 ps-2 mb-5 text-muted"><div class="access"><section id="access-lastmod"><h2 class="panel-heading">Recently Updated</h2><ul class="content list-unstyled ps-0 pb-1 ms-1 mt-2"><li class="text-truncate lh-lg"> <a href="/posts/Configure-Kubernetes-Single-Node-Cluster-and-Deploy-an-ASP.NET-Core-Application-Using-Docker-Hub.html">Kubernetes | Configure Kubernetes Single Node Cluster and Deploy an ASP.NET Core Application Using Docker Hub</a><li class="text-truncate lh-lg"> <a href="/posts/xUnit-and-Complex-Inline-Data-Object-Theory-Methods.html">C# | Unit Tests with xUnit and Complex Inline Data Object</a><li class="text-truncate lh-lg"> <a href="/posts/Implementing-Event-Driven-Microservices-Architecture-in-.NET.html">C# | Implementing Event Driven Microservices Architecture</a><li class="text-truncate lh-lg"> <a href="/posts/Accessing-the-Kubernetes-Dashboard-and-Creating-an-Admin-Service-Account.html">Kubernetes | Accessing the Kubernetes Dashboard and Creating an Admin Service Account</a><li class="text-truncate lh-lg"> <a href="/posts/Optimizing-Your-Web-API-Performance-in-C-Caching-Techniques.html">C# | Optimizing Your Web API Performance - Caching Techniques</a></ul></section><section><h2 class="panel-heading">Trending Tags</h2><div class="d-flex flex-wrap mt-3 mb-1 me-3"> <a class="post-tag btn btn-outline-primary" href="/tags/microsoft/">microsoft</a> <a class="post-tag btn btn-outline-primary" href="/tags/csharp/">csharp</a> <a class="post-tag btn btn-outline-primary" href="/tags/c/">c#</a> <a class="post-tag btn btn-outline-primary" href="/tags/azure/">azure</a> <a class="post-tag btn btn-outline-primary" href="/tags/bestpractices/">bestpractices</a> <a class="post-tag btn btn-outline-primary" href="/tags/answers/">answers</a> <a class="post-tag btn btn-outline-primary" href="/tags/azuredevops/">azuredevops</a> <a class="post-tag btn btn-outline-primary" href="/tags/questions/">questions</a> <a class="post-tag btn btn-outline-primary" href="/tags/webapi/">webapi</a> <a class="post-tag btn btn-outline-primary" href="/tags/development/">development</a></div></section></div><section id="toc-wrapper" class="ps-0 pe-4"><h2 class="panel-heading ps-3 pt-2 mb-2">Contents</h2><nav id="toc"></nav></section></aside></div><div class="row"><div id="tail-wrapper" class="col-12 col-lg-11 col-xl-9 px-md-4"><aside id="related-posts" aria-labelledby="related-label"><h3 class="mb-4" id="related-label">Further Reading</h3><nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4"><article class="col"> <a href="/posts/Real-Time-Financial-Transaction-Monitoring-in-Banking-Using-Azure-Event-Hub.html" class="post-preview card h-100"><div class="card-body"> <time data-ts="1721167200" data-df="ll" > Jul 17, 2024 </time><h4 class="pt-0 my-2">Azure | Real-Time Financial Transaction Monitoring in Banking Using Azure Event Hub</h4><div class="text-muted"><p> Note I highlighted screenshots with a yellow color to focus on some important informations. You can download the C# s...</p></div></div></a></article><article class="col"> <a href="/posts/Iac.html" class="post-preview card h-100"><div class="card-body"> <time data-ts="1709161200" data-df="ll" > Feb 29, 2024 </time><h4 class="pt-0 my-2">Azure | Infrastructure as Code with ARM Template and Terraform</h4><div class="text-muted"><p> In modern cloud computing environments, Infrastructure as Code (IaC) has become a cornerstone for managing and provisioning resources efficiently. Two popular tools for implementing IaC are Azure R...</p></div></div></a></article><article class="col"> <a href="/posts/Azure-DevOps-Using-Terraform.html" class="post-preview card h-100"><div class="card-body"> <time data-ts="1690581600" data-df="ll" > Jul 29, 2023 </time><h4 class="pt-0 my-2">Azure DevOps | Using Terraform</h4><div class="text-muted"><p> Using Terraform with Azure DevOps Azure DevOps is a set of development tools and services for software development, while Terraform is a popular infrastructure as code (IaC) tool used to provision ...</p></div></div></a></article></nav></aside><nav class="post-navigation d-flex justify-content-between" aria-label="Post Navigation"> <a href="/posts/Creating-Azure-Logic-Apps-to-integrate-workflows-for-sending-notifications-about-changes-within-a-Blob-Storage-container.html" class="btn btn-outline-primary" aria-label="Older" ><p>Azure | Creating Azure Logic Apps to integrate workflows for sending notifications about changes within a Blob Storage container</p></a> <a href="/posts/Real-Time-Financial-Transaction-Monitoring-in-Banking-Using-Azure-Event-Hub.html" class="btn btn-outline-primary" aria-label="Newer" ><p>Azure | Real-Time Financial Transaction Monitoring in Banking Using Azure Event Hub</p></a></nav><footer aria-label="Site Info" class=" d-flex flex-column justify-content-center text-muted flex-lg-row justify-content-lg-between align-items-lg-center pb-lg-3 " ><p>© <time>2024</time> <a href="https://twitter.com/hbolajraf">Hassan BOLAJRAF</a>. <span data-bs-toggle="tooltip" data-bs-placement="top" title="Except where otherwise noted, the blog posts on this site are licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) License by the author." >Some rights reserved.</span></p></footer></div></div><div id="search-result-wrapper" class="d-flex justify-content-center unloaded"><div class="col-11 content"><div id="search-hints"><section><h2 class="panel-heading">Trending Tags</h2><div class="d-flex flex-wrap mt-3 mb-1 me-3"> <a class="post-tag btn btn-outline-primary" href="/tags/microsoft/">microsoft</a> <a class="post-tag btn btn-outline-primary" href="/tags/csharp/">csharp</a> <a class="post-tag btn btn-outline-primary" href="/tags/c/">c#</a> <a class="post-tag btn btn-outline-primary" href="/tags/azure/">azure</a> <a class="post-tag btn btn-outline-primary" href="/tags/bestpractices/">bestpractices</a> <a class="post-tag btn btn-outline-primary" href="/tags/answers/">answers</a> <a class="post-tag btn btn-outline-primary" href="/tags/azuredevops/">azuredevops</a> <a class="post-tag btn btn-outline-primary" href="/tags/questions/">questions</a> <a class="post-tag btn btn-outline-primary" href="/tags/webapi/">webapi</a> <a class="post-tag btn btn-outline-primary" href="/tags/development/">development</a></div></section></div><div id="search-results" class="d-flex flex-wrap justify-content-center text-muted mt-3"></div></div></div></div><aside aria-label="Scroll to Top"> <button id="back-to-top" type="button" class="btn btn-lg btn-box-shadow"> <i class="fas fa-angle-up"></i> </button></aside></div><div id="mask"></div><aside id="notification" class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-bs-animation="true" data-bs-autohide="false" ><div class="toast-header"> <button type="button" class="btn-close ms-auto" data-bs-dismiss="toast" aria-label="Close" ></button></div><div class="toast-body text-center pt-0"><p class="px-2 mb-3">A new version of content is available.</p><button type="button" class="btn btn-primary" aria-label="Update"> Update </button></div></aside><script src="https://cdn.jsdelivr.net/combine/npm/jquery@3.7.1/dist/jquery.min.js,npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js,npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/magnific-popup@1.1.0/dist/jquery.magnific-popup.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.10/dayjs.min.js,npm/dayjs@1.11.10/locale/en.min.js,npm/dayjs@1.11.10/plugin/relativeTime.min.js,npm/dayjs@1.11.10/plugin/localizedFormat.min.js,npm/tocbot@4.25.0/dist/tocbot.min.js"></script> <script defer src="/assets/js/dist/post.min.js"></script> <script defer src="/assets/js/dist/app.min.js"></script> <script> /* Note: dependent library will be loaded in `js-selector.html` */ SimpleJekyllSearch({ searchInput: document.getElementById('search-input'), resultsContainer: document.getElementById('search-results'), json: '/assets/js/data/search.json', searchResultTemplate: '<article class="px-1 px-sm-2 px-lg-4 px-xl-0"><header><h2><a href="{url}">{title}</a></h2><div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1"> {categories} {tags}</div></header><p>{snippet}</p></article>', noResultsText: '<p class="mt-5"></p>', templateMiddleware: function(prop, value, template) { if (prop === 'categories') { if (value === '') { return `${value}`; } else { return `<div class="me-sm-4"><i class="far fa-folder fa-fw"></i>${value}</div>`; } } if (prop === 'tags') { if (value === '') { return `${value}`; } else { return `<div><i class="fa fa-tag fa-fw"></i>${value}</div>`; } } } }); </script>
+</pre></td></tr></tbody></table></code></div></div>
+
+<h2 id="what-next-"><span class="me-2">What Next ?</span><a href="#what-next-" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<p>This Terraform script automates the setup of Azure resources, making it easier to deploy and manage the infrastructure required for real-time financial transaction monitoring in banking using Azure Event Hub. Adjustments can be made to suit specific requirements or security policies within your organization.</p>
+
+  </div>
+
+  <div class="post-tail-wrapper text-muted">
+    <!-- categories -->
+    
+      <div class="post-meta mb-3">
+        <i class="far fa-folder-open fa-fw me-1"></i>
+        
+          <a href="/categories/azure/">Azure</a>,
+          <a href="/categories/terraform/">Terraform</a>
+      </div>
+    
+
+    <!-- tags -->
+    
+      <div class="post-tags">
+        <i class="fa fa-tags fa-fw me-1"></i>
+        
+          <a
+            href="/tags/microsoft/"
+            class="post-tag no-text-decoration"
+          >microsoft</a>
+        
+          <a
+            href="/tags/azure/"
+            class="post-tag no-text-decoration"
+          >azure</a>
+        
+          <a
+            href="/tags/terraform/"
+            class="post-tag no-text-decoration"
+          >terraform</a>
+        
+          <a
+            href="/tags/iac/"
+            class="post-tag no-text-decoration"
+          >iac</a>
+        
+          <a
+            href="/tags/eventhub/"
+            class="post-tag no-text-decoration"
+          >eventhub</a>
+        
+      </div>
+    
+	
+	 <div>
+  <!-- Giscus configuration -->
+  <!-- Manually added -->  
+<script src="https://giscus.app/client.js"
+        data-repo="hbolajraf/hbolajraf.github.io"
+        data-repo-id="R_kgDOKjs-PQ"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOKjs-Pc4CazvF"
+        data-mapping="title"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="1"
+        data-input-position="top"
+        data-theme="dark_dimmed"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
+  </div>
+
+    <div
+      class="
+        post-tail-bottom
+        d-flex justify-content-between align-items-center mt-5 pb-2
+      "
+    >
+      <div class="license-wrapper">
+        
+          
+
+          This post is licensed under 
+        <a href="https://creativecommons.org/licenses/by/4.0/">
+          CC BY 4.0
+        </a>
+         by the author.
+        
+      </div>
+
+      <!-- Post sharing snippet -->
+
+<div class="share-wrapper d-flex align-items-center">
+  <span class="share-label text-muted">Share</span>
+  <span class="share-icons">
+    
+    
+    
+
+    
+
+      
+
+      <a href="https://www.linkedin.com/sharing/share-offsite/?url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2FTerraform-project-for-creating-Azure-Resources.html" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Linkedin" aria-label="Linkedin">
+        <i class="fa-fw fab fa-linkedin"></i>
+      </a>
+    
+
+      
+
+      <a href="https://twitter.com/intent/tweet?text=Azure%20%7C%20Terraform%20project%20for%20creating%20Azure%20Resources%20-%20Hassan%20BOLAJRAF%20Blog&url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2FTerraform-project-for-creating-Azure-Resources.html" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
+        <i class="fa-fw fa-brands fa-square-x-twitter"></i>
+      </a>
+    
+
+      
+
+      <a href="https://www.facebook.com/sharer/sharer.php?title=Azure%20%7C%20Terraform%20project%20for%20creating%20Azure%20Resources%20-%20Hassan%20BOLAJRAF%20Blog&u=http%3A%2F%2Flocalhost%3A4000%2Fposts%2FTerraform-project-for-creating-Azure-Resources.html" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
+        <i class="fa-fw fab fa-facebook-square"></i>
+      </a>
+    
+
+    <button
+      id="copy-link"
+      aria-label="Copy link"
+      class="btn small"
+      data-bs-toggle="tooltip"
+      data-bs-placement="top"
+      title="Copy link"
+      data-title-succeed="Link copied successfully!"
+    >
+      <i class="fa-fw fas fa-link pe-none fs-6"></i>
+    </button>
+  </span>
+</div>
+
+    </div>
+    <!-- .post-tail-bottom -->
+  </div>
+  <!-- div.post-tail-wrapper -->
+</article>
+
+
+            
+          </main>
+
+          <!-- panel -->
+          <aside aria-label="Panel" id="panel-wrapper" class="col-xl-3 ps-2 mb-5 text-muted">
+            <div class="access">
+              <!-- Get 5 last posted/updated posts -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <section id="access-lastmod">
+    <h2 class="panel-heading">Recently Updated</h2>
+    <ul class="content list-unstyled ps-0 pb-1 ms-1 mt-2">
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/Setting-Up-a-Health-Check-API-with-Application-Insights-in-ASP.NET-Core-and-Deploying-to-Azure.html">Azure | Setting Up a Health Check API with Application Insights in ASP.NET Core and Deploying to Azure</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/Understanding-Cloud-Service-Models.html">Azure | Understanding Cloud Service Models</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/Azure-Functions-Types-and-C-Examples.html">Azure | Azure Functions Trigger Types with Use Cases and Examples</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/Exploring-DotNET-9-New-Developer-Features.html">C# | Exploring .NET 9's New Developer Features</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/Configure-Kubernetes-Single-Node-Cluster-and-Deploy-an-ASP.NET-Core-Application-Using-Docker-Hub.html">Kubernetes | Configure Kubernetes Single Node Cluster and Deploy an ASP.NET Core Application Using Docker Hub</a>
+        </li>
+      
+    </ul>
+  </section>
+  <!-- #access-lastmod -->
+
+
+              <!-- The trending tags list -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+
+
+  <section>
+    <h2 class="panel-heading">Trending Tags</h2>
+    <div class="d-flex flex-wrap mt-3 mb-1 me-3">
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/microsoft/">microsoft</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/csharp/">csharp</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/c/">c#</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/azure/">azure</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/bestpractices/">bestpractices</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/answers/">answers</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/azuredevops/">azuredevops</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/questions/">questions</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/webapi/">webapi</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/development/">development</a>
+      
+    </div>
+  </section>
+
+
+            </div>
+
+            
+              
+              
+
+
+
+  <section id="toc-wrapper" class="ps-0 pe-4">
+    <h2 class="panel-heading ps-3 pt-2 mb-2">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
+
+
+            
+          </aside>
+        </div>
+
+        <div class="row">
+          <!-- tail -->
+          <div id="tail-wrapper" class="col-12 col-lg-11 col-xl-9 px-md-4">
+            
+              
+              <!-- Recommend the other 3 posts according to the tags and categories of the current post. -->
+
+<!-- The total size of related posts -->
+
+
+<!-- An random integer that bigger than 0 -->
+
+
+<!-- Equals to TAG_SCORE / {max_categories_hierarchy} -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  <aside id="related-posts" aria-labelledby="related-label">
+    <h3 class="mb-4" id="related-label">Further Reading</h3>
+    <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
+      
+        <article class="col">
+          <a href="/posts/Real-Time-Financial-Transaction-Monitoring-in-Banking-Using-Azure-Event-Hub.html" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1721167200"
+  data-df="ll"
+  
+>
+  Jul 17, 2024
+</time>
+
+              <h4 class="pt-0 my-2">Azure | Real-Time Financial Transaction Monitoring in Banking Using Azure Event Hub</h4>
+              <div class="text-muted">
+                <p>
+                  
+
+
+
+
+
+                  
+  
+    
+      
+          Note
+      
+    
+    
+      
+        I highlighted screenshots with a yellow color to focus on some important informations.
+      
+      
+        You can download the C# s...
+                </p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+        <article class="col">
+          <a href="/posts/Iac.html" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1709161200"
+  data-df="ll"
+  
+>
+  Feb 29, 2024
+</time>
+
+              <h4 class="pt-0 my-2">Azure | Infrastructure as Code with ARM Template and Terraform</h4>
+              <div class="text-muted">
+                <p>
+                  
+
+
+
+
+
+                  In modern cloud computing environments, Infrastructure as Code (IaC) has become a cornerstone for managing and provisioning resources efficiently. Two popular tools for implementing IaC are Azure R...
+                </p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+        <article class="col">
+          <a href="/posts/Azure-DevOps-Using-Terraform.html" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1690581600"
+  data-df="ll"
+  
+>
+  Jul 29, 2023
+</time>
+
+              <h4 class="pt-0 my-2">Azure DevOps | Using Terraform</h4>
+              <div class="text-muted">
+                <p>
+                  
+
+
+
+
+
+                  Using Terraform with Azure DevOps
+Azure DevOps is a set of development tools and services for software development, while Terraform is a popular infrastructure as code (IaC) tool used to provision ...
+                </p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+    </nav>
+  </aside>
+  <!-- #related-posts -->
+
+
+            
+              
+              <!-- Navigation buttons at the bottom of the post. -->
+
+<nav class="post-navigation d-flex justify-content-between" aria-label="Post Navigation">
+  
+  
+
+  
+    <a
+      href="/posts/Creating-Azure-Logic-Apps-to-integrate-workflows-for-sending-notifications-about-changes-within-a-Blob-Storage-container.html"
+      class="btn btn-outline-primary"
+      aria-label="Older"
+    >
+      <p>Azure | Creating Azure Logic Apps to integrate workflows for sending notifications about changes within a Blob Storage container</p>
+    </a>
+  
+
+  
+    <a
+      href="/posts/Real-Time-Financial-Transaction-Monitoring-in-Banking-Using-Azure-Event-Hub.html"
+      class="btn btn-outline-primary"
+      aria-label="Newer"
+    >
+      <p>Azure | Real-Time Financial Transaction Monitoring in Banking Using Azure Event Hub</p>
+    </a>
+  
+</nav>
+
+            
+              
+              <!--  The comments switcher -->
+
+
+            
+
+            <!-- The Footer -->
+
+<footer
+  aria-label="Site Info"
+  class="
+    d-flex flex-column justify-content-center text-muted
+    flex-lg-row justify-content-lg-between align-items-lg-center pb-lg-3
+  "
+>
+  <p>©
+    <time>2024</time>
+
+    
+      <a href="https://twitter.com/hbolajraf">Hassan BOLAJRAF</a>.
+    
+
+    
+      <span
+        data-bs-toggle="tooltip"
+        data-bs-placement="top"
+        title="Except where otherwise noted, the blog posts on this site are licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) License by the author."
+      >Some rights reserved.</span>
+    
+  </p>
+ 
+</footer>
+
+          </div>
+        </div>
+
+        <!-- The Search results -->
+
+<div id="search-result-wrapper" class="d-flex justify-content-center unloaded">
+  <div class="col-11 content">
+    <div id="search-hints">
+      <!-- The trending tags list -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+
+
+  <section>
+    <h2 class="panel-heading">Trending Tags</h2>
+    <div class="d-flex flex-wrap mt-3 mb-1 me-3">
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/microsoft/">microsoft</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/csharp/">csharp</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/c/">c#</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/azure/">azure</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/bestpractices/">bestpractices</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/answers/">answers</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/azuredevops/">azuredevops</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/questions/">questions</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/webapi/">webapi</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/development/">development</a>
+      
+    </div>
+  </section>
+
+
+    </div>
+    <div id="search-results" class="d-flex flex-wrap justify-content-center text-muted mt-3"></div>
+  </div>
+</div>
+
+      </div>
+
+      <aside aria-label="Scroll to Top">
+        <button id="back-to-top" type="button" class="btn btn-lg btn-box-shadow">
+          <i class="fas fa-angle-up"></i>
+        </button>
+      </aside>
+    </div>
+
+    <div id="mask"></div>
+
+    
+      <aside
+  id="notification"
+  class="toast"
+  role="alert"
+  aria-live="assertive"
+  aria-atomic="true"
+  data-bs-animation="true"
+  data-bs-autohide="false"
+>
+  <div class="toast-header">
+    <button
+      type="button"
+      class="btn-close ms-auto"
+      data-bs-dismiss="toast"
+      aria-label="Close"
+    ></button>
+  </div>
+  <div class="toast-body text-center pt-0">
+    <p class="px-2 mb-3">A new version of content is available.</p>
+    <button type="button" class="btn btn-primary" aria-label="Update">
+      Update
+    </button>
+  </div>
+</aside>
+
+    
+
+    <!-- JavaScripts -->
+
+    <!-- JS selector for site. -->
+
+<!-- commons -->
+
+
+
+<!-- layout specified -->
+
+
+
+
+  
+
+  
+    <!-- image lazy-loading & popup & clipboard -->
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+
+    
+
+  
+
+  
+    
+
+    
+
+  
+
+  
+    
+
+    
+
+  
+
+  
+    
+
+    
+
+  
+
+  
+    
+
+    
+
+  
+
+  
+    
+
+    
+
+  
+
+  
+    
+
+    
+
+  
+
+  
+    
+
+    
+
+  
+
+  
+    
+
+    
+
+  
+
+  
+    
+
+    
+
+  
+
+  
+    
+
+    
+
+  
+
+
+
+  <script src="https://cdn.jsdelivr.net/combine/npm/jquery@3.7.1/dist/jquery.min.js,npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js,npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/magnific-popup@1.1.0/dist/jquery.magnific-popup.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.10/dayjs.min.js,npm/dayjs@1.11.10/locale/en.min.js,npm/dayjs@1.11.10/plugin/relativeTime.min.js,npm/dayjs@1.11.10/plugin/localizedFormat.min.js,npm/tocbot@4.25.0/dist/tocbot.min.js"></script>
+
+
+
+
+
+
+<script defer src="/assets/js/dist/post.min.js"></script>
+
+
+
+
+
+
+    
+
+    <!--
+  Jekyll Simple Search loader
+  See: <https://github.com/christian-fei/Simple-Jekyll-Search>
+-->
+
+
+
+
+
+<script>
+  /* Note: dependent library will be loaded in `js-selector.html` */
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('search-results'),
+    json: '/assets/js/data/search.json',
+    searchResultTemplate: '  <article class="px-1 px-sm-2 px-lg-4 px-xl-0">    <header>      <h2><a href="{url}">{title}</a></h2>      <div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1">        {categories}        {tags}      </div>    </header>    <p>{snippet}</p>  </article>',
+    noResultsText: '<p class="mt-5"></p>',
+    templateMiddleware: function(prop, value, template) {
+      if (prop === 'categories') {
+        if (value === '') {
+          return `${value}`;
+        } else {
+          return `<div class="me-sm-4"><i class="far fa-folder fa-fw"></i>${value}</div>`;
+        }
+      }
+
+      if (prop === 'tags') {
+        if (value === '') {
+          return `${value}`;
+        } else {
+          return `<div><i class="fa fa-tag fa-fw"></i>${value}</div>`;
+        }
+      }
+    }
+  });
+</script>
+
+  </body>
+</html>
+
