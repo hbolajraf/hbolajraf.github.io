@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Hassan BOLAJRAF Blog</title>
   <subtitle></subtitle>
-  <updated>2024-12-30T11:51:42+01:00</updated>
+  <updated>2025-05-11T12:57:55+02:00</updated>
   <author>
     <name>Hassan BOLAJRAF</name>
     <uri>http://localhost:4000/</uri>
@@ -13,30 +13,30 @@
   <link rel="alternate" type="text/html" hreflang="en"
     href="http://localhost:4000/"/>
   <generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator>
-  <rights> © 2024 Hassan BOLAJRAF </rights>
+  <rights> © 2025 Hassan BOLAJRAF </rights>
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
 
   
   <entry>
-    <title>Azure | Setting Up a Health Check API with Application Insights in ASP.NET Core and Deploying to Azure</title>
-    <link href="http://localhost:4000/posts/Setting-Up-a-Health-Check-API-with-Application-Insights-in-ASP.NET-Core-and-Deploying-to-Azure.html" rel="alternate" type="text/html" title="Azure | Setting Up a Health Check API with Application Insights in ASP.NET Core and Deploying to Azure" />
-    <published>2024-12-24T00:00:00+01:00</published>
+    <title>Kubernetes | How to Implement Horizontal Pod Autoscaler (HPA) for an ASP.NET Core App in Kubernetes</title>
+    <link href="http://localhost:4000/posts/How-to-Implement-Horizontal-Pod-Autoscaler-for-an-ASP.NET-Core-App-in-Kubernetes.html" rel="alternate" type="text/html" title="Kubernetes | How to Implement Horizontal Pod Autoscaler (HPA) for an ASP.NET Core App in Kubernetes" />
+    <published>2025-05-11T00:00:00+02:00</published>
   
-    <updated>2024-12-24T00:00:00+01:00</updated>
+    <updated>2025-05-11T00:00:00+02:00</updated>
   
-    <id>http://localhost:4000/posts/Setting-Up-a-Health-Check-API-with-Application-Insights-in-ASP.NET-Core-and-Deploying-to-Azure.html</id>
-    <content src="http://localhost:4000/posts/Setting-Up-a-Health-Check-API-with-Application-Insights-in-ASP.NET-Core-and-Deploying-to-Azure.html" />
+    <id>http://localhost:4000/posts/How-to-Implement-Horizontal-Pod-Autoscaler-for-an-ASP.NET-Core-App-in-Kubernetes.html</id>
+    <content src="http://localhost:4000/posts/How-to-Implement-Horizontal-Pod-Autoscaler-for-an-ASP.NET-Core-App-in-Kubernetes.html" />
     <author>
       <name>Hassan BOLAJRAF</name>
     </author>
 
   
     
-    <category term="Azure" />
+    <category term="Kubernetes" />
     
-    <category term="App Insights" />
+    <category term="HPA" />
     
   
 
@@ -48,14 +48,14 @@
 
 
 
-      In this guide, we’ll build a Health Check API in ASP.NET Core, integrate it with Application Insights for logging and monitoring, and then deploy the application to Azure for real-time monitoring. By the end of this post, you’ll have a fully operational health check API, complete with logging and monitoring in the Azure portal.
+      This guide walks you through deploying an ASP.NET Core app on Kubernetes with Horizontal Pod Autoscaler (HPA) configured for autoscaling based on CPU and memory thresholds. All configurations are provided in YAML with comments for clarity.
+
+
+  The solution was implemented on a Kubernetes cluster running locally on Windows 11 Pro.
 
 
 
-Step 1: Set Up Application Insights in Azure
-
-
-  Go to the Azure...
+  You can find the Kubernetes configuration files in my GitHub...
     </summary>
   
 
@@ -65,9 +65,9 @@ Step 1: Set Up Application Insights in Azure
   <entry>
     <title>Azure | Understanding Cloud Service Models</title>
     <link href="http://localhost:4000/posts/Understanding-Cloud-Service-Models.html" rel="alternate" type="text/html" title="Azure | Understanding Cloud Service Models" />
-    <published>2024-11-21T00:00:00+01:00</published>
+    <published>2025-05-09T00:00:00+02:00</published>
   
-    <updated>2024-11-21T00:00:00+01:00</updated>
+    <updated>2025-05-09T00:00:00+02:00</updated>
   
     <id>http://localhost:4000/posts/Understanding-Cloud-Service-Models.html</id>
     <content src="http://localhost:4000/posts/Understanding-Cloud-Service-Models.html" />
@@ -109,9 +109,9 @@ In this scenario, you’re responsible for everything:
   <entry>
     <title>Azure | Azure Functions Trigger Types with Use Cases and Examples</title>
     <link href="http://localhost:4000/posts/Azure-Functions-Types-and-C-Examples.html" rel="alternate" type="text/html" title="Azure | Azure Functions Trigger Types with Use Cases and Examples" />
-    <published>2024-11-18T00:00:00+01:00</published>
+    <published>2025-04-15T00:00:00+02:00</published>
   
-    <updated>2024-11-18T00:00:00+01:00</updated>
+    <updated>2025-04-15T00:00:00+02:00</updated>
   
     <id>http://localhost:4000/posts/Azure-Functions-Types-and-C-Examples.html</id>
     <content src="http://localhost:4000/posts/Azure-Functions-Types-and-C-Examples.html" />
@@ -153,9 +153,9 @@ You can create an HTTP Trigger Function to process incoming customer orders. Whe
   <entry>
     <title>C# | Exploring .NET 9's New Developer Features</title>
     <link href="http://localhost:4000/posts/Exploring-DotNET-9-New-Developer-Features.html" rel="alternate" type="text/html" title="C# | Exploring .NET 9&amp;apos;s New Developer Features" />
-    <published>2024-10-09T00:00:00+02:00</published>
+    <published>2025-04-09T00:00:00+02:00</published>
   
-    <updated>2024-10-09T00:00:00+02:00</updated>
+    <updated>2025-04-09T00:00:00+02:00</updated>
   
     <id>http://localhost:4000/posts/Exploring-DotNET-9-New-Developer-Features.html</id>
     <content src="http://localhost:4000/posts/Exploring-DotNET-9-New-Developer-Features.html" />
@@ -191,23 +191,23 @@ One of the most anticipated features in .NET 9 is the introduction of collection
 
   
   <entry>
-    <title>Kubernetes | Configure Kubernetes Single Node Cluster and Deploy an ASP.NET Core Application Using Docker Hub</title>
-    <link href="http://localhost:4000/posts/Configure-Kubernetes-Single-Node-Cluster-and-Deploy-an-ASP.NET-Core-Application-Using-Docker-Hub.html" rel="alternate" type="text/html" title="Kubernetes | Configure Kubernetes Single Node Cluster and Deploy an ASP.NET Core Application Using Docker Hub" />
-    <published>2024-10-01T00:00:00+02:00</published>
+    <title>Azure | Setting Up a Health Check API with Application Insights in ASP.NET Core and Deploying to Azure</title>
+    <link href="http://localhost:4000/posts/Setting-Up-a-Health-Check-API-with-Application-Insights-in-ASP.NET-Core-and-Deploying-to-Azure.html" rel="alternate" type="text/html" title="Azure | Setting Up a Health Check API with Application Insights in ASP.NET Core and Deploying to Azure" />
+    <published>2025-03-24T00:00:00+01:00</published>
   
-    <updated>2024-10-01T00:00:00+02:00</updated>
+    <updated>2025-03-24T00:00:00+01:00</updated>
   
-    <id>http://localhost:4000/posts/Configure-Kubernetes-Single-Node-Cluster-and-Deploy-an-ASP.NET-Core-Application-Using-Docker-Hub.html</id>
-    <content src="http://localhost:4000/posts/Configure-Kubernetes-Single-Node-Cluster-and-Deploy-an-ASP.NET-Core-Application-Using-Docker-Hub.html" />
+    <id>http://localhost:4000/posts/Setting-Up-a-Health-Check-API-with-Application-Insights-in-ASP.NET-Core-and-Deploying-to-Azure.html</id>
+    <content src="http://localhost:4000/posts/Setting-Up-a-Health-Check-API-with-Application-Insights-in-ASP.NET-Core-and-Deploying-to-Azure.html" />
     <author>
       <name>Hassan BOLAJRAF</name>
     </author>
 
   
     
-    <category term="Kubernetes" />
+    <category term="Azure" />
     
-    <category term="Development" />
+    <category term="App Insights" />
     
   
 
@@ -219,27 +219,14 @@ One of the most anticipated features in .NET 9 is the introduction of collection
 
 
 
-      
-  
-    
-      
-          Note
-      
-    
-    
-      
-        I highlighted screenshots with a yellow color to focus on some important informations.
-      
-      
-        You can download the C# solution from GitHub
-      
-    
-  
+      In this guide, we’ll build a Health Check API in ASP.NET Core, integrate it with Application Insights for logging and monitoring, and then deploy the application to Azure for real-time monitoring. By the end of this post, you’ll have a fully operational health check API, complete with logging and monitoring in the Azure portal.
 
 
-Overview
-Kubernetes is a powerful open-source container orchestration tool that simplifies the deployment, 
-scaling, and management of containerized applications. ...
+
+Step 1: Set Up Application Insights in Azure
+
+
+  Go to the Azure...
     </summary>
   
 
