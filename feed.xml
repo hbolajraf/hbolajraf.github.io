@@ -4,7 +4,7 @@
   <id>https://hbolajraf.net/</id>
   <title>Hassan BOLAJRAF Blog</title>
   <subtitle></subtitle>
-  <updated>2026-11-22T15:21:29+01:00</updated>
+  <updated>2026-11-22T16:28:21+01:00</updated>
   <author>
     <name>Hassan BOLAJRAF</name>
     <uri>https://hbolajraf.net/</uri>
@@ -17,6 +17,44 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>Kubernetes | Default Pod Labels with Mutating Admission Policies</title>
+    <link href="https://hbolajraf.net/posts/kubernetes-mutating-admission-policies.html" rel="alternate" type="text/html" title="Kubernetes | Default Pod Labels with Mutating Admission Policies" />
+    <published>2026-11-22T00:00:00+01:00</published>
+  
+    <updated>2026-11-22T00:00:00+01:00</updated>
+  
+    <id>https://hbolajraf.net/posts/kubernetes-mutating-admission-policies.html</id>
+    <content src="https://hbolajraf.net/posts/kubernetes-mutating-admission-policies.html" />
+    <author>
+      <name>Hassan BOLAJRAF</name>
+    </author>
+
+  
+    
+    <category term="Kubernetes" />
+    
+    <category term="Cloud" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      A platform team might want new Pods in a test namespace to carry an owner label. Asking every developer to remember the label works until someone forgets. A mutating admission policy can add a default during the API request, before Kubernetes stores the Pod.
+
+MutatingAdmissionPolicy became stable in Kubernetes 1.36. It uses CEL expressions in the API server and can replace some webhook use case...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -102,6 +140,44 @@ Microsoft released .NET 11 on November 10, 2026. It is a standard-term support (
 
   
   <entry>
+    <title>.NET | Reconcile Two Lists with LINQ FullJoin</title>
+    <link href="https://hbolajraf.net/posts/dotnet-11-fulljoin-reconciling-data.html" rel="alternate" type="text/html" title=".NET | Reconcile Two Lists with LINQ FullJoin" />
+    <published>2026-11-22T00:00:00+01:00</published>
+  
+    <updated>2026-11-22T00:00:00+01:00</updated>
+  
+    <id>https://hbolajraf.net/posts/dotnet-11-fulljoin-reconciling-data.html</id>
+    <content src="https://hbolajraf.net/posts/dotnet-11-fulljoin-reconciling-data.html" />
+    <author>
+      <name>Hassan BOLAJRAF</name>
+    </author>
+
+  
+    
+    <category term="Dotnet" />
+    
+    <category term="Development" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Imagine comparing a product catalog with a warehouse count. Some products appear in both lists; others exist in only one. An inner join hides those missing records, which are often the very records you need to investigate.
+
+.NET 11 adds LINQ FullJoin. It keeps matched records and the unmatched records from both sequences. Let’s use it to find the differences between an expected inventory and an...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
     <title>DevOps | Protecting GitHub Actions Workflow Execution</title>
     <link href="https://hbolajraf.net/posts/devops-github-actions-execution-protections.html" rel="alternate" type="text/html" title="DevOps | Protecting GitHub Actions Workflow Execution" />
     <published>2026-11-22T00:00:00+01:00</published>
@@ -135,93 +211,6 @@ Microsoft released .NET 11 on November 10, 2026. It is a standard-term support (
 What are execution protections?
 
 These protections let administrators define allowlists for workflow e...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Kubernetes | How to Implement Horizontal Pod Autoscaler (HPA) for an ASP.NET Core App in Kubernetes</title>
-    <link href="https://hbolajraf.net/posts/How-to-Implement-Horizontal-Pod-Autoscaler-for-an-ASP.NET-Core-App-in-Kubernetes.html" rel="alternate" type="text/html" title="Kubernetes | How to Implement Horizontal Pod Autoscaler (HPA) for an ASP.NET Core App in Kubernetes" />
-    <published>2025-05-11T00:00:00+02:00</published>
-  
-    <updated>2025-05-11T00:00:00+02:00</updated>
-  
-    <id>https://hbolajraf.net/posts/How-to-Implement-Horizontal-Pod-Autoscaler-for-an-ASP.NET-Core-App-in-Kubernetes.html</id>
-    <content src="https://hbolajraf.net/posts/How-to-Implement-Horizontal-Pod-Autoscaler-for-an-ASP.NET-Core-App-in-Kubernetes.html" />
-    <author>
-      <name>Hassan BOLAJRAF</name>
-    </author>
-
-  
-    
-    <category term="Kubernetes" />
-    
-    <category term="HPA" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      This guide walks you through deploying an ASP.NET Core app on Kubernetes with Horizontal Pod Autoscaler (HPA) configured for autoscaling based on CPU and memory thresholds. All configurations are provided in YAML with comments for clarity.
-
-
-  The solution was implemented on a Kubernetes cluster running locally on Windows 11 Pro.
-
-
-
-  You can find the Kubernetes configuration files in my GitHub...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Azure | Understanding Cloud Service Models</title>
-    <link href="https://hbolajraf.net/posts/Understanding-Cloud-Service-Models.html" rel="alternate" type="text/html" title="Azure | Understanding Cloud Service Models" />
-    <published>2025-05-09T00:00:00+02:00</published>
-  
-    <updated>2025-05-09T00:00:00+02:00</updated>
-  
-    <id>https://hbolajraf.net/posts/Understanding-Cloud-Service-Models.html</id>
-    <content src="https://hbolajraf.net/posts/Understanding-Cloud-Service-Models.html" />
-    <author>
-      <name>Hassan BOLAJRAF</name>
-    </author>
-
-  
-    
-    <category term="Azure" />
-    
-    <category term="Cloud" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      Cloud computing service models can be complex to understand. This post uses a simple pizza-making analogy to explain different cloud service models, followed by technical implementations in Microsoft Azure.
-
-Service Models Explained
-
-Traditional On-Premises (Making Pizza at Home)
-In this scenario, you’re responsible for everything:
-
-  Buying and maintaining the kitchen (infrastructure)
-  Purcha...
     </summary>
   
 
