@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Kubernetes 1.37: two isolation boundaries</title>
+  <desc id="desc">Pod user namespaces isolate a workload's user identities, while rootless node mode runs node components as an unprivileged host user.</desc>
+  <rect width="1200" height="630" fill="#f3f7fb"/><circle cx="1105" cy="85" r="190" fill="#e4edf9"/>
+  <rect x="64" y="54" width="88" height="88" rx="20" fill="#326ce5"/>
+  <g transform="translate(108 98)" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round"><circle r="21"/><circle r="5" fill="#fff"/><path d="M0-21v-7M16-14l6-5M20 5l7 2M9 19l3 7M-9 19l-3 7M-20 5l-7 2M-16-14l-6-5M0-5v-12M4-3l9-8M5 1l12 3M2 5l5 10M-2 5l-5 10M-5 1l-12 3M-4-3l-9-8"/></g>
+  <text x="175" y="82" font-family="Arial,sans-serif" font-size="17" font-weight="700" letter-spacing="2.5" fill="#577291">PLATFORM NOTES / KUBERNETES 1.37</text>
+  <text x="175" y="125" font-family="Georgia,serif" font-size="39" font-weight="700" fill="#18314d">Isolation, made clearer</text>
+  <text x="67" y="214" font-family="Georgia,serif" font-size="47" font-weight="700" fill="#18314d">One cluster, two boundaries</text>
+  <text x="68" y="253" font-family="Arial,sans-serif" font-size="21" fill="#556b80">Pod user namespaces and rootless node components solve different problems.</text>
+  <rect x="67" y="294" width="516" height="225" rx="22" fill="#fff" stroke="#d5e1ed" stroke-width="2"/>
+  <rect x="617" y="294" width="516" height="225" rx="22" fill="#fff" stroke="#d5e1ed" stroke-width="2"/>
+  <circle cx="123" cy="350" r="27" fill="#e5efff"/><rect x="111" y="340" width="24" height="21" rx="3" fill="none" stroke="#326ce5" stroke-width="2.5"/><path d="M111 347h24m-16-7v-4m8 4v-4" fill="none" stroke="#326ce5" stroke-width="2.5" stroke-linecap="round"/>
+  <text x="166" y="345" font-family="Arial,sans-serif" font-size="24" font-weight="700" fill="#193955">Pod user namespace</text><text x="166" y="374" font-family="Arial,sans-serif" font-size="17" fill="#61768a">Workload boundary</text>
+  <path d="M113 425h335m-11-8 11 8-11 8" fill="none" stroke="#8caed3" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="113" y="411" font-family="Arial,sans-serif" font-size="17" fill="#375571">Container user ID</text><text x="113" y="465" font-family="Arial,sans-serif" font-size="17" fill="#375571">Mapped to an unprivileged host ID</text>
+  <circle cx="673" cy="350" r="27" fill="#e5efff"/><rect x="660" y="339" width="26" height="22" rx="3" fill="none" stroke="#326ce5" stroke-width="2.5"/><path d="M665 346h16m-16 7h10m-16 16h28" fill="none" stroke="#326ce5" stroke-width="2.5" stroke-linecap="round"/>
+  <text x="716" y="345" font-family="Arial,sans-serif" font-size="24" font-weight="700" fill="#193955">Rootless node</text><text x="716" y="374" font-family="Arial,sans-serif" font-size="17" fill="#61768a">Node component boundary</text>
+  <path d="M663 425h335m-11-8 11 8-11 8" fill="none" stroke="#8caed3" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="663" y="411" font-family="Arial,sans-serif" font-size="17" fill="#375571">Kubelet + node services</text><text x="663" y="465" font-family="Arial,sans-serif" font-size="17" fill="#375571">Run as a non-root host user</text>
+  <rect x="68" y="553" width="157" height="37" rx="18.5" fill="#dfebff"/><text x="146" y="577" text-anchor="middle" font-family="Arial,sans-serif" font-size="15" font-weight="700" fill="#285bb7">1.37: NODE BETA</text>
+  <text x="241" y="578" font-family="Arial,sans-serif" font-size="17" fill="#61768a">Rootless operation requires explicit setup.</text>
+  <text x="1131" y="579" text-anchor="end" font-family="Arial,sans-serif" font-size="15" fill="#7b8fa1">HASSAN BOLAJRAF BLOG</text>
+</svg>
